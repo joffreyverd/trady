@@ -1,0 +1,63 @@
+{
+    "globals": {
+        "React": "readonly"
+    },
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        }
+      },
+    "rules": {
+        "indent": ["error", 2, {"ignoredNodes": ["JSXElement"]}],
+        "react/jsx-indent": ["error", 2],
+        "react/jsx-filename-extension": [
+            2, 
+            { 
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "camelcase": [2, {"properties": "always"}],
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/sort-comp": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/media-has-caption": "off",
+        "jsx-a11y/no-noninteractive-element-interactions": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "no-nested-ternary": "off",
+        "no-param-reassign": "off",
+        "object-curly-newline": "off",
+        "object-shorthand": "off",
+        "operator-linebreak": "off",
+        "import/extensions": "off",
+        "react/prop-types": "off"
+    }
+}

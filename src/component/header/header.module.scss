@@ -1,0 +1,27 @@
+@import 'styles/variables';
+
+.header {
+    display: flex;
+    background-color: $secondary-black;
+    height: 50px;
+}
+
+.item {
+    margin: auto;
+}
+
+.logoItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.test {
+    margin: auto;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.test:hover {
+    color: $primary-blue;
+}
