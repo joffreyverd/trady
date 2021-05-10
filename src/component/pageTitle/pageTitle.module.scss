@@ -1,4 +1,6 @@
+@import 'styles/variables';
+
 .title {
-    padding-left: 50px;
+    margin: 30px $main-margin;
     size: 2em;
 }
