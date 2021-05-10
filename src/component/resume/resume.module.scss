@@ -1,0 +1,18 @@
+@import 'styles/variables';
+
+.resumeContainer {
+    margin: auto $main-margin;
+    display: flex;
+    border-radius: $border-radius;
+    background-color: #292d3f;
+}
+
+.item {
+    text-align: center;
+    font-size: .8em;
+    width: 33.33%;
+}
+
+.amout {
+    font-weight: bold;
+}
