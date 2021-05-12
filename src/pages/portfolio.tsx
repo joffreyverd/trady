@@ -2,6 +2,7 @@ import React from 'react';
 import PageTitle from '../component/pageTitle';
 import Resume from '../component/resume';
 import Doughnut from '../component/doughnut';
+import List from '../component/list';
 
 const sections = [
   { title: 'Current Balance', value: '$5000' },
@@ -13,7 +14,10 @@ const portfolio: React.FC = () => (
   <div className='pageContainer'>
     <PageTitle title='Your portfolio' />
     <Resume sections={sections} />
-    <Doughnut />
+    <div className='flexContainer'>
+      <Doughnut />
+      <List />
+    </div>
   </div>
 
 );
