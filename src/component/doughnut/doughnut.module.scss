@@ -1,0 +1,9 @@
+@import 'styles/variables';
+
+.chartContainer {
+    width: 50%;
+    margin: $main-margin;
+    padding: 50px;
+    border-radius: $border-radius;
+    background-color: #292d3f;
+}

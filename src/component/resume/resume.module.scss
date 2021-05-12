@@ -1,8 +1,8 @@
 @import 'styles/variables';
 
 .resumeContainer {
-    margin: auto $main-margin;
     display: flex;
+    margin: auto $main-margin;
     border-radius: $border-radius;
     background-color: #292d3f;
 }

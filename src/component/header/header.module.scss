@@ -1,6 +1,9 @@
 @import 'styles/variables';
 
 .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
     display: flex;
     background-color: $secondary-black;
     height: 50px;
@@ -16,12 +19,12 @@
     width: 100px;
 }
 
-.test {
+.name {
     margin: auto;
     font-weight: bold;
     transition: 0.2s;
 }
 
-.test:hover {
+.name:hover {
     color: $primary-blue;
 }

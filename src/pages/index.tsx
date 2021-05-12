@@ -2,7 +2,7 @@ import React from 'react';
 import PageTitle from '../component/pageTitle';
 
 const main: React.FC = () => (
-  <div>
+  <div className='pageContainer'>
     <PageTitle title='Welcome on Trady!' />
   </div>
 );

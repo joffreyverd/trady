@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const position: React.FC = () => {
   const router = useRouter();
   return (
-    <div>
+    <div className='pageContainer'>
       <p>The following position has been asked: {router.query.position}</p>
       <Link href='/'><a>Home</a></Link>
     </div>

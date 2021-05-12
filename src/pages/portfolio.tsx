@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from '../component/pageTitle';
 import Resume from '../component/resume';
+import Doughnut from '../component/doughnut';
 
 const sections = [
   { title: 'Current Balance', value: '$5000' },
@@ -9,10 +10,12 @@ const sections = [
 ];
 
 const portfolio: React.FC = () => (
-  <div>
+  <div className='pageContainer'>
     <PageTitle title='Your portfolio' />
     <Resume sections={sections} />
+    <Doughnut />
   </div>
+
 );
 
 export default portfolio;
