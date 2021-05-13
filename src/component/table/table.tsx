@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import styles from './table.module.scss';
 
 interface Props {
@@ -13,7 +13,7 @@ function Table(props:Props) {
 
   const { getTableProps, getTableBodyProps,
     headerGroups, rows, prepareRow,
-  } = useTable({ columns, data });
+  } = useTable({ columns, data }, useSortBy);
 
   return (
     <div className={styles.tableContainer}>
@@ -22,8 +22,14 @@ function Table(props:Props) {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()} className={styles.head}>
+                <th
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  className={styles.head}
+                >
                   {column.render('Header')}
+                  <span>
+                    {column.isSorted ? column.isSortedDesc ? ' 👇🏼' : ' 👆🏼' : ''}
+                  </span>
                 </th>
               ))}
             </tr>
@@ -46,7 +52,6 @@ function Table(props:Props) {
         </tbody>
       </table>
     </div>
-
   );
 }
 
