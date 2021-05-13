@@ -1,9 +1,9 @@
 import React from 'react';
-import PageTitle from '../component/pageTitle';
+import Title from '../component/pageTitle';
 
 const analytics: React.FC = () => (
   <div className='pageContainer'>
-    <PageTitle title='Your analytics' />
+    <Title title='Your analytics' />
   </div>
 );
 

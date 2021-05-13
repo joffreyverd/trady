@@ -17,6 +17,12 @@ a {
     box-sizing: border-box;
 }
 
+.titleAndAction {
+    justify-content: space-between;
+    padding-right: 50px;
+    height: 80px;
+}
+
 .pageContainer {
     margin: 100px $main-margin;
 }

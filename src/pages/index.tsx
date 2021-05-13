@@ -1,9 +1,9 @@
 import React from 'react';
-import PageTitle from '../component/pageTitle';
+import Title from '../component/pageTitle';
 
 const main: React.FC = () => (
   <div className='pageContainer'>
-    <PageTitle title='Welcome on Trady!' />
+    <Title title='Welcome on Trady!' />
   </div>
 );
 

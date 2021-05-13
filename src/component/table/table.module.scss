@@ -1,0 +1,22 @@
+@import 'styles/variables';
+
+.tableContainer {
+    margin: auto $main-margin;
+    border-radius: $border-radius;
+    background-color: $ternary-black;
+}
+
+.tableBody {
+    width: 100%;
+}
+
+.head {
+    height: 40px;
+    background-color: $secondary-black;
+    color: $font-primary-color;
+    font-weight: bold;
+}
+
+.cell {
+    padding: 10px;
+}

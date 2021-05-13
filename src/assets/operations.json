@@ -1,0 +1,41 @@
+[
+    {
+        "status": "Win",
+        "side": "Long",
+        "pair": "XBTBUSD",
+        "open": "29/06/2020",
+        "buy": "12700",
+        "cost": "1000",
+        "sell": "13000",
+        "returnD": "",
+        "returnP": "",
+        "setup": "order",
+        "pnl": "0"
+    },
+    {
+        "status": "Loss",
+        "side": "Short",
+        "pair": "ETHBUSD",
+        "open": "12/12/2020",
+        "buy": "900",
+        "cost": "500",
+        "sell": "850",
+        "returnD": "",
+        "returnP": "",
+        "setup": "trade",
+        "pnl": "0"
+    },
+    {
+        "status": "Open",
+        "side": "Long",
+        "pair": "SHIBBUSD",
+        "open": "14/04/2021",
+        "buy": "0.00003",
+        "cost": "200",
+        "sell": "",
+        "returnD": "",
+        "returnP": "",
+        "setup": "order",
+        "pnl": ""
+    }
+]
