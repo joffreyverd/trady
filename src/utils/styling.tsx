@@ -1,6 +1,6 @@
 import styles from './styling.module.scss';
 
-function getStyle(column, value) {
+function getStyle(column:string, value:string) {
   if (column === 'pair') {
     return styles.pairFont;
   }
@@ -27,7 +27,7 @@ function getStyle(column, value) {
   }
 
   if (column === 'returnD' || column === 'returnP' || column === 'pnl') {
-    if (value >= 0) {
+    if (parseInt(value, 10) >= 0) {
       return styles.positive;
     }
     return styles.negative;
