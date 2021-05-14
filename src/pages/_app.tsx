@@ -10,7 +10,7 @@ const sections = [
   { title: 'Portfolio', action: '/portfolio' },
   { title: 'Operations', action: '/operations' },
   { title: 'Analytics', action: '/analytics' },
-  { title: 'Reports', action: '/Reports' },
+  { title: 'Reports', action: '/reports' },
   { title: 'Calendar', action: '/calendar' },
 ];
 

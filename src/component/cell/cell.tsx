@@ -9,10 +9,7 @@ function Cell(props:Props) {
   const { object } = props;
 
   return (
-    <td
-      {...object.getCellProps()}
-      className={styles.cell}
-    >
+    <td {...object.getCellProps()} className={styles.cell}>
       <div
         className={getStyle(object.column.id, object.value)}
       >{object.render('Cell')}

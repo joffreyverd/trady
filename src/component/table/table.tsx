@@ -1,11 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
 import Cell from '../cell';
 
 interface Props {
-  data: [],
-  columns: [],
+  data: OperationsTableContent[],
+  columns: OperationsTableColumns[],
 }
 
 function Table(props:Props) {
@@ -48,11 +49,13 @@ function Table(props:Props) {
           {page.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} className={styles.row}>
-                {row.cells.map((cell) => (
-                  <Cell object={cell} />
-                ))}
-              </tr>
+              <Link href={`./positions/${row.original.id}`}>
+                <tr {...row.getRowProps()} className={styles.row}>
+                  {row.cells.map((cell) => (
+                    <Cell object={cell} />
+                  ))}
+                </tr>
+              </Link>
             );
           })}
         </tbody>

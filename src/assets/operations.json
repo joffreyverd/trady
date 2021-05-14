@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "status": "Win",
         "side": "Long",
         "pair": "XBT/BUSD",
@@ -13,6 +14,7 @@
         "pnl": "0"
     },
     {
+        "id": 1,
         "status": "Loss",
         "side": "Short",
         "pair": "ETH/BUSD",
@@ -26,6 +28,7 @@
         "pnl": "0"
     },
     {
+        "id": 2,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -39,6 +42,7 @@
         "pnl": ""
     },
     {
+        "id": 3,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -52,6 +56,7 @@
         "pnl": ""
     },
     {
+        "id": 4,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -65,6 +70,7 @@
         "pnl": ""
     },
     {
+        "id": 5,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -78,6 +84,7 @@
         "pnl": ""
     },
     {
+        "id": 6,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -91,6 +98,7 @@
         "pnl": ""
     },
     {
+        "id": 7,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -104,6 +112,7 @@
         "pnl": ""
     },
     {
+        "id": 8,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -117,6 +126,7 @@
         "pnl": ""
     },
     {
+        "id": 9,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -130,6 +140,7 @@
         "pnl": ""
     },
     {
+        "id": 10,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
@@ -143,6 +154,7 @@
         "pnl": ""
     },
     {
+        "id": 11,
         "status": "Open",
         "side": "Long",
         "pair": "SHIB/BUSD",
