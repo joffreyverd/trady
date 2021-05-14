@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
 
 interface Props {
@@ -12,8 +12,15 @@ function Table(props:Props) {
   const columns = React.useMemo(() => props.columns, []);
 
   const { getTableProps, getTableBodyProps,
-    headerGroups, rows, prepareRow,
-  } = useTable({ columns, data }, useSortBy);
+    headerGroups, page, prepareRow,
+    pageOptions,
+    canPreviousPage, canNextPage,
+    setPageSize, previousPage, nextPage,
+    state: { pageIndex, pageSize },
+  } = useTable(
+    { columns, data, initialState: { pageIndex: 0, pageSize: 10 } },
+    useSortBy, usePagination,
+  );
 
   return (
     <div className={styles.tableContainer}>
@@ -37,10 +44,10 @@ function Table(props:Props) {
         </thead>
 
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} className={styles.row}>
                 {row.cells.map((cell) => (
                   <td {...cell.getCellProps()} className={styles.cell}>
                     {cell.render('Cell')}
@@ -51,6 +58,34 @@ function Table(props:Props) {
           })}
         </tbody>
       </table>
+
+      <div className={styles.paginationContainer}>
+        <button
+          type='button'
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+          className={styles.button}
+        >👈🏻
+        </button>
+        <button
+          type='button'
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+          className={styles.button}
+        >👉🏻
+        </button>
+        <p>Page {pageIndex + 1}/{pageOptions.length}</p>
+        <select
+          value={pageSize}
+          onChange={(e) => {
+            setPageSize(Number(e.target.value));
+          }}
+        >
+          {[10, 50, 100].map((size) => (
+            <option key={size} value={size}>Show {size}</option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }

@@ -10,6 +10,8 @@ const sections = [
   { title: 'Portfolio', action: '/portfolio' },
   { title: 'Operations', action: '/operations' },
   { title: 'Analytics', action: '/analytics' },
+  { title: 'Reports', action: '/Reports' },
+  { title: 'Calendar', action: '/calendar' },
 ];
 
 function App({ Component, pageProps }: AppProps) {

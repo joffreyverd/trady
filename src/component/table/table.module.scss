@@ -17,6 +17,34 @@
     font-weight: bold;
 }
 
+.row {
+    height: 50px;
+}
+
 .cell {
     padding: 10px;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.paginationContainer > p, .paginationContainer > select {
+    margin: auto 0px;
+}
+
+.paginationContainer > p {
+    padding: 0px 20px;
+}
+
+.button {
+    background-color: $primary-blue;
+    border: 0px;
+    border-radius: $border-radius;
+    margin: auto 8px;
+    cursor: pointer;
+    height: 20px;
 }
