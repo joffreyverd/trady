@@ -22,7 +22,7 @@
 .name {
     margin: auto;
     font-weight: bold;
-    transition: .2s;
+    transition: $default-transition;
 }
 
 .name:hover {

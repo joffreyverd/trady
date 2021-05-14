@@ -20,6 +20,13 @@
 
 .row {
     height: 50px;
+    transition: $quick-transition;
+    cursor: pointer;
+}
+
+.row:hover {
+    background-color: $primary-black;
+    transition: $quick-transition;
 }
 
 .paginationContainer {
