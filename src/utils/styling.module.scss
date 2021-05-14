@@ -1,0 +1,47 @@
+@import 'styles/variables';
+
+.pairFont {
+    color: $primary-blue;
+}
+
+.validLabel, .dangerLabel, .warningLabel {
+    text-align: center;
+    padding-top: 4px;
+    border-radius: $light-border-radius;
+    padding: 3px;
+    font-weight: bold;
+}
+
+.validLabel {
+    background-color: $valid-theme;
+}
+
+.warningLabel {
+    background-color: $warning-theme;
+}
+
+.dangerLabel {
+    background-color: $danger-theme;
+}
+
+.upLabel, .downLabel {
+    border: 1px solid;
+    border-radius: $light-border-radius;
+    padding: 3px;
+}
+
+.upLabel {
+    border-color: $valid-theme;
+}
+
+.downLabel {
+    border-color: $danger-theme;
+}
+
+.positive {
+    color: $valid-theme;
+}
+
+.negative {
+    color: $danger-theme;
+}

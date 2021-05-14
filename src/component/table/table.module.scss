@@ -2,11 +2,12 @@
 
 .tableContainer {
     margin: auto $main-margin;
-    border-radius: $border-radius;
-    background-color: $ternary-black;
+
 }
 
 .tableBody {
+    border-radius: $default-border-radius;
+    background-color: $ternary-black;
     width: 100%;
 }
 
@@ -19,10 +20,6 @@
 
 .row {
     height: 50px;
-}
-
-.cell {
-    padding: 10px;
 }
 
 .paginationContainer {
@@ -43,7 +40,7 @@
 .button {
     background-color: $primary-blue;
     border: 0px;
-    border-radius: $border-radius;
+    border-radius: $default-border-radius;
     margin: auto 8px;
     cursor: pointer;
     height: 20px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
+import Cell from '../cell';
 
 interface Props {
   data: [],
@@ -49,9 +50,7 @@ function Table(props:Props) {
             return (
               <tr {...row.getRowProps()} className={styles.row}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className={styles.cell}>
-                    {cell.render('Cell')}
-                  </td>
+                  <Cell object={cell} />
                 ))}
               </tr>
             );

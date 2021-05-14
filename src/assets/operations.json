@@ -2,33 +2,33 @@
     {
         "status": "Win",
         "side": "Long",
-        "pair": "XBTBUSD",
+        "pair": "XBT/BUSD",
         "open": "2020-01-01",
         "buy": "12700",
         "cost": "1000",
         "sell": "13000",
-        "returnD": "",
-        "returnP": "",
+        "returnD": "236",
+        "returnP": "26",
         "setup": "order",
         "pnl": "0"
     },
     {
         "status": "Loss",
         "side": "Short",
-        "pair": "ETHBUSD",
+        "pair": "ETH/BUSD",
         "open": "2020-06-29",
         "buy": "900",
         "cost": "500",
         "sell": "850",
-        "returnD": "",
-        "returnP": "",
+        "returnD": "-150",
+        "returnP": "-12",
         "setup": "trade",
         "pnl": "0"
     },
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -41,7 +41,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -54,7 +54,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -67,7 +67,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -80,7 +80,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -93,7 +93,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -106,7 +106,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -119,7 +119,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -132,7 +132,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
@@ -145,7 +145,7 @@
     {
         "status": "Open",
         "side": "Long",
-        "pair": "SHIBBUSD",
+        "pair": "SHIB/BUSD",
         "open": "2021-03-14",
         "buy": "0.00003",
         "cost": "200",
