@@ -25,11 +25,9 @@ const Header: React.FC<Props> = ({ sections, logoPath }) => (
                 <a className={styles.name}>{section.title}</a>
               </Link>
           }
-
         </div>
       ))
     }
-
   </div>
 );
 

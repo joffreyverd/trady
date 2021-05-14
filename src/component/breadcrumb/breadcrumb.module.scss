@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+.breadcrumbContainer {
+    display: flex;
+    color: $font-secondary-color;
+    margin-top: -40px;
+}
+
+.breadcrumbContainer > a {
+    margin: auto 4px;
+    transition: $quick-transition;
+}
+
+.breadcrumbContainer > a:hover {
+    color: $primary-blue;
+    transition: $quick-transition;
+}

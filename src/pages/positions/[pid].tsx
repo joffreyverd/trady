@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Title from '../../component/pageTitle';
+import BreadCrumb from '../../component/breadcrumb';
 
 const position: React.FC = () => {
   const router = useRouter();
@@ -9,7 +10,7 @@ const position: React.FC = () => {
   return (
     <div className='pageContainer'>
       <Title title='Your position' />
-      <p>The following position has been asked: {pid}</p>
+      <BreadCrumb path='/operations' name='operations' current={`position ${pid}`} />
     </div>
   );
 };
