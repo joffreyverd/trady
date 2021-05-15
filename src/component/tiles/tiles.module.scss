@@ -1,0 +1,49 @@
+@import 'styles/variables';
+
+.tilesContainer {
+    display: flex;
+    margin: auto $main-margin;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.categoryTitles {
+    margin-left: 70px;
+    margin-bottom: 0px;
+}
+
+.tile {
+    flex: 1 0 21%; // 4 tiles per row and the last one take the available space
+    background-color: $ternary-black;
+    height: 200px;
+    margin: 20px;
+    border-radius: $light-border-radius;
+    transition: $quick-transition;
+    cursor: pointer;
+    color: $font-secondary-color;
+}
+
+.tile:hover {
+    background-color: $secondary-black;
+    transition: $default-transition;
+}
+
+.tile > h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.tile > p {
+    text-align: center;
+    margin: 50px;
+    height: 30px;
+    font-size: 1.2em;
+}
+
+.greenFont {
+    color: $valid-theme;
+}
+
+.redFont {
+    color: $danger-theme;
+}

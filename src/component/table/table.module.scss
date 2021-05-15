@@ -2,7 +2,6 @@
 
 .tableContainer {
     margin: auto $main-margin;
-
 }
 
 .tableBody {
@@ -13,7 +12,7 @@
 
 .head {
     height: 40px;
-    background-color: $secondary-black;
+    background-color: $ternary-black;
     color: $font-primary-color;
     font-weight: bold;
 }
@@ -22,6 +21,7 @@
     height: 50px;
     transition: $quick-transition;
     cursor: pointer;
+    color: $font-secondary-color;
 }
 
 .row:hover {

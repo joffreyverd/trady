@@ -1,0 +1,70 @@
+[
+    {
+      "id": 0,
+      "title": "Return $",
+      "value": [
+        { "id": 0, "title": "Accumulative return", "value": 2950 },
+        { "id": 1, "title": "Accumulative return net", "value": 2900 },
+        { "id": 2, "title": "Return on long", "value": 2985 },
+        { "id": 3, "title": "Return on short", "value": -30 },
+        { "id": 4, "title": "Biggest profit", "value": 850 },
+        { "id": 5, "title": "Biggest loss", "value": 7 }
+      ],
+      "symbol": "$"
+    },
+    {
+      "id": 1,
+      "title": "Return %",
+      "value": [
+        { "id": 6, "title": "Win trades", "value": 88.9 },
+        { "id": 7, "title": "Loss trades", "value": 11.1 },
+        { "id": 8, "title": "Open trades", "value": 21.7 },
+        { "id": 9, "title": "Accumulative return", "value": 90.66 },
+        { "id": 10, "title": "Biggest profit", "value": 355.12 },
+        { "id": 11, "title": "Biggest loss", "value": -5 }
+      ],
+      "symbol": "%"
+    },
+    {
+      "id": 2,
+      "title": "Average return $",
+      "value": [
+        { "id": 12, "title": "Average return", "value": 128.3 },
+        { "id": 13, "title": "Average on winners", "value": 186.67 },
+        { "id": 14, "title": "Average on losers", "value": -1.27 }
+      ],
+      "symbol": "$"
+    },
+    {
+      "id": 3,
+      "title": "Average return %",
+      "value": [
+        { "id": 15, "title": "Average return", "value": 29.77 },
+        { "id": 16, "title": "Average on winners", "value": 43.66 },
+        { "id": 17, "title": "Average on losers", "value": -3.7 }
+      ],
+      "symbol": "%"
+    },
+    {
+      "id": 4,
+      "title": "Trades",
+      "value": [
+        { "id": 18, "title": "Closed", "value": 18 },
+        { "id": 19, "title": "Opened", "value": 5 },
+        { "id": 20, "title": "Winners", "value": 16 },
+        { "id": 21, "title": "Losers", "value": 2 },
+        { "id": 22, "title": "Profit Factor", "value": 1176.51 },
+        { "id": 23, "title": "Profit/Loss ratio", "value": 23 }
+      ],
+      "symbol": ""
+    },
+    {
+      "id": 5,
+      "title": "Fees",
+      "value": [
+        { "id": 24, "title": "Total", "value": 33.41 },
+        { "id": 25, "title": "Average fees", "value": 1.45 }
+      ],
+      "symbol": "$"
+    }
+]

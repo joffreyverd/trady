@@ -10,6 +10,7 @@
     border-radius: $light-border-radius;
     padding: 3px;
     font-weight: bold;
+    color: $font-primary-color;
 }
 
 .validLabel {
@@ -28,6 +29,10 @@
     border: 1px solid;
     border-radius: $light-border-radius;
     padding: 3px;
+}
+
+.upLabel, .downLabel {
+    color: $font-primary-color;
 }
 
 .upLabel {
