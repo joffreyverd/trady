@@ -1,0 +1,17 @@
+@import 'styles/variables';
+
+.modal {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    background-color: $secondary-black;
+    border-radius: $default-border-radius;
+    border: none;
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+}
+
+.modal > div {
+    
+}

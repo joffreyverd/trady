@@ -5,6 +5,7 @@ import '../styles/global.scss';
 import type { AppProps } from 'next/app';
 import Header from '../component/header';
 import Footer from '../component/footer';
+import OverlayFilter from '../component/overlayAction';
 
 const sections = [
   { title: 'Trady', action: '/' },
@@ -26,6 +27,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header logoPath='/logo.png' sections={sections} />
       <Component {...pageProps} />
+      <OverlayFilter title='Filters' />
       <Footer />
     </>
   );

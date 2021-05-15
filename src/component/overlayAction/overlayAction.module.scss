@@ -1,0 +1,15 @@
+@import 'styles/variables';
+
+.button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $primary-blue;
+    border-radius: $default-border-radius;
+    border: none;
+    color: $font-primary-color;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
