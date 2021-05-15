@@ -4,6 +4,7 @@ import '../styles/global.scss';
 /* eslint-disable no-unused-vars */
 import type { AppProps } from 'next/app';
 import Header from '../component/header';
+import Footer from '../component/footer';
 
 const sections = [
   { title: 'Trady', action: '/' },
@@ -25,6 +26,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header logoPath='/logo.png' sections={sections} />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }

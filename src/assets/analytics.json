@@ -8,7 +8,7 @@
         { "id": 2, "title": "Return on long", "value": 2985 },
         { "id": 3, "title": "Return on short", "value": -30 },
         { "id": 4, "title": "Biggest profit", "value": 850 },
-        { "id": 5, "title": "Biggest loss", "value": 7 }
+        { "id": 5, "title": "Biggest loss", "value": -7 }
       ],
       "symbol": "$"
     },

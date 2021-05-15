@@ -35,7 +35,8 @@ const Tiles: React.FC<Props> = ({ data }) => (
                   <p className={greenOrRed(tile.value, styles)}>
                     {
                       subData.symbol === '$' ?
-                        `${subData.symbol} ${tile.value}` : `${tile.value}${subData.symbol}`
+                        `${subData.symbol} ${tile.value}` :
+                        `${tile.value}${subData.symbol}`
                     }
                   </p>
                 </div>
