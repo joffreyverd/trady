@@ -5,9 +5,10 @@ import FiltersModal from '../modal';
 interface Props {
   title: string,
   actionOnChange: Function,
+  years: [],
 }
 
-function overlayAction({ title, actionOnChange }): React.ReactElement<Props> {
+function overlayAction({ title, actionOnChange, years }): React.ReactElement<Props> {
   const [onlyShowOpen, toggleOnlyShowOpen] = useState(false);
   const [year, setYear] = useState('');
   const [isModalOpen, toggleModal] = useState(false);
@@ -26,7 +27,7 @@ function overlayAction({ title, actionOnChange }): React.ReactElement<Props> {
       id: 1,
       label: 'Year',
       type: 'dropdown',
-      values: [2020, 2021],
+      values: years,
       state: year,
       setState: setYear,
     },

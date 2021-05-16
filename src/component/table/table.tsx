@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
 import Cell from '../cell';
 
+interface TableHeader {
+  Header: string,
+  accessor: string,
+}
+
 interface Props {
-  data: OperationsTableContent[],
-  columns: OperationsTableColumns[],
+  data: Operations[],
+  columns: TableHeader[],
 }
 
 function Table(props:Props) {
-  const data = React.useMemo(() => props.data, []);
-  const columns = React.useMemo(() => props.columns, []);
+  const [data, setData] = useState(props.data);
+  const columns = useMemo(() => props.columns, []);
+
+  useEffect(() => {
+    setData(props.data);
+  },
+  [props]);
 
   const { getTableProps, getTableBodyProps,
     headerGroups, page, prepareRow,

@@ -1,5 +1,10 @@
 import styles from './resume.module.scss';
 
+interface Balances {
+  title: string,
+  value: string
+}
+
 interface Props {
   sections: Balances[],
 }

@@ -2,6 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './header.module.scss';
 
+interface Menu {
+  title: string,
+  action: string
+}
+
 interface Props {
   logoPath: string,
   sections: Menu[],

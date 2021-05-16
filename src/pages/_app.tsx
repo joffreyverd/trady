@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import '../styles/global.scss';
 /* eslint-disable no-unused-vars */
@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app';
 import Header from '../component/header';
 import Footer from '../component/footer';
 import OverlayFilter from '../component/overlayAction';
+import data from '../assets/operations.json';
 
 const sections = [
   { title: 'Trady', action: '/' },
@@ -16,12 +17,31 @@ const sections = [
   { title: 'Calendar', action: '/calendar' },
 ];
 
-function updateFilters(onlyShowOpen, year) {
-  console.log(onlyShowOpen);
-  console.log(year);
-}
-
 function App({ Component, pageProps }: AppProps) {
+  const [operations, setOperations] = useState(data);
+
+  function updateFilters(onlyShowOpen, year): void {
+    const filteredData = data.filter((singleData) => {
+      if (onlyShowOpen && singleData.status !== 'Open') {
+        return '';
+      }
+      const openYear = new Date(singleData.open).getFullYear();
+      if (year !== '' && openYear !== parseInt(year, 10)) {
+        return '';
+      }
+      return singleData;
+    });
+    setOperations(filteredData);
+  }
+
+  const years = [];
+  data.map((operation) => {
+    const openYear = new Date(operation.open).getFullYear();
+    if (!years.includes(openYear)) {
+      years.push(openYear);
+    }
+  });
+
   return (
     <>
       <Head>
@@ -31,8 +51,8 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <Header logoPath='/logo.png' sections={sections} />
-      <Component {...pageProps} />
-      <OverlayFilter title='Filters' actionOnChange={updateFilters} />
+      <Component {...pageProps} dataSet={operations} />
+      <OverlayFilter title='Filters' actionOnChange={updateFilters} years={years} />
       <Footer />
     </>
   );

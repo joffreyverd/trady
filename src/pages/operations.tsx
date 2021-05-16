@@ -3,8 +3,6 @@ import Button from '../component/button';
 import Title from '../component/pageTitle';
 import Table from '../component/table';
 
-import assets from '../assets/operations.json';
-
 const columns = [
   { Header: 'Status', accessor: 'status' },
   { Header: 'Side', accessor: 'side' },
@@ -19,15 +17,20 @@ const columns = [
   { Header: 'PnL', accessor: 'pnl' },
 ];
 
-const operations: React.FC = () => (
-  <div className='pageContainer'>
-    <div className='flexContainer titleAndAction'>
-      <Title title='Your operations' />
-      <Button title='Add transaction' action='/' />
-    </div>
+interface Props {
+  dataSet: Operations[],
+}
 
-    <Table data={assets} columns={columns} />
-  </div>
-);
+function operations({ dataSet }): React.ReactElement<Props> {
+  return (
+    <div className='pageContainer'>
+      <div className='flexContainer titleAndAction'>
+        <Title title='Your operations' />
+        <Button title='Add transaction' action='/' />
+      </div>
+
+      <Table data={dataSet} columns={columns} />
+    </div>);
+}
 
 export default operations;

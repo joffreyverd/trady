@@ -1,19 +1,4 @@
-interface Menu {
-    title: string,
-    action: string
-}
-
-interface Balances {
-    title: string,
-    value: string
-}
-
-interface OperationsTableColumns {
-    Header: string,
-    accessor: string,
-}
-
-interface OperationsTableContent {
+interface Operations {
     id: integer,
     status: string,
     side: string,
