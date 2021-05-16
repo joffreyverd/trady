@@ -1,6 +1,20 @@
 import styles from './modal.module.scss';
 
-function modal({ title, options }): React.ReactElement {
+interface Options {
+  id: number,
+  label: string,
+  type: string,
+  values: [],
+  state: boolean,
+  setState: Function,
+}
+
+interface Props {
+  title: string,
+  options: Options[],
+}
+
+function modal({ title, options }): React.ReactElement<Props> {
   return (
     <div className={styles.modal}>
       <h3>{title}</h3>

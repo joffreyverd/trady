@@ -16,6 +16,11 @@ const sections = [
   { title: 'Calendar', action: '/calendar' },
 ];
 
+function updateFilters(onlyShowOpen, year) {
+  console.log(onlyShowOpen);
+  console.log(year);
+}
+
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -27,7 +32,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header logoPath='/logo.png' sections={sections} />
       <Component {...pageProps} />
-      <OverlayFilter title='Filters' />
+      <OverlayFilter title='Filters' actionOnChange={updateFilters} />
       <Footer />
     </>
   );
