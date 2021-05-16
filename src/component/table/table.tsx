@@ -46,10 +46,10 @@ function Table(props:Props) {
         </thead>
 
         <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
+          {page.map((row, i) => {
             prepareRow(row);
             return (
-              <Link href={`./positions/${row.original.id}`}>
+              <Link href={`./positions/${row.original.id}`} key={i}>
                 <tr {...row.getRowProps()} className={styles.row}>
                   {row.cells.map((cell) => (
                     <Cell object={cell} />

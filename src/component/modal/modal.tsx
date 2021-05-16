@@ -28,7 +28,7 @@ function modal({ title, options }): React.ReactElement<Props> {
                   type='checkbox'
                   id={option.id}
                   name={option.id}
-                  checked={option.state}
+                  defaultChecked={option.state}
                   onChange={() => option.setState(!option.state)}
                 />
               </label>
@@ -38,16 +38,16 @@ function modal({ title, options }): React.ReactElement<Props> {
               <div key={option.id}>
                 <label htmlFor='options'>
                   <p>{option.label}</p>
-                  <select name='options' id='options' value={option.state}>
-                    <option value='' onClick={(e) => { option.setState(e.target.value); }}>Select</option>
+                  <select
+                    name='options'
+                    id='options'
+                    defaultValue={option.state}
+                    onChange={(e) => { option.setState(e.target.value); }}
+                  >
+                    <option value=''>Select</option>
                     {
                       option.values.map((value) => (
-                        <option
-                          value={value}
-                          key={value}
-                          onClick={(e) => { option.setState(e.target.value); }}
-                        >{value}
-                        </option>
+                        <option value={value} key={value}>{value}</option>
                       ))
                     }
                   </select>
