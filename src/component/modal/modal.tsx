@@ -1,34 +1,47 @@
-import { useState } from 'react';
 import styles from './modal.module.scss';
 
-function modal({ dropdownOptions }): React.ReactElement {
-  const [showOnlyOpen, toggleShowOnlyOpen] = useState(false);
+function modal({ title, options }): React.ReactElement {
   return (
     <div className={styles.modal}>
-      <div>
-        <label htmlFor='onlyOpen'>Show only open positions
-          <input
-            type='checkbox'
-            id='onlyOpen'
-            name='onlyOpen'
-            {...showOnlyOpen ? 'checked' : ''}
-            onClick={() => toggleShowOnlyOpen(!showOnlyOpen)}
-          />
-        </label>
-      </div>
+      <h3>{title}</h3>
+      {
+        options.map((option) => (
+          option.type === 'checkbox' ?
+            <div key={option.id}>
+              <label htmlFor={option.id}>
+                <p>{option.label}</p>
+                <input
+                  type='checkbox'
+                  id={option.id}
+                  name={option.id}
+                  checked={option.state}
+                  onChange={() => option.setState(!option.state)}
+                />
+              </label>
+            </div>
 
-      <div>
-        <label htmlFor='options'>Year
-          <select name='options' id='options'>
-            <option value=''>Select</option>
-            {
-              dropdownOptions.map((option) => (
-                <option value={option} key={option}>{option}</option>
-              ))
-            }
-          </select>
-        </label>
-      </div>
+            : option.type === 'dropdown' ?
+              <div key={option.id}>
+                <label htmlFor='options'>
+                  <p>{option.label}</p>
+                  <select name='options' id='options' value={option.state}>
+                    <option value='' onClick={(e) => { option.setState(e.target.value); }}>Select</option>
+                    {
+                      option.values.map((value) => (
+                        <option
+                          value={value}
+                          key={value}
+                          onClick={(e) => { option.setState(e.target.value); }}
+                        >{value}
+                        </option>
+                      ))
+                    }
+                  </select>
+                </label>
+              </div>
+              : ''
+        ))
+      }
     </div>
   );
 }

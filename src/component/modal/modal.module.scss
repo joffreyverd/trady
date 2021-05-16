@@ -8,10 +8,29 @@
     border-radius: $default-border-radius;
     border: none;
     width: 400px;
-    height: 200px;
+    height: auto;
     padding: 20px;
 }
 
+.modal > h3 {
+    font-size: $medium-font-size;
+    margin: auto;
+    text-align: center;
+}
+
 .modal > div {
-    
+    margin: 20px 0px;
+    background-color: $primary-black;
+    border: $default-border-radius;
+    padding: 10px 20px;
+}
+
+.modal > div > label {
+    display: flex;
+    height: 30px;
+}
+
+.modal > div > label > * {
+    padding-right: 10px;
+    margin: auto 0px;
 }

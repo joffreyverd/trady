@@ -8,8 +8,12 @@
     border-radius: $default-border-radius;
     border: none;
     color: $font-primary-color;
-    font-size: 1.2em;
+    font-size: $medium-font-size;
     cursor: pointer;
     width: 100px;
     height: 40px;
+}
+
+.highlight {
+    background-color: $danger-theme;
 }
