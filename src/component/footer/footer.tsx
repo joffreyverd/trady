@@ -1,6 +1,6 @@
 import styles from './footer.module.scss';
 
-const Button: React.FC<any> = () => (
+const Button: React.FC<HTMLElement> = () => (
   <div className={styles.footer}>
     <a
       href='https://github.com/joffreyverd/trady'

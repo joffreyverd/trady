@@ -3,7 +3,7 @@ import styles from './breadcrumb.module.scss';
 
 interface Props {
   path: string,
-  name: string
+  name: string,
   current: string
 }
 

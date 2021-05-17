@@ -1,4 +1,4 @@
-interface Operations {
+type Operation = {
     id: number,
     status: string,
     side: string,

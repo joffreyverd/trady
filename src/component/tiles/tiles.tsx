@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import styles from './tiles.module.scss';
 
 interface Tile {
@@ -6,7 +7,7 @@ interface Tile {
   value: number,
 }
 
-interface Analytics {
+interface Analytic {
   id: number,
   title: string,
   value: Tile[],
@@ -14,10 +15,10 @@ interface Analytics {
 }
 
 interface Props {
-  data: Analytics[],
+  data: Analytic[],
 }
 
-function greenOrRed(value:number, css:any) {
+function greenOrRed(value: number, css) {
   return value > 0 ? css.greenFont : css.redFont;
 }
 

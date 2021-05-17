@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, useContext } from 'react';
+import React, { useMemo, useContext } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import { OperationsContext } from 'context/operationsContext';

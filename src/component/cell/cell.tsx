@@ -1,11 +1,7 @@
 import getStyle from 'utils/styling';
 import styles from './cell.module.scss';
 
-interface Props {
-  object: any,
-}
-
-function Cell(props:Props) {
+function Cell(props): React.ReactElement {
   const { object } = props;
 
   return (

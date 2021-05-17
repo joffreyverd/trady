@@ -7,7 +7,7 @@ interface Options {
   label: string,
   type: string,
   values: [],
-  state: any,
+  state: boolean | string,
   setState: Function,
 }
 

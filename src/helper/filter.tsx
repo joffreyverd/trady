@@ -4,7 +4,7 @@ interface Filters {
 }
 
 function updateFilters(
-  filters: Filters, operations: Operations, setOperations: Function,
+  filters: Filters, operations: Operation[], setOperations: Function,
 ): void {
   const { onlyShowOpen, year } = filters;
   const filteredData = operations.filter((singleData) => {
@@ -20,7 +20,7 @@ function updateFilters(
   setOperations(filteredData);
 }
 
-function getYears(operations: Operations): [] {
+function getYears(operations: Operation[]): string[] {
   const years = [];
   operations.map((operation) => {
     const openYear = new Date(operation.open).getFullYear();

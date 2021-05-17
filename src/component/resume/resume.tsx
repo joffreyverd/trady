@@ -1,12 +1,12 @@
 import styles from './resume.module.scss';
 
-interface Balances {
+interface Balance {
   title: string,
   value: string
 }
 
 interface Props {
-  sections: Balances[],
+  sections: Balance[],
 }
 
 const Resume: React.FC<Props> = ({ sections }) => (
