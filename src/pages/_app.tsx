@@ -7,9 +7,7 @@ import sections from 'utils/sections';
 import { OperationsProvider } from 'context/operationsContext';
 import type { AppProps } from 'next/app';
 
-
 function App({ Component, pageProps }: AppProps) {
-
   return (
     <>
       <Head>
@@ -21,7 +19,7 @@ function App({ Component, pageProps }: AppProps) {
       <Header logoPath='/logo.png' sections={sections} />
       <OperationsProvider>
         <Component {...pageProps} />
-        <OverlayFilter/>
+        <OverlayFilter />
       </OperationsProvider>
       <Footer />
     </>

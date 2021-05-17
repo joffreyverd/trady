@@ -1,7 +1,7 @@
 import React, { useMemo, useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
-import {OperationsContext} from 'context/operationsContext'
+import { OperationsContext } from 'context/operationsContext';
 import styles from './table.module.scss';
 import Cell from '../cell';
 
@@ -14,7 +14,7 @@ interface Props {
   columns: TableHeader[],
 }
 
-function Table(props:Props) {
+function Table(props: Props) {
   const { filteredOperations } = useContext(OperationsContext);
   const columns = useMemo(() => props.columns, []);
 

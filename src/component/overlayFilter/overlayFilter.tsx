@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import filter from 'helper/filter';
+import { OperationsContext } from 'context/operationsContext';
+import OverlayAction from 'component/overlayAction';
 import styles from './overlayFilter.module.scss';
-import {OperationsContext} from 'context/operationsContext'
-import OverlayAction from 'component/overlayAction'
-
 
 function overlayFilter(): React.ReactElement {
   const { data, setFilteredOperations } = useContext(OperationsContext);
@@ -23,10 +22,11 @@ function overlayFilter(): React.ReactElement {
     yearsFilter,
   );
   return (
-      <OverlayAction 
-      title='Filters' 
+    <OverlayAction
+      title='Filters'
       isActive={isActiveFilter}
-      options={options} />
+      options={options}
+    />
   );
 }
 export default overlayFilter;

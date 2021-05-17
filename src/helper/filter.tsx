@@ -1,10 +1,10 @@
 interface Filters {
-    onlyShowOpen: boolean,
-    year: string
+  onlyShowOpen: boolean,
+  year: string
 }
 
 function updateFilters(
-  filters:Filters, operations:Operations, setOperations:Function,
+  filters: Filters, operations: Operations, setOperations: Function,
 ): void {
   const { onlyShowOpen, year } = filters;
   const filteredData = operations.filter((singleData) => {
@@ -20,7 +20,7 @@ function updateFilters(
   setOperations(filteredData);
 }
 
-function getYears(operations:Operations): [] {
+function getYears(operations: Operations): [] {
   const years = [];
   operations.map((operation) => {
     const openYear = new Date(operation.open).getFullYear();
@@ -41,11 +41,12 @@ interface YearFilter {
   setYear: Function,
 }
 
-function getOptions(openFilter:OpenFilter, yearFilter:YearFilter, years:[]) {
+function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: []) {
   const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;
   const { year, setYear } = yearFilter;
   return [
-    { id: 0,
+    {
+      id: 0,
       label: 'Only show open positions',
       type: 'checkbox',
       values: [true, false],
