@@ -1,5 +1,5 @@
 interface Operations {
-    id: integer,
+    id: number,
     status: string,
     side: string,
     pair: string,

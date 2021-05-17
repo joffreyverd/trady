@@ -1,47 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './overlayAction.module.scss';
 import FiltersModal from '../modal';
 
-interface Props {
-  title: string,
-  actionOnChange: Function,
-  years: [],
+interface Options {
+  id: number,
+  label: string,
+  type: string,
+  values: [],
+  state: any,
+  setState: Function,
 }
 
-function overlayAction({ title, actionOnChange, years }): React.ReactElement<Props> {
-  const [onlyShowOpen, toggleOnlyShowOpen] = useState(false);
-  const [year, setYear] = useState('');
+interface Props {
+  title: string,
+  options: Options[],
+  isActive: boolean,
+}
+
+function overlayAction({ title, options, isActive }): React.ReactElement<Props> {
   const [isModalOpen, toggleModal] = useState(false);
-  const isFilterActive = year !== '' || onlyShowOpen ? styles.highlight : '';
-
-  const options = [
-    {
-      id: 0,
-      label: 'Only show open positions',
-      type: 'checkbox',
-      values: [true, false],
-      state: onlyShowOpen,
-      setState: toggleOnlyShowOpen,
-    },
-    {
-      id: 1,
-      label: 'Year',
-      type: 'dropdown',
-      values: years,
-      state: year,
-      setState: setYear,
-    },
-  ];
-
-  useEffect(() => {
-    actionOnChange(onlyShowOpen, year);
-  }, [onlyShowOpen, year]);
+  const isActiveFilter = isActive ? styles.highlight : '';
 
   return (
     <>
       <button
         type='button'
-        className={`${styles.button} ${isFilterActive}`}
+        className={`${styles.button} ${isActiveFilter}`}
         onClick={() => toggleModal(!isModalOpen)}
       >{title}
       </button>
