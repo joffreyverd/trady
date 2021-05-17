@@ -16,12 +16,14 @@ function App({ Component, pageProps }: AppProps) {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
 
-      <Header logoPath='/logo.png' sections={sections} />
-      <OperationsProvider>
-        <Component {...pageProps} />
-        <OverlayFilter />
-      </OperationsProvider>
-      <Footer />
+      <div className='global'>
+        <Header logoPath='/logo.png' sections={sections} />
+        <OperationsProvider>
+          <Component {...pageProps} />
+          <OverlayFilter />
+        </OperationsProvider>
+        <Footer />
+      </div>
     </>
   );
 }

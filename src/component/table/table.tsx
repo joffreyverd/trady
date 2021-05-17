@@ -54,10 +54,10 @@ function Table(props: Props) {
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <Link href={`./positions/${row.original.id}`} key={i}>
+              <Link href={`./positions/${row.id}`} key={i}>
                 <tr {...row.getRowProps()} className={styles.row}>
-                  {row.cells.map((cell) => (
-                    <Cell object={cell} />
+                  {row.cells.map((cell, i) => (
+                    <Cell object={cell} key={i} />
                   ))}
                 </tr>
               </Link>

@@ -3,9 +3,9 @@
 .footer {
     display: flex;
     bottom: 0;
-    height: 70px;
     background-color: $secondary-black;
     margin-top: $main-margin;
+    padding: 35px 0px;
 }
 
 .footer > a {

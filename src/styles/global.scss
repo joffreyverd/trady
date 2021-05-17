@@ -8,6 +8,15 @@ html, body {
     margin: 0;
 }
 
+html, body, #__next, .global {
+    height: 100%;
+}
+
+.global {
+    display: flex;
+    flex-direction: column;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -25,6 +34,7 @@ a {
 
 .pageContainer {
     margin: 100px $main-margin 0px $main-margin;
+    flex-grow: 1;
 }
 
 .flexContainer {
