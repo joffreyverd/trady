@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import styles from './modal.module.scss';
 
 interface Options {
@@ -6,7 +7,7 @@ interface Options {
   type: string,
   values: [],
   state: boolean,
-  setState: Function,
+  setState: Dispatch<SetStateAction<boolean>>,
 }
 
 interface Props {

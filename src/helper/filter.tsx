@@ -1,10 +1,12 @@
+import { Dispatch, SetStateAction } from 'react';
+
 interface Filters {
   onlyShowOpen: boolean,
   year: string
 }
 
 function updateFilters(
-  filters: Filters, operations: Operation[], setOperations: Function,
+  filters: Filters, operations: Operation[], setOperations: Dispatch<SetStateAction<Operation[]>>,
 ): void {
   const { onlyShowOpen, year } = filters;
   const filteredData = operations.filter((singleData) => {
@@ -33,12 +35,12 @@ function getYears(operations: Operation[]): string[] {
 
 interface OpenFilter {
   onlyShowOpen: boolean,
-  toggleOnlyShowOpen: Function,
+  toggleOnlyShowOpen: Dispatch<SetStateAction<boolean>>,
 }
 
 interface YearFilter {
   year: string,
-  setYear: Function,
+  setYear: Dispatch<SetStateAction<string>>,
 }
 
 function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: []) {

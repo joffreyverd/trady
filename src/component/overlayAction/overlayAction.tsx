@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 import styles from './overlayAction.module.scss';
 import FiltersModal from '../modal';
 
-interface Options {
+interface Option {
   id: number,
   label: string,
   type: string,
   values: [],
   state: boolean | string,
-  setState: Function,
+  setState: Dispatch<SetStateAction<any>>,
 }
 
 interface Props {
   title: string,
-  options: Options[],
+  options: Option[],
   isActive: boolean,
 }
 
