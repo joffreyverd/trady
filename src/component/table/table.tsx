@@ -1,21 +1,11 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
-import { OperationsContext } from 'context/operationsContext';
 import styles from './table.module.scss';
 import Cell from '../cell';
 
-interface TableHeader {
-  Header: string,
-  accessor: string,
-}
-
-interface Props {
-  columns: TableHeader[],
-}
-
-function Table(props: Props) {
-  const { filteredOperations } = useContext(OperationsContext);
+function Table(props: Table) {
+  const { data, pagination, goTo, filter } = props;
   const columns = useMemo(() => props.columns, []);
 
   const { getTableProps, getTableBodyProps,
@@ -25,7 +15,7 @@ function Table(props: Props) {
     setPageSize, previousPage, nextPage,
     state: { pageIndex, pageSize },
   } = useTable(
-    { columns, data: filteredOperations, initialState: { pageIndex: 0, pageSize: 10 } },
+    { columns, data, initialState: { pageIndex: 0, pageSize: 10 } },
     useSortBy, usePagination,
   );
 
@@ -35,10 +25,14 @@ function Table(props: Props) {
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
+              {headerGroup.headers.map((column, i) => (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  {...filter ?
+                    column.getHeaderProps(column.getSortByToggleProps())
+                    : ''
+                  }
                   className={styles.head}
+                  key={i}
                 >
                   {column.render('Header')}
                   <span>
@@ -54,45 +48,55 @@ function Table(props: Props) {
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <Link href={`./positions/${row.id}`} key={i}>
-                <tr {...row.getRowProps()} className={styles.row}>
+              goTo ?
+                <Link href={`${goTo}${row.id}`} key={i}>
+                  <tr {...row.getRowProps()} className={styles.row}>
+                    {row.cells.map((cell, i) => (
+                      <Cell object={cell} key={i} />
+                    ))}
+                  </tr>
+                </Link>
+                :
+                <tr {...row.getRowProps()} className={styles.row} key={i}>
                   {row.cells.map((cell, i) => (
                     <Cell object={cell} key={i} />
                   ))}
                 </tr>
-              </Link>
             );
           })}
         </tbody>
       </table>
 
-      <div className={styles.paginationContainer}>
-        <button
-          type='button'
-          onClick={() => previousPage()}
-          disabled={!canPreviousPage}
-          className={styles.button}
-        >👈🏻
-        </button>
-        <button
-          type='button'
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-          className={styles.button}
-        >👉🏻
-        </button>
-        <p>Page {pageIndex + 1}/{pageOptions.length}</p>
-        <select
-          value={pageSize}
-          onChange={(e) => {
-            setPageSize(Number(e.target.value));
-          }}
-        >
-          {[10, 50, 100].map((size) => (
-            <option key={size} value={size}>Show {size}</option>
-          ))}
-        </select>
-      </div>
+      { pagination ?
+        <div className={styles.paginationContainer}>
+          <button
+            type='button'
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+            className={styles.button}
+          >👈🏻
+      </button>
+          <button
+            type='button'
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+            className={styles.button}
+          >👉🏻
+      </button>
+          <p>Page {pageIndex + 1}/{pageOptions.length}</p>
+          <select
+            value={pageSize}
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+            }}
+          >
+            {[10, 50, 100].map((size) => (
+              <option key={size} value={size}>Show {size}</option>
+            ))}
+          </select>
+        </div>
+        : ''
+      }
     </div>
   );
 }

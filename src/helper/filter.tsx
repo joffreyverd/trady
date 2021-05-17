@@ -43,7 +43,7 @@ interface YearFilter {
   setYear: Dispatch<SetStateAction<string>>,
 }
 
-function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: []) {
+function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: string[]) {
   const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;
   const { year, setYear } = yearFilter;
   return [

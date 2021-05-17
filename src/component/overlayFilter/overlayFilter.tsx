@@ -4,7 +4,7 @@ import { OperationsContext } from 'context/operationsContext';
 import OverlayAction from 'component/overlayAction';
 import styles from './overlayFilter.module.scss';
 
-function overlayFilter(): React.ReactElement {
+function OverlayFilter(): React.ReactElement {
   const { data, setFilteredOperations } = useContext(OperationsContext);
   const [onlyShowOpen, toggleOnlyShowOpen] = useState(false);
   const [year, setYear] = useState('');
@@ -29,4 +29,4 @@ function overlayFilter(): React.ReactElement {
     />
   );
 }
-export default overlayFilter;
+export default OverlayFilter;

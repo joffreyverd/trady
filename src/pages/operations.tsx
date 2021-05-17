@@ -1,33 +1,32 @@
 import React from 'react';
 import Button from 'component/button';
 import Title from 'component/pageTitle';
-import Table from 'component/table';
+import OperationsTable from 'component/operationsTable';
 
 const columns = [
   { Header: 'Status', accessor: 'status' },
   { Header: 'Side', accessor: 'side' },
   { Header: 'Pair', accessor: 'pair' },
   { Header: 'Open Date', accessor: 'open' },
-  { Header: 'Average Buy', accessor: 'buy' },
+  { Header: 'Average Entry', accessor: 'buy' },
   { Header: 'Cost', accessor: 'cost' },
-  { Header: 'Average Sell', accessor: 'sell' },
+  { Header: 'Average Exit', accessor: 'sell' },
   { Header: 'Return ($)', accessor: 'returnD' },
   { Header: 'Return (%)', accessor: 'returnP' },
-  { Header: 'Setup', accessor: 'setup' },
   { Header: 'PnL', accessor: 'pnl' },
 ];
 
 
-function operations(): React.ReactElement {
+function Operations(): React.ReactElement {
   return (
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your operations' />
-        <Button title='Add transaction' action='/' />
+        <Button title='Add operation' action='/' />
       </div>
-      <Table columns={columns} />
+      <OperationsTable columns={columns} />
     </div>
   );
 }
 
-export default operations;
+export default Operations;

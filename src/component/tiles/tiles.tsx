@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react';
+import CategoryTitle from 'component/categoryTitle';
 import styles from './tiles.module.scss';
 
 interface Tile {
@@ -27,7 +28,7 @@ const Tiles: React.FC<Props> = ({ data }) => (
     {
       data.map((subData) => (
         <div key={subData.id}>
-          <h2 className={styles.categoryTitles}>{subData.title}</h2>
+          <CategoryTitle title={subData.title} />
           <div className={styles.tilesContainer}>
             {
               subData.value.map((tile) => (

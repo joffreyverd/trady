@@ -10,7 +10,6 @@
         "sell": "13000",
         "returnD": "236",
         "returnP": "26",
-        "setup": "order",
         "pnl": "0"
     },
     {
@@ -24,7 +23,6 @@
         "sell": "850",
         "returnD": "-150",
         "returnP": "-12",
-        "setup": "trade",
         "pnl": "0"
     },
     {
@@ -38,7 +36,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -52,7 +49,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -66,7 +62,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -80,7 +75,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -108,7 +102,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -122,7 +115,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -136,7 +128,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -150,7 +141,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     },
     {
@@ -164,7 +154,6 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
         "pnl": ""
     }
 ]

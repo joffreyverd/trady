@@ -15,7 +15,7 @@ interface Props {
   options: Options[],
 }
 
-function modal({ title, options }): React.ReactElement<Props> {
+function Modal({ title, options }): React.ReactElement<Props> {
   return (
     <div className={styles.modal}>
       <h3>{title}</h3>
@@ -60,4 +60,4 @@ function modal({ title, options }): React.ReactElement<Props> {
     </div>
   );
 }
-export default modal;
+export default Modal;

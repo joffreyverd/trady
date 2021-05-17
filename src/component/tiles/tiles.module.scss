@@ -7,11 +7,6 @@
     flex-wrap: wrap;
 }
 
-.categoryTitles {
-    margin-left: 70px;
-    margin-bottom: 0px;
-}
-
 .tile {
     flex: 1 0 21%; // 4 tiles per row and the last one take the available space
     background-color: $ternary-black;

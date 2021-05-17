@@ -17,7 +17,7 @@ interface Props {
   isActive: boolean,
 }
 
-function overlayAction({ title, options, isActive }): React.ReactElement<Props> {
+function OverlayAction({ title, options, isActive }): React.ReactElement<Props> {
   const [isModalOpen, toggleModal] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
@@ -34,4 +34,4 @@ function overlayAction({ title, options, isActive }): React.ReactElement<Props> 
     </>
   );
 }
-export default overlayAction;
+export default OverlayAction;

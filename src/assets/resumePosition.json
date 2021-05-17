@@ -1,0 +1,12 @@
+[
+    {
+        "status": "Win",
+        "side": "Long",
+        "size": 20,
+        "cost": 2000,
+        "averageEntryPrice": 0,
+        "averageExitPrice": 0,
+        "returnD": 0,
+        "returnP": 0
+    }
+]

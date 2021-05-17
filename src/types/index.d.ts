@@ -12,3 +12,41 @@ type Operation = {
     setup: string,
     pnl: string,
 }
+
+type ResumePosition = {
+    status: string,
+    side: string,
+    size: number,
+    cost: number,
+    averageEntryPrice: number,
+    averageExitPrice: number,
+    returnD: number,
+    returnP: number,
+}
+
+type Position = {
+    action: string,
+    open: string,
+    time: string,
+    size: number,
+    price: number,
+    value: number,
+    fees: number,
+}
+
+type TableHeader = {
+    Header: string,
+    accessor: string,
+}
+
+type Table = {
+    columns: TableHeader[],
+    data: Operation[] | Position[] | ResumePosition[],
+    pagination: boolean,
+    filter: boolean,
+    goTo: string,
+}
+
+type Columns = {
+    columns: TableHeader[],
+}
