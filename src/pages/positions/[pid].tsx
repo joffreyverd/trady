@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Title from '../../component/pageTitle';
-import BreadCrumb from '../../component/breadcrumb';
+import Title from 'component/pageTitle';
+import BreadCrumb from 'component/breadcrumb';
 
 const position: React.FC = () => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../component/button';
-import Title from '../component/pageTitle';
-import Table from '../component/table';
+import Button from 'component/button';
+import Title from 'component/pageTitle';
+import Table from 'component/table';
 
 const columns = [
   { Header: 'Status', accessor: 'status' },
@@ -17,20 +17,17 @@ const columns = [
   { Header: 'PnL', accessor: 'pnl' },
 ];
 
-interface Props {
-  dataSet: Operations[],
-}
 
-function operations({ dataSet }): React.ReactElement<Props> {
+function operations(): React.ReactElement {
   return (
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your operations' />
         <Button title='Add transaction' action='/' />
       </div>
-
-      <Table data={dataSet} columns={columns} />
-    </div>);
+      <Table columns={columns} />
+    </div>
+  );
 }
 
 export default operations;

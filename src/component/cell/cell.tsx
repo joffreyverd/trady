@@ -1,5 +1,5 @@
+import getStyle from 'utils/styling';
 import styles from './cell.module.scss';
-import getStyle from '../../utils/styling';
 
 interface Props {
   object: any,

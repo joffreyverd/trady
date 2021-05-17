@@ -1,8 +1,8 @@
 import React from 'react';
-import Title from '../component/pageTitle';
-import AccountBalance from '../component/resume';
-import Doughnut from '../component/doughnut';
-import AssetsList from '../component/list';
+import Title from 'component/pageTitle';
+import AccountBalance from 'component/resume';
+import Doughnut from 'component/doughnut';
+import AssetsList from 'component/list';
 
 const sections = [
   { title: 'Current Balance', value: '5000' },
@@ -20,6 +20,6 @@ const portfolio: React.FC = () => (
     </div>
   </div>
 
-);
+); '';
 
 export default portfolio;

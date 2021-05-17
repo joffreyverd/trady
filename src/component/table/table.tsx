@@ -1,6 +1,7 @@
-import React, { useMemo, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useState, useContext } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
+import {OperationsContext} from 'context/operationsContext'
 import styles from './table.module.scss';
 import Cell from '../cell';
 
@@ -10,18 +11,12 @@ interface TableHeader {
 }
 
 interface Props {
-  data: Operations[],
   columns: TableHeader[],
 }
 
 function Table(props:Props) {
-  const [data, setData] = useState(props.data);
+  const { filteredOperations } = useContext(OperationsContext);
   const columns = useMemo(() => props.columns, []);
-
-  useEffect(() => {
-    setData(props.data);
-  },
-  [props]);
 
   const { getTableProps, getTableBodyProps,
     headerGroups, page, prepareRow,
@@ -30,7 +25,7 @@ function Table(props:Props) {
     setPageSize, previousPage, nextPage,
     state: { pageIndex, pageSize },
   } = useTable(
-    { columns, data, initialState: { pageIndex: 0, pageSize: 10 } },
+    { columns, data: filteredOperations, initialState: { pageIndex: 0, pageSize: 10 } },
     useSortBy, usePagination,
   );
 

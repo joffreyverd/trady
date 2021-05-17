@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from '../component/pageTitle';
+import Title from 'component/pageTitle';
 
 const main: React.FC = () => (
   <div className='pageContainer'>

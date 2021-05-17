@@ -41,7 +41,7 @@ interface YearFilter {
   setYear: Function,
 }
 
-function getOptions(openFilter:OpenFilter, yearFilter:YearFilter, data) {
+function getOptions(openFilter:OpenFilter, yearFilter:YearFilter, years:[]) {
   const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;
   const { year, setYear } = yearFilter;
   return [
@@ -56,7 +56,7 @@ function getOptions(openFilter:OpenFilter, yearFilter:YearFilter, data) {
       id: 1,
       label: 'Year',
       type: 'dropdown',
-      values: getYears(data),
+      values: years,
       state: year,
       setState: setYear,
     },
