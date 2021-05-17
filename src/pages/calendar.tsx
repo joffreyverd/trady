@@ -1,6 +1,6 @@
 import React from 'react';
 import Title from 'component/pageTitle';
-import MontlyCalendar from 'component/calendar';
+import MontlyCalendar from 'component/monthlyCalendar';
 
 const calendar: React.FC = () => (
   <div className='pageContainer'>
