@@ -26,7 +26,7 @@ type ResumePosition = {
 
 type Position = {
     action: string,
-    open: string,
+    date: string,
     time: string,
     size: number,
     price: number,

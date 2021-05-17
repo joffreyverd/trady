@@ -1,7 +1,7 @@
 @import 'styles/variables';
 
 .tableContainer {
-    margin: auto $main-margin;
+    margin: auto $main-margin $main-margin $main-margin;
 }
 
 .tableBody {

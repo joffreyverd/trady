@@ -1,6 +1,6 @@
 import styles from './styling.module.scss';
 
-function getStyle(column:string, value:string) {
+function getStyle(column: string, value: string) {
   if (column === 'pair') {
     return styles.pairFont;
   }
@@ -31,6 +31,15 @@ function getStyle(column:string, value:string) {
       return styles.positive;
     }
     return styles.negative;
+  }
+
+  if (column === 'action') {
+    if (value === 'Buy') {
+      return styles.positive;
+    }
+    if (value === 'Sell') {
+      return styles.negative;
+    }
   }
 
   return '';

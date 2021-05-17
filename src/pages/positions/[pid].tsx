@@ -12,15 +12,15 @@ const resumeColumns = [
   { Header: 'Side', accessor: 'side' },
   { Header: 'Size', accessor: 'size' },
   { Header: 'Cost', accessor: 'cost' },
-  { Header: 'Average Entry ($)', accessor: 'averageEntryPrice' },
-  { Header: 'Average Exit ($)', accessor: 'averageExitPrice' },
+  { Header: 'Average Entry', accessor: 'averageEntryPrice' },
+  { Header: 'Average Exit', accessor: 'averageExitPrice' },
   { Header: 'Return ($)', accessor: 'returnD' },
   { Header: 'Return (%)', accessor: 'returnP' },
 ];
 
 const historyColumns = [
   { Header: 'Action', accessor: 'action' },
-  { Header: 'Open Date', accessor: 'open' },
+  { Header: 'Date', accessor: 'date' },
   { Header: 'Time', accessor: 'time' },
   { Header: 'Size', accessor: 'size' },
   { Header: 'Price ($)', accessor: 'price' },
