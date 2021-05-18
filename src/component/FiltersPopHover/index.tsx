@@ -1,1 +1,1 @@
-export { default } from './FiltersPopHover';
+export { default } from './filtersPopHover';

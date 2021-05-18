@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction, ReactElement } from 'react';
 import styles from './filters.module.scss';
+import CloseIcon from '@material-ui/icons/Close';
 
 interface Options {
   id: number,
@@ -13,12 +14,15 @@ interface Options {
 interface Props {
   title: string,
   options: Options[],
+  isModalOpen: boolean,
+  toggleModal: Dispatch<SetStateAction<boolean>>
 }
 
-function Filters({ title, options }): ReactElement<Props> {
+function Filters({ title, options, isModalOpen, toggleModal }): ReactElement<Props> {
   return (
     <div className={styles.modal}>
       <h3>{title}</h3>
+      <CloseIcon onClick={() => toggleModal(false)} className={styles.closeIcon} />
       {
         options.map((option) => (
           option.type === 'checkbox' ?

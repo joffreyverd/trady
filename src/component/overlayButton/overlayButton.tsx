@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, ReactElement } from 'react';
 import filter from 'helper/filter';
 import { OperationsContext } from 'context/operationsContext';
-import FiltersPopHover from 'component/FiltersPopHover';
+import FiltersPopHover from 'component/filtersPopHover';
 
 function OverlayButton(): ReactElement {
   const { data, setFilteredOperations } = useContext(OperationsContext);
