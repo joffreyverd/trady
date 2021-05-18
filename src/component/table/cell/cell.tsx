@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import getStyle from 'utils/styling';
+import getStyle from 'utils/getStyle';
 import styles from './cell.module.scss';
 
 const dollarColumns = ['returnD', 'value', 'fees', 'price', 'cost', 'pnl'];

@@ -6,9 +6,8 @@
 
 .validLabel, .dangerLabel, .warningLabel {
     text-align: center;
-    padding-top: 4px;
+    padding: 4px;
     border-radius: $light-border-radius;
-    padding: 3px;
     font-weight: bold;
     color: $font-primary-color;
 }
@@ -28,11 +27,8 @@
 .upLabel, .downLabel {
     border: 1px solid;
     border-radius: $light-border-radius;
-    padding: 3px;
-}
-
-.upLabel, .downLabel {
     color: $font-primary-color;
+    padding: 3px;
 }
 
 .upLabel {

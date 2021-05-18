@@ -10,6 +10,6 @@ function Page(props: Props): ReactElement {
   return (
     <h1 className={styles.title}>{title}</h1>
   );
-};
+}
 
 export default Page;

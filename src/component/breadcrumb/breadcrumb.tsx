@@ -18,6 +18,6 @@ function BreadCrumb(props: Props): ReactElement {
       <p>/ {current}</p>
     </div>
   );
-};
+}
 
 export default BreadCrumb;

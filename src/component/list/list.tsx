@@ -7,6 +7,6 @@ function List(): ReactElement {
       <p>CoinMarketCap List</p>
     </div>
   );
-};
+}
 
 export default List;

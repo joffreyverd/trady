@@ -13,7 +13,7 @@ function Analytics(): ReactElement {
       <Tiles data={assets} />
     </div>
   );
-};
+}
 
 export default Analytics;
 

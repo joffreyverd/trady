@@ -12,6 +12,6 @@ function Calendar(): ReactElement {
       <MontlyCalendar />
     </div>
   );
-};
+}
 
 export default Calendar;

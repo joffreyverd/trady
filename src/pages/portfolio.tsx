@@ -24,7 +24,7 @@ function Portfolio(): ReactElement {
       </div>
     </div >
   );
-};
+}
 
 export default Portfolio;
 

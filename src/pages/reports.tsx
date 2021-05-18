@@ -11,6 +11,6 @@ function Reports(): ReactElement {
       <p>This feature is ongoing 🤯</p>
     </div>
   );
-};
+}
 
 export default Reports;

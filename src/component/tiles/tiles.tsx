@@ -52,6 +52,6 @@ function Tiles(props: Props): ReactElement {
       }
     </div>
   );
-};
+}
 
 export default Tiles;

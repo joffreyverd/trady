@@ -38,6 +38,6 @@ function Header(props: Props): ReactElement {
       }
     </div>
   );
-};
+}
 
 export default Header;

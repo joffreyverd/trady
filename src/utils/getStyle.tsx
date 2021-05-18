@@ -1,4 +1,4 @@
-import styles from './styling.module.scss';
+import styles from './getStyle.module.scss';
 
 function getStyle(column: string, value: string) {
   if (column === 'pair') {

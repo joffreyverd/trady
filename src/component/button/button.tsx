@@ -18,6 +18,6 @@ function Button(props: Props): ReactElement {
       </button>
     </Link>
   );
-};
+}
 
 export default Button;

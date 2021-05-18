@@ -12,7 +12,7 @@ import { resume, history, targets } from 'utils/columnsDefinitions';
 
 function Position(): ReactElement {
   const router = useRouter();
-  const { pid } = router.query;
+  const { position } = router.query;
   const TvChart = dynamic(() =>
     import('../../component/chart/tradingView'),
     { ssr: false }
@@ -28,7 +28,7 @@ function Position(): ReactElement {
         <BreadCrumb
           path='/operations'
           name='operations'
-          current={`position ${pid}`}
+          current={`position ${position}`}
         />
 
         <CategoryTitle title='Resume' />
@@ -47,6 +47,6 @@ function Position(): ReactElement {
       </div>
     </>
   );
-};
+}
 
 export default Position;

@@ -13,6 +13,6 @@ function Footer(): ReactElement {
     </a>
     </div>
   );
-};
+}
 
 export default Footer;

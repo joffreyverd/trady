@@ -10,6 +10,6 @@ function Category(props: Props): ReactElement {
   return (
     <h2 className={styles.title}>{title}</h2>
   );
-};
+}
 
 export default Category;

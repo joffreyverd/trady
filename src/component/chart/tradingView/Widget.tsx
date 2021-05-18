@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-export default class TradingViewWidget extends PureComponent {
+export default class Widget extends PureComponent {
     static defaultProps = {
         allow_symbol_change: true,
         autosize: false,

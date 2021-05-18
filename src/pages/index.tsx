@@ -10,6 +10,6 @@ function Main(): ReactElement {
       </div>
     </div>
   );
-};
+}
 
 export default Main;

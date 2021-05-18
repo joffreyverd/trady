@@ -1,1 +1,1 @@
-export { default } from './tradingView';
+export { default } from './Widget';

@@ -24,6 +24,6 @@ function Resume(props: Props): ReactElement {
       }
     </div>
   );
-};
+}
 
 export default Resume;

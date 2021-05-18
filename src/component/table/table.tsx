@@ -51,15 +51,15 @@ function Table(props: Table) {
               goTo ?
                 <Link href={`${goTo}${row.id}`} key={i}>
                   <tr {...row.getRowProps()} className={styles.row}>
-                    {row.cells.map((cell, i) => (
-                      <Cell object={cell} key={i} />
+                    {row.cells.map((cell, j) => (
+                      <Cell object={cell} key={j} />
                     ))}
                   </tr>
                 </Link>
                 :
                 <tr {...row.getRowProps()} className={styles.row} key={i}>
-                  {row.cells.map((cell, i) => (
-                    <Cell object={cell} key={i} />
+                  {row.cells.map((cell, k) => (
+                    <Cell object={cell} key={k} />
                   ))}
                 </tr>
             );
