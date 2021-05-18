@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
+import AddIcon from '@material-ui/icons/Add';
 import styles from './button.module.scss';
 
 interface Props {
@@ -12,7 +13,8 @@ function Button(props: Props): ReactElement {
   return (
     <Link href={action}>
       <button type='button' className={styles.button}>
-        {title}
+        <AddIcon className={styles.addIcon} />
+        <p>{title}</p>
       </button>
     </Link>
   );

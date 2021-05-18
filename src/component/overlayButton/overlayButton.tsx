@@ -22,7 +22,6 @@ function OverlayButton(): ReactElement {
   );
   return (
     <FiltersPopHover
-      title='Filters'
       isActive={isActiveFilter}
       options={options}
     />

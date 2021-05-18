@@ -13,12 +13,11 @@ interface Option {
 }
 
 interface Props {
-  title: string,
   options: Option[],
   isActive: boolean,
 }
 
-function FiltersPopHover({ title, options, isActive }): ReactElement<Props> {
+function FiltersPopHover({ options, isActive }): ReactElement<Props> {
   const [isModalOpen, toggleModal] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
@@ -33,9 +32,7 @@ function FiltersPopHover({ title, options, isActive }): ReactElement<Props> {
       </button>
       { isModalOpen ?
         <Filters
-          title='Filters'
           options={options}
-          isModalOpen={isModalOpen}
           toggleModal={toggleModal}
         /> : ''}
     </>

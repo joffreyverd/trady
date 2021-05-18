@@ -1,9 +1,10 @@
 @import 'styles/variables';
 
 .button {
+    display: flex;
     cursor: pointer;
     height: 40px;
-    width: 150px;
+    // width: 150px;
     background-color: $primary-blue;
     border: none;
     border-radius: $default-border-radius;
@@ -13,4 +14,17 @@
     color: $font-primary-color;
     margin: auto 0px;
     transition: $default-transition;
+}
+
+.button:hover {
+    background-color: $valid-theme;
+    transition: $default-transition;
+}
+
+.button > p {
+    margin: auto 0px auto 5px;
+}
+
+.addIcon {
+    margin: auto 0px;
 }
