@@ -1,6 +1,9 @@
-const monthlyCalendar: React.FC = () => (
+import React, { ReactElement } from 'react';
 
-  <p>This feature is ongoing 🤯</p>
-);
+function MonthlyCalendar(): ReactElement {
+  return (
+    <p>This feature is ongoing 🤯</p>
+  );
+};
 
-export default monthlyCalendar;
+export default MonthlyCalendar;

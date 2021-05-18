@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction, ReactElement } from 'react';
 import styles from './modal.module.scss';
 
 interface Options {
@@ -15,7 +15,7 @@ interface Props {
   options: Options[],
 }
 
-function Modal({ title, options }): React.ReactElement<Props> {
+function Modal({ title, options }): ReactElement<Props> {
   return (
     <div className={styles.modal}>
       <h3>{title}</h3>

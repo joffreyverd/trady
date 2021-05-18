@@ -1,14 +1,16 @@
-import React from 'react';
-import Title from 'component/pageTitle';
+import React, { ReactElement } from 'react';
+import Title from 'component/title/page';
 
-const reports: React.FC = () => (
-  <div className='pageContainer'>
-    <div className='flexContainer titleAndAction'>
-      <Title title='Your reports' />
-      <></>
+function Reports(): ReactElement {
+  return (
+    <div className='pageContainer'>
+      <div className='flexContainer titleAndAction'>
+        <Title title='Your reports' />
+        <></>
+      </div>
+      <p>This feature is ongoing 🤯</p>
     </div>
-    <p>This feature is ongoing 🤯</p>
-  </div>
-);
+  );
+};
 
-export default reports;
+export default Reports;

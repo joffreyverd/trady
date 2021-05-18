@@ -1,17 +1,19 @@
-import React from 'react';
-import Title from 'component/pageTitle';
+import React, { ReactElement } from 'react';
+import Title from 'component/title/page';
 import Tiles from 'component/tiles';
-
 import assets from 'assets/analytics.json';
 
-const analytics: React.FC = () => (
-  <div className='pageContainer'>
-    <div className='flexContainer titleAndAction'>
-      <Title title='Your analytics' />
-      <></>
+function Analytics(): ReactElement {
+  return (
+    <div className='pageContainer'>
+      <div className='flexContainer titleAndAction'>
+        <Title title='Your analytics' />
+        <></>
+      </div>
+      <Tiles data={assets} />
     </div>
-    <Tiles data={assets} />
-  </div>
-);
+  );
+};
 
-export default analytics;
+export default Analytics;
+

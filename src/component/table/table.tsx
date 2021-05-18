@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
-import Cell from '../cell';
+import Cell from './cell';
 
 function Table(props: Table) {
   const { data, pagination, goTo, filter } = props;

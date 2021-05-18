@@ -1,49 +1,22 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import Title from 'component/pageTitle';
+import Title from 'component/title/page';
 import Button from 'component/button';
 import BreadCrumb from 'component/breadcrumb';
-import CategoryTitle from 'component/categoryTitle';
-import ResumePositionsTable from 'component/resumePositionTable';
-import HistoryPositionsTable from 'component/historyPositionTable';
-import TargetsTable from 'component/targetsTable';
+import CategoryTitle from 'component/title/category';
+import ResumePositions from 'component/table/positionResume';
+import HistoryPositions from 'component/table/positionHistory';
+import Targets from 'component/table/targets';
+import { resume, history, targets } from 'utils/columnsDefinitions';
 
-const resumeColumns = [
-  { Header: 'Status', accessor: 'status' },
-  { Header: 'Side', accessor: 'side' },
-  { Header: 'Pair', accessor: 'pair' },
-  { Header: 'Size', accessor: 'size' },
-  { Header: 'Cost', accessor: 'cost' },
-  { Header: 'Average Entry', accessor: 'averageEntryPrice' },
-  { Header: 'Average Exit', accessor: 'averageExitPrice' },
-  { Header: 'Return $', accessor: 'returnD' },
-  { Header: 'Return %', accessor: 'returnP' },
-];
-
-const historyColumns = [
-  { Header: 'Action', accessor: 'action' },
-  { Header: 'Date', accessor: 'date' },
-  { Header: 'Time', accessor: 'time' },
-  { Header: 'Size', accessor: 'size' },
-  { Header: 'Price $', accessor: 'price' },
-  { Header: 'Value $', accessor: 'value' },
-  { Header: 'Fees $', accessor: 'fees' },
-];
-
-const targetsColumns = [
-  { Header: 'Action', accessor: 'action' },
-  { Header: 'Size', accessor: 'size' },
-  { Header: 'Price $', accessor: 'price' },
-  { Header: 'Value $', accessor: 'value' },
-  { Header: 'Return $', accessor: 'returnD' },
-  { Header: 'Return %', accessor: 'returnP' },
-]
-
-function Position() {
+function Position(): ReactElement {
   const router = useRouter();
   const { pid } = router.query;
-  const TvChart = dynamic(() => import('../../component/tradingViewChart'), { ssr: false });
+  const TvChart = dynamic(() =>
+    import('../../component/chart/tradingView'),
+    { ssr: false }
+  );
 
   return (
     <>
@@ -52,20 +25,24 @@ function Position() {
           <Title title='Your position' />
           <Button title='Add action' action='/' />
         </div>
-        <BreadCrumb path='/operations' name='operations' current={`position ${pid}`} />
+        <BreadCrumb
+          path='/operations'
+          name='operations'
+          current={`position ${pid}`}
+        />
 
         <CategoryTitle title='Resume' />
-        <ResumePositionsTable columns={resumeColumns} />
+        <ResumePositions columns={resume} />
 
         <CategoryTitle title='History' />
-        <HistoryPositionsTable columns={historyColumns} />
+        <HistoryPositions columns={history} />
 
         <CategoryTitle title='Targets' />
-        <TargetsTable columns={targetsColumns} />
+        <Targets columns={targets} />
 
         <CategoryTitle title='Chart' />
         <div className='TVContainer'>
-          <TvChart symbol='ETHUSDT' />
+          <TvChart symbol='BTCUSDT' />
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
-import React from 'react';
-import Title from 'component/pageTitle';
+import React, { ReactElement } from 'react';
+import Title from 'component/title/page';
 import AccountBalance from 'component/resume';
-import Doughnut from 'component/doughnut';
+import Doughnut from 'component/chart/doughnut';
 import AssetsList from 'component/list';
 
 const sections = [
@@ -10,19 +10,21 @@ const sections = [
   { title: 'Crypto', value: '2000' },
 ];
 
-const portfolio: React.FC = () => (
-  <div className='pageContainer'>
-    <div className='flexContainer titleAndAction'>
-      <Title title='Your portfolio' />
-      <></>
-    </div>
-    <AccountBalance sections={sections} />
-    <div className='flexContainer'>
-      <Doughnut />
-      <AssetsList />
-    </div>
-  </div >
+function Portfolio(): ReactElement {
+  return (
+    <div className='pageContainer'>
+      <div className='flexContainer titleAndAction'>
+        <Title title='Your portfolio' />
+        <></>
+      </div>
+      <AccountBalance sections={sections} />
+      <div className='flexContainer'>
+        <Doughnut />
+        <AssetsList />
+      </div>
+    </div >
+  );
+};
 
-); '';
+export default Portfolio;
 
-export default portfolio;

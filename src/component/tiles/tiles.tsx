@@ -1,4 +1,5 @@
-import CategoryTitle from 'component/categoryTitle';
+import React, { ReactElement } from 'react';
+import CategoryTitle from 'component/title/category';
 import styles from './tiles.module.scss';
 
 interface Tile {
@@ -22,32 +23,35 @@ function greenOrRed(value: number, css) {
   return value > 0 ? css.greenFont : css.redFont;
 }
 
-const Tiles: React.FC<Props> = ({ data }) => (
-  <div>
-    {
-      data.map((subData) => (
-        <div key={subData.id}>
-          <CategoryTitle title={subData.title} />
-          <div className={styles.tilesContainer}>
-            {
-              subData.value.map((tile) => (
-                <div className={styles.tile} key={tile.id}>
-                  <h3>{tile.title}</h3>
-                  <p className={greenOrRed(tile.value, styles)}>
-                    {
-                      subData.symbol === '$' ?
-                        `${subData.symbol} ${tile.value}` :
-                        `${tile.value}${subData.symbol}`
-                    }
-                  </p>
-                </div>
-              ))
-            }
+function Tiles(props: Props): ReactElement {
+  const { data } = props;
+  return (
+    <div>
+      {
+        data.map((subData) => (
+          <div key={subData.id}>
+            <CategoryTitle title={subData.title} />
+            <div className={styles.tilesContainer}>
+              {
+                subData.value.map((tile) => (
+                  <div className={styles.tile} key={tile.id}>
+                    <h3>{tile.title}</h3>
+                    <p className={greenOrRed(tile.value, styles)}>
+                      {
+                        subData.symbol === '$' ?
+                          `${subData.symbol} ${tile.value}` :
+                          `${tile.value}${subData.symbol}`
+                      }
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
           </div>
-        </div>
-      ))
-    }
-  </div>
-);
+        ))
+      }
+    </div>
+  );
+};
 
 export default Tiles;

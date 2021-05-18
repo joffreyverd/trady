@@ -1,13 +1,15 @@
-import React from 'react';
-import Title from 'component/pageTitle';
+import React, { ReactElement } from 'react';
+import Title from 'component/title/page';
 
-const main: React.FC = () => (
-  <div className='pageContainer'>
-    <div className='flexContainer titleAndAction'>
-      <Title title='Welcome on Trady!' />
-      <></>
+function Main(): ReactElement {
+  return (
+    <div className='pageContainer'>
+      <div className='flexContainer titleAndAction'>
+        <Title title='Welcome on Trady!' />
+        <></>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default main;
+export default Main;

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import 'styles/global.scss';
 import Header from 'component/header';
 import Footer from 'component/footer';
-import OverlayFilter from 'component/overlayFilter';
+import OverlayFilter from 'component/overlay/filter';
 import sections from 'utils/sections';
 import { OperationsProvider } from 'context/operationsContext';
 import type { AppProps } from 'next/app';
