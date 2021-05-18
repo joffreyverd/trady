@@ -6,7 +6,10 @@ import assets from 'assets/analytics.json';
 
 const analytics: React.FC = () => (
   <div className='pageContainer'>
-    <Title title='Your analytics' />
+    <div className='flexContainer titleAndAction'>
+      <Title title='Your analytics' />
+      <></>
+    </div>
     <Tiles data={assets} />
   </div>
 );

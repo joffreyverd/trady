@@ -16,6 +16,7 @@ type Operation = {
 type ResumePosition = {
     status: string,
     side: string,
+    pair: string,
     size: number,
     cost: number,
     averageEntryPrice: number,

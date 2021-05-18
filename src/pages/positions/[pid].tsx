@@ -10,6 +10,7 @@ import CategoryTitle from 'component/categoryTitle';
 const resumeColumns = [
   { Header: 'Status', accessor: 'status' },
   { Header: 'Side', accessor: 'side' },
+  { Header: 'Pair', accessor: 'pair' },
   { Header: 'Size', accessor: 'size' },
   { Header: 'Cost', accessor: 'cost' },
   { Header: 'Average Entry', accessor: 'averageEntryPrice' },

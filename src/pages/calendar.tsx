@@ -4,7 +4,10 @@ import MontlyCalendar from 'component/monthlyCalendar';
 
 const calendar: React.FC = () => (
   <div className='pageContainer'>
-    <Title title='Your trading calendar' />
+    <div className='flexContainer titleAndAction'>
+      <Title title='Your trading calendar' />
+      <></>
+    </div>
     <MontlyCalendar />
   </div>
 );

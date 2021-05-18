@@ -12,13 +12,16 @@ const sections = [
 
 const portfolio: React.FC = () => (
   <div className='pageContainer'>
-    <Title title='Your portfolio' />
+    <div className='flexContainer titleAndAction'>
+      <Title title='Your portfolio' />
+      <></>
+    </div>
     <AccountBalance sections={sections} />
     <div className='flexContainer'>
       <Doughnut />
       <AssetsList />
     </div>
-  </div>
+  </div >
 
 ); '';
 

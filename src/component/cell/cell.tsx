@@ -1,6 +1,9 @@
 import getStyle from 'utils/styling';
 import styles from './cell.module.scss';
 
+const dollarColumns = ['returnD'];
+const percentColumns = ['returnP'];
+
 function Cell(props): React.ReactElement {
   const { object } = props;
 
@@ -15,3 +18,5 @@ function Cell(props): React.ReactElement {
 }
 
 export default Cell;
+
+// dollarColumns.includes(object.column.id) ? '$' ? ''

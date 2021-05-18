@@ -2,11 +2,12 @@
     {
         "status": "Win",
         "side": "Long",
+        "pair": "BTC/BUSD",
         "size": 20,
         "cost": 2000,
-        "averageEntryPrice": 0,
-        "averageExitPrice": 0,
-        "returnD": 0,
-        "returnP": 0
+        "averageEntryPrice": 100,
+        "averageExitPrice": 112,
+        "returnD": 240,
+        "returnP": 12
     }
 ]
