@@ -2,7 +2,7 @@ import Head from 'next/head';
 import 'styles/global.scss';
 import Header from 'component/header';
 import Footer from 'component/footer';
-import OverlayFilter from 'component/overlay/filter';
+import OverlayButton from 'component/overlayButton';
 import sections from 'utils/sections';
 import { OperationsProvider } from 'context/operationsContext';
 import type { AppProps } from 'next/app';
@@ -20,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
         <Header logoPath='/logo.png' sections={sections} />
         <OperationsProvider>
           <Component {...pageProps} />
-          <OverlayFilter />
+          <OverlayButton />
         </OperationsProvider>
         <Footer />
       </div>

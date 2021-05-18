@@ -1,6 +1,6 @@
 import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
-import styles from './action.module.scss';
-import FiltersModal from '../../modal';
+import styles from './FiltersPopHover.module.scss';
+import Filters from 'component/filters';
 
 interface Option {
   id: number,
@@ -17,7 +17,7 @@ interface Props {
   isActive: boolean,
 }
 
-function OverlayAction({ title, options, isActive }): ReactElement<Props> {
+function FiltersPopHover({ title, options, isActive }): ReactElement<Props> {
   const [isModalOpen, toggleModal] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
@@ -30,8 +30,8 @@ function OverlayAction({ title, options, isActive }): ReactElement<Props> {
       >{title}
       </button>
       { isModalOpen ?
-        <FiltersModal title='Filters' options={options} /> : ''}
+        <Filters title='Filters' options={options} /> : ''}
     </>
   );
 }
-export default OverlayAction;
+export default FiltersPopHover;

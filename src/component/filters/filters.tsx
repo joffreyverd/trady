@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, ReactElement } from 'react';
-import styles from './modal.module.scss';
+import styles from './filters.module.scss';
 
 interface Options {
   id: number,
@@ -15,7 +15,7 @@ interface Props {
   options: Options[],
 }
 
-function Modal({ title, options }): ReactElement<Props> {
+function Filters({ title, options }): ReactElement<Props> {
   return (
     <div className={styles.modal}>
       <h3>{title}</h3>
@@ -60,4 +60,4 @@ function Modal({ title, options }): ReactElement<Props> {
     </div>
   );
 }
-export default Modal;
+export default Filters;
