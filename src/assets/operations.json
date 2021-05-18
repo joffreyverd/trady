@@ -9,8 +9,7 @@
         "cost": "1000",
         "sell": "13000",
         "returnD": "236",
-        "returnP": "26",
-        "pnl": "0"
+        "returnP": "26"
     },
     {
         "id": 1,
@@ -22,8 +21,7 @@
         "cost": "500",
         "sell": "850",
         "returnD": "-150",
-        "returnP": "-12",
-        "pnl": "0"
+        "returnP": "-12"
     },
     {
         "id": 2,
@@ -35,8 +33,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 3,
@@ -48,8 +45,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 4,
@@ -61,8 +57,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 5,
@@ -74,8 +69,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 6,
@@ -88,8 +82,7 @@
         "sell": "",
         "returnD": "",
         "returnP": "",
-        "setup": "order",
-        "pnl": ""
+        "setup": "order"
     },
     {
         "id": 7,
@@ -101,8 +94,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 8,
@@ -114,8 +106,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 9,
@@ -127,8 +118,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 10,
@@ -140,8 +130,7 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     },
     {
         "id": 11,
@@ -153,7 +142,6 @@
         "cost": "200",
         "sell": "",
         "returnD": "",
-        "returnP": "",
-        "pnl": ""
+        "returnP": ""
     }
 ]

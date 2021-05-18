@@ -1,7 +1,7 @@
 import getStyle from 'utils/styling';
 import styles from './cell.module.scss';
 
-const dollarColumns = ['returnD'];
+const dollarColumns = ['returnD', 'value', 'fees', 'price', 'cost', 'pnl'];
 const percentColumns = ['returnP'];
 
 function Cell(props): React.ReactElement {
@@ -9,14 +9,13 @@ function Cell(props): React.ReactElement {
 
   return (
     <td {...object.getCellProps()} className={styles.cell}>
-      <div
-        className={getStyle(object.column.id, object.value)}
-      >{object.render('Cell')}
+      <div className={getStyle(object.column.id, object.value)}>
+        {object.value && dollarColumns.includes(object.column.id) ? '$ ' : ''}
+        {object.render('Cell')}
+        {object.value && percentColumns.includes(object.column.id) ? ' %' : ''}
       </div>
-    </td>
-  );
+    </ td>
+  )
 }
 
 export default Cell;
-
-// dollarColumns.includes(object.column.id) ? '$' ? ''

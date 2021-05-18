@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import CategoryTitle from 'component/categoryTitle';
 import styles from './tiles.module.scss';
 

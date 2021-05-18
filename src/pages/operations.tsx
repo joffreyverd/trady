@@ -11,9 +11,8 @@ const columns = [
   { Header: 'Average Entry', accessor: 'buy' },
   { Header: 'Cost', accessor: 'cost' },
   { Header: 'Average Exit', accessor: 'sell' },
-  { Header: 'Return ($)', accessor: 'returnD' },
-  { Header: 'Return (%)', accessor: 'returnP' },
-  { Header: 'PnL', accessor: 'pnl' },
+  { Header: 'Return $', accessor: 'returnD' },
+  { Header: 'Return %', accessor: 'returnP' },
 ];
 
 

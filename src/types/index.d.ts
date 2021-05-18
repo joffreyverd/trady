@@ -10,7 +10,6 @@ type Operation = {
     returnD: string,
     returnP: string,
     setup: string,
-    pnl: string,
 }
 
 type ResumePosition = {
@@ -35,6 +34,15 @@ type Position = {
     fees: number,
 }
 
+type Targets = {
+    action: string,
+    size: number,
+    price: number,
+    value: number,
+    returnD: number,
+    returnP: number
+}
+
 type TableHeader = {
     Header: string,
     accessor: string,
@@ -42,7 +50,7 @@ type TableHeader = {
 
 type Table = {
     columns: TableHeader[],
-    data: Operation[] | Position[] | ResumePosition[],
+    data: Operation[] | Position[] | ResumePosition[] | Targets[],
     pagination: boolean,
     filter: boolean,
     goTo: string,
