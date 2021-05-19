@@ -18,28 +18,15 @@ function getStyle(column: string, value: string) {
   }
 
   if (column === 'side') {
-    if (value === 'Long') {
-      return styles.upLabel;
-    }
-    if (value === 'Short') {
-      return styles.downLabel;
-    }
+    return value === 'Long' ? styles.upLabel : styles.downLabel;
   }
 
   if (column === 'returnD' || column === 'returnP' || column === 'pnl') {
-    if (parseInt(value, 10) >= 0) {
-      return styles.positive;
-    }
-    return styles.negative;
+    return parseInt(value, 10) >= 0 ? styles.positive : styles.negative;
   }
 
   if (column === 'action') {
-    if (value === 'Buy') {
-      return styles.positive;
-    }
-    if (value === 'Sell') {
-      return styles.negative;
-    }
+    return value === 'Buy' ? styles.positive : styles.negative;
   }
 
   return '';

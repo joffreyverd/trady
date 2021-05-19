@@ -4,6 +4,13 @@ import { useTable, useSortBy, usePagination } from 'react-table';
 import styles from './table.module.scss';
 import Cell from './cell';
 
+function sort(isSorted: boolean, isSortedDesc: boolean): string | boolean {
+  if (!isSorted) {
+    return '';
+  }
+  return isSortedDesc ? ' 👇🏼' : ' 👆🏼';
+}
+
 function Table(props: Table) {
   const { data, pagination, goTo, filter } = props;
   const columns = useMemo(() => props.columns, []);
@@ -36,7 +43,7 @@ function Table(props: Table) {
                 >
                   {column.render('Header')}
                   <span>
-                    {column.isSorted ? column.isSortedDesc ? ' 👇🏼' : ' 👆🏼' : ''}
+                    {sort(column.isSorted, column.isSortedDesc)}
                   </span>
                 </th>
               ))}

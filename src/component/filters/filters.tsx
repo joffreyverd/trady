@@ -1,5 +1,7 @@
 import React, { Dispatch, SetStateAction, ReactElement } from 'react';
 import styles from './filters.module.scss';
+import Checkbox from 'component/filters/type/checkbox';
+import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
 
@@ -25,38 +27,9 @@ function Filters({ options, toggleModal }): ReactElement<Props> {
       {
         options.map((option) => (
           option.type === 'checkbox' ?
-            <div key={option.id} className={styles.filterContainer}>
-              <label htmlFor={option.id}>
-                <p>{option.label}</p>
-                <input
-                  type='checkbox'
-                  id={option.id}
-                  name={option.id}
-                  defaultChecked={option.state}
-                  onChange={() => option.setState(!option.state)}
-                />
-              </label>
-            </div>
-
+            <Checkbox option={option} />
             : option.type === 'dropdown' ?
-              <div key={option.id} className={styles.filterContainer}>
-                <label htmlFor='options'>
-                  <p>{option.label}</p>
-                  <select
-                    name='options'
-                    id='options'
-                    defaultValue={option.state}
-                    onChange={(e) => { option.setState(e.target.value); }}
-                  >
-                    <option value=''>Select</option>
-                    {
-                      option.values.map((value) => (
-                        <option value={value} key={value}>{value}</option>
-                      ))
-                    }
-                  </select>
-                </label>
-              </div>
+              <Dropdown option={option} />
               : ''
         ))
       }
