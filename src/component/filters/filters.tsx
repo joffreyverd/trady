@@ -5,17 +5,8 @@ import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
 
-interface Options {
-  id: number,
-  label: string,
-  type: string,
-  values: [],
-  state: boolean | string,
-  setState: Dispatch<SetStateAction<boolean | string>>,
-}
-
 interface Props {
-  options: Options[],
+  options: FiltersOptions[],
   toggleModal: Dispatch<SetStateAction<boolean>>
 }
 

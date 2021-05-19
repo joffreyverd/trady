@@ -1,6 +1,7 @@
 @import 'styles/variables';
 
 .title {
-    margin-left: 70px;
+    margin-left: $main-margin;
     margin-bottom: 20px;
+    font-size: $medium-font-size;
 }

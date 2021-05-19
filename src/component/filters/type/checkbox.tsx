@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styles from '../filters.module.scss';
 
-function Checkbox({ option }): ReactElement {
+function Checkbox({ option }): ReactElement<FiltersOptions> {
     return (
         <div key={option.id} className={styles.filterContainer}>
             <label htmlFor={option.id}>

@@ -59,3 +59,12 @@ type Table = {
 type Columns = {
     columns: TableHeader[],
 }
+
+type FiltersOptions = {
+    id: number,
+    label: string,
+    type: string,
+    values: [],
+    state: boolean | string,
+    setState: Dispatch<SetStateAction<boolean | string>>,
+}
