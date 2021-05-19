@@ -7,25 +7,35 @@ import ClearAllIcon from '@material-ui/icons/ClearAll';
 
 interface Props {
   options: FiltersOptions[],
-  toggleModal: Dispatch<SetStateAction<boolean>>
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>
 }
 
-function Filters({ options, toggleModal }): ReactElement<Props> {
+function Filters({ options, setIsModalOpen }): ReactElement<Props> {
+
+  function reset() {
+    options.map((option) => (
+      option.type === 'checkbox' ? option.setState(false) :
+        option.type === 'dropdown' ? option.setState('') : ''
+    ))
+  }
+
   return (
     <div className={styles.modal}>
       <h3>Filters</h3>
-      <CloseIcon onClick={() => toggleModal(false)} className={styles.closeIcon} />
+      <CloseIcon
+        onClick={() => setIsModalOpen(false)}
+        className={styles.closeIcon} />
       {
-        options.map((option) => (
+        options.map((option, i) => (
           option.type === 'checkbox' ?
-            <Checkbox option={option} />
+            <Checkbox option={option} key={i} />
             : option.type === 'dropdown' ?
-              <Dropdown option={option} />
+              <Dropdown option={option} key={i} />
               : ''
         ))
       }
       <div className={styles.clearAllContainer}>
-        <button type='button' className={styles.clearAll}>
+        <button type='button' className={styles.clearAll} onClick={() => reset()} >
           <ClearAllIcon className={styles.clearAllIcon} />
           <p>Clear all</p>
         </button>

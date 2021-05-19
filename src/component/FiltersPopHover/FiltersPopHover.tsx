@@ -18,7 +18,7 @@ interface Props {
 }
 
 function FiltersPopHover({ options, isActive }): ReactElement<Props> {
-  const [isModalOpen, toggleModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
   return (
@@ -26,15 +26,17 @@ function FiltersPopHover({ options, isActive }): ReactElement<Props> {
       <button
         type='button'
         className={`${styles.button} ${isActiveFilter}`}
-        onClick={() => toggleModal(!isModalOpen)}
+        onClick={() => setIsModalOpen(!isModalOpen)}
       >
         <FilterListIcon className={styles.filterIcon} />
       </button>
-      { isModalOpen ?
-        <Filters
-          options={options}
-          toggleModal={toggleModal}
-        /> : ''}
+      {
+        isModalOpen ?
+          <Filters
+            options={options}
+            setIsModalOpen={setIsModalOpen}
+          /> : ''
+      }
     </>
   );
 }
