@@ -24,7 +24,7 @@ function updateFilters(
 
 function getYears(operations: Operation[]): string[] {
   const years = [];
-  operations.map((operation) => {
+  operations.forEach((operation) => {
     const openYear = new Date(operation.open).getFullYear();
     if (!years.includes(openYear)) {
       years.push(openYear);

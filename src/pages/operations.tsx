@@ -3,7 +3,7 @@ import Button from 'component/button';
 import Title from 'component/title/page';
 import OperationsTable from 'component/table/operations';
 import { operations } from 'utils/columnsDefinitions';
-import { fields } from 'utils/fieldsDefinitions';
+import { operationFields } from 'utils/fieldsDefinitions';
 import AddOperation from 'component/modal';
 
 function Operations(): ReactElement {
@@ -17,16 +17,14 @@ function Operations(): ReactElement {
         <Button title={title} action={setIsModalOpen} />
       </div>
       <OperationsTable columns={operations} />
-      <div>
-        {
-          isModalOpen ?
-            <AddOperation
-              title={title}
-              action={setIsModalOpen}
-              fields={fields} />
-            : ''
-        }
-      </div>
+      {
+        isModalOpen ?
+          <AddOperation
+            title={title}
+            action={setIsModalOpen}
+            fields={operationFields} />
+          : ''
+      }
     </div>
   );
 }

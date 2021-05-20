@@ -13,10 +13,14 @@ interface Props {
 function Filters({ options, setIsModalOpen }): ReactElement<Props> {
 
   function reset() {
-    options.map((option) => (
-      option.type === 'checkbox' ? option.setState(false) :
-        option.type === 'dropdown' ? option.setState('') : ''
-    ))
+    options.map((option) => {
+      if (option.type === 'checkbox') {
+        return option.setState(false);
+      }
+      if (option.type === 'dropdown') {
+        return option.setState('');
+      }
+    })
   }
 
   return (
@@ -26,13 +30,14 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
         onClick={() => setIsModalOpen(false)}
         className={styles.closeIcon} />
       {
-        options.map((option, i) => (
-          option.type === 'checkbox' ?
-            <Checkbox option={option} key={i} />
-            : option.type === 'dropdown' ?
-              <Dropdown option={option} key={i} />
-              : ''
-        ))
+        options.map((option, i) => {
+          if (option.type === 'checkbox') {
+            return <Checkbox option={option} key={i} />
+          }
+          if (option.type === 'dropdown') {
+            return <Dropdown option={option} key={i} />
+          }
+        })
       }
       <div className={styles.clearAllContainer}>
         <button type='button' className={styles.clearAll} onClick={() => reset()} >
