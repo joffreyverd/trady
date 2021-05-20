@@ -3,19 +3,58 @@
 .modalContainer {
     position: fixed;
     padding-top: 100px;
-    left: 0;
-    top: 0;
+    left: 0rem;
+    top: 0rem;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
 
 .modalContent {
-    background-color: $primary-black;
+    background-color: $secondary-black;
     border-radius: $default-border-radius;
     margin: auto;
     padding: 20px;
-    width: 80%;
+    width: 500px;
+}
+
+.modalContent > h3 {
+    font-size: $medium-font-size;
+    margin: auto;
+    text-align: center;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 7rem;
+    right: 30.3rem;
+    cursor: pointer;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin: 20px 20px;
+    background-color: $primary-black;
+    border-radius: $default-border-radius;
+}
+
+.inputContainer > label {
+    margin: auto 20px;
+}
+
+.input {
+    margin: auto 20px;
+    height: 30px;
+    width: 120px;
+}
+
+.addButtonContainer > button {
+    margin: auto;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    background-color: $valid-theme;
 }

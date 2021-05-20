@@ -64,7 +64,15 @@ type FiltersOptions = {
     id: number,
     label: string,
     type: string,
-    values: [],
+    values: [string],
     state: boolean | string,
     setState: Dispatch<SetStateAction<boolean | string>>,
+}
+
+type Fields = {
+    label: string,
+    type: string,
+    id: string,
+    value: string,
+    options: [string],
 }
