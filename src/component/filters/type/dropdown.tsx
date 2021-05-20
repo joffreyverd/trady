@@ -9,7 +9,7 @@ function Dropdown({ option }): ReactElement<FiltersOptions> {
                 <select
                     name='options'
                     id='options'
-                    defaultValue={option.state}
+                    value={option.state}
                     onChange={(e) => { option.setState(e.target.value); }}
                 >
                     <option value=''>Select</option>

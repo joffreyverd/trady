@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import styles from '../filters.module.scss';
 
 function Checkbox({ option }): ReactElement<FiltersOptions> {
+    console.log(option.state);
     return (
         <div key={option.id} className={styles.filterContainer}>
             <label htmlFor={option.id}>
@@ -10,7 +11,8 @@ function Checkbox({ option }): ReactElement<FiltersOptions> {
                     type='checkbox'
                     id={option.id}
                     name={option.id}
-                    defaultChecked={option.state}
+                    value={option.state}
+                    checked={option.state}
                     onChange={() => option.setState(!option.state)}
                 />
             </label>

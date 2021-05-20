@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect, useRef } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Button from 'component/button';
 import Title from 'component/title/page';
 import OperationsTable from 'component/table/operations';

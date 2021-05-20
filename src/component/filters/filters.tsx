@@ -7,7 +7,7 @@ import ClearAllIcon from '@material-ui/icons/ClearAll';
 
 interface Props {
   options: FiltersOptions[],
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>,
 }
 
 function Filters({ options, setIsModalOpen }): ReactElement<Props> {
