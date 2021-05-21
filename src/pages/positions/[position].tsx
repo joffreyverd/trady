@@ -5,8 +5,8 @@ import Title from 'component/title/page';
 import Button from 'component/button';
 import BreadCrumb from 'component/breadcrumb';
 import CategoryTitle from 'component/title/category';
-import ResumePositions from 'component/table/positionResume';
-import HistoryPositions from 'component/table/positionHistory';
+import PositionResume from 'component/table/positionResume';
+import PositionHistory from 'component/table/positionHistory';
 import Targets from 'component/table/targets';
 import AddAction from 'component/modal';
 import { actionFields } from 'utils/fieldsDefinitions';
@@ -35,10 +35,10 @@ function Position(): ReactElement {
       />
 
       <CategoryTitle title='Resume' />
-      <ResumePositions columns={resume} />
+      <PositionResume columns={resume} />
 
       <CategoryTitle title='History' />
-      <HistoryPositions columns={history} />
+      <PositionHistory columns={history} />
 
       <CategoryTitle title='Targets' />
       <Targets columns={targets} />

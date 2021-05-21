@@ -10,40 +10,6 @@
     width: 100%;
 }
 
-.head {
-    height: 40px;
-    background-color: $ternary-black;
-    color: $font-primary-color;
-    font-weight: bold;
-}
-
-.row {
-    height: 50px;
-    transition: $quick-transition;
-    cursor: pointer;
-    color: $font-secondary-color;
-}
-
-.row:hover {
-    background-color: $primary-black;
-    transition: $quick-transition;
-}
-
-.paginationContainer {
-    display: flex;
-    justify-content: center;
-    height: 30px;
-    margin-top: 20px;
-}
-
-.paginationContainer > p, .paginationContainer > select {
-    margin: auto 0px;
-}
-
-.paginationContainer > p {
-    padding: 0px 20px;
-}
-
 .button {
     background-color: $primary-blue;
     border: 0px;

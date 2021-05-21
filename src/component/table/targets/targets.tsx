@@ -6,7 +6,6 @@ function Targets(props: Columns) {
     <Table
       columns={props.columns}
       data={targets}
-      pagination={false}
       filter={false}
       goTo='' />
   );

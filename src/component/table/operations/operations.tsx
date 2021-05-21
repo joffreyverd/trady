@@ -9,7 +9,6 @@ function Operations(props: Columns) {
     <Table
       columns={props.columns}
       data={filteredOperations}
-      pagination={true}
       filter={true}
       goTo='./positions/' />
   );

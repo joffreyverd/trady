@@ -6,7 +6,6 @@ function PositionResume(props: Columns) {
     <Table
       columns={props.columns}
       data={position}
-      pagination={false}
       filter={false}
       goTo='' />
   );

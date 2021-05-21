@@ -51,7 +51,6 @@ type TableHeader = {
 type Table = {
     columns: TableHeader[],
     data: Operation[] | Position[] | ResumePosition[] | Targets[],
-    pagination: boolean,
     filter: boolean,
     goTo: string,
 }
