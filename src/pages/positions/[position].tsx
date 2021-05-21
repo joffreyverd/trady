@@ -31,8 +31,7 @@ function Position(): ReactElement {
       <BreadCrumb
         path='/operations'
         name='operations'
-        current={`position ${position}`}
-      />
+        current={`position ${position}`} />
 
       <CategoryTitle title='Resume' />
       <PositionResume columns={resume} />

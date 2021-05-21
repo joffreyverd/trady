@@ -20,11 +20,11 @@ function OverlayButton(): ReactElement {
     { year, setYear },
     yearsFilter,
   );
+
   return (
     <FiltersPopHover
       isActive={isActiveFilter}
-      options={options}
-    />
+      options={options} />
   );
 }
 export default OverlayButton;

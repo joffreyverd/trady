@@ -48,11 +48,12 @@ type TableHeader = {
     accessor: string,
 }
 
-type Table = {
+type Table<T> = {
     columns: TableHeader[],
-    data: Operation[] | Position[] | ResumePosition[] | Targets[],
+    data: T[],
     filter: boolean,
     goTo: string,
+    handleHover: bollean,
 }
 
 type Columns = {

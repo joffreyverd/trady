@@ -10,7 +10,8 @@ function Operations(props: Columns) {
       columns={props.columns}
       data={filteredOperations}
       filter={true}
-      goTo='./positions/' />
+      goTo='./positions/'
+      handleHover={true} />
   );
 }
 

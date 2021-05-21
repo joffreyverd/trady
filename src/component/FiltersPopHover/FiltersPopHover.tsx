@@ -34,8 +34,7 @@ function FiltersPopHover({ options, isActive }): ReactElement<Props> {
         isModalOpen ?
           <Filters
             options={options}
-            setIsModalOpen={setIsModalOpen}
-          /> : ''
+            setIsModalOpen={setIsModalOpen} /> : ''
       }
     </>
   );

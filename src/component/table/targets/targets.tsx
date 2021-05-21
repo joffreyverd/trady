@@ -3,11 +3,12 @@ import targets from 'assets/targets.json';
 
 function Targets(props: Columns) {
   return (
-    <Table
+    <Table<Targets>
       columns={props.columns}
       data={targets}
       filter={false}
-      goTo='' />
+      goTo=''
+      handleHover={true} />
   );
 }
 

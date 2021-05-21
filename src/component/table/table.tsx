@@ -11,8 +11,8 @@ function sort(isSorted: boolean, isSortedDesc: boolean): string {
   return isSortedDesc ? ' 👇🏼' : ' 👆🏼';
 }
 
-function Table(props: Table) {
-  const { data, goTo, filter } = props;
+function Table<T extends object>(props: Table<T>) {
+  const { data, goTo, filter, handleHover } = props;
   const columns = useMemo(() => props.columns, []);
 
   const { getTableProps, getTableBodyProps,
@@ -27,13 +27,13 @@ function Table(props: Table) {
         <Head
           headerGroups={headerGroups}
           filter={filter}
-          sort={sort}
-        />
+          sort={sort} />
         <Body
           getTableBodyProps={getTableBodyProps}
           rows={rows}
           prepareRow={prepareRow}
-          goTo={goTo} />
+          goTo={goTo}
+          handleHover={handleHover} />
       </table>
     </div>
   );
