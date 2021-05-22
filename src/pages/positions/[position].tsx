@@ -47,12 +47,11 @@ function Position(): ReactElement {
         <TvChart symbol='BTCUSDT' />
       </div>
       {
-        isModalOpen ?
-          <AddAction
-            title={title}
-            action={setIsModalOpen}
-            fields={actionFields} />
-          : ''
+        isModalOpen &&
+        <AddAction
+          title={title}
+          action={setIsModalOpen}
+          fields={actionFields} />
       }
     </div>
   );

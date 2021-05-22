@@ -8,7 +8,7 @@ function Targets(props: Columns) {
       data={targets}
       filter={false}
       goTo=''
-      handleHover={true} />
+      action={true} />
   );
 }
 

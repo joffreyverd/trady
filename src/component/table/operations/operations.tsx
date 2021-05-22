@@ -11,7 +11,7 @@ function Operations(props: Columns) {
       data={filteredOperations}
       filter={true}
       goTo='./positions/'
-      handleHover={true} />
+      action={true} />
   );
 }
 

@@ -10,9 +10,8 @@ function Body(props): ReactElement {
         <tr {...headerGroup.getHeaderGroupProps()}>
           {headerGroup.headers.map((column, i) => (
             <th
-              {...filter ?
-                column.getHeaderProps(column.getSortByToggleProps())
-                : ''
+              {...filter &&
+              column.getHeaderProps(column.getSortByToggleProps())
               }
               className={styles.head}
               key={i}

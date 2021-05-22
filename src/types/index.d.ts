@@ -53,7 +53,7 @@ type Table<T> = {
     data: T[],
     filter: boolean,
     goTo: string,
-    handleHover: bollean,
+    action: boolean,
 }
 
 type Columns = {

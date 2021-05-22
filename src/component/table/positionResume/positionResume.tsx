@@ -8,7 +8,7 @@ function PositionResume(props: Columns) {
       data={position}
       filter={false}
       goTo=''
-      handleHover={false} />
+      action={false} />
   );
 }
 

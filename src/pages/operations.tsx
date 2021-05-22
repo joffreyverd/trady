@@ -18,12 +18,11 @@ function Operations(): ReactElement {
       </div>
       <OperationsTable columns={operations} />
       {
-        isModalOpen ?
-          <AddOperation
-            title={title}
-            action={setIsModalOpen}
-            fields={operationFields} />
-          : ''
+        isModalOpen &&
+        <AddOperation
+          title={title}
+          action={setIsModalOpen}
+          fields={operationFields} />
       }
     </div>
   );

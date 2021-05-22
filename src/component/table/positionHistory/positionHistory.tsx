@@ -8,7 +8,7 @@ function PositionHistory(props: Columns) {
       data={position}
       filter={true}
       goTo=''
-      handleHover={true} />
+      action={true} />
   );
 }
 

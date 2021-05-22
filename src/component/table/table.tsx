@@ -1,7 +1,9 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Head from 'component/table/head';
 import Body from 'component/table/body';
+import ModalUpdateRow from 'component/modal';
+import { actionFields } from 'utils/fieldsDefinitions';
 import styles from './table.module.scss';
 
 function sort(isSorted: boolean, isSortedDesc: boolean): string {
@@ -12,7 +14,9 @@ function sort(isSorted: boolean, isSortedDesc: boolean): string {
 }
 
 function Table<T extends object>(props: Table<T>) {
-  const { data, goTo, filter, handleHover } = props;
+  const { data, goTo, filter, action } = props;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [fields, setFields] = useState(actionFields);
   const columns = useMemo(() => props.columns, []);
 
   const { getTableProps, getTableBodyProps,
@@ -20,6 +24,17 @@ function Table<T extends object>(props: Table<T>) {
       { columns, data },
       useSortBy,
     );
+
+  function handleRowClick(data) {
+    const row = data.values;
+    fields.map((field) => {
+      if (field.id in row) {
+        field.value = row[field.id];
+      }
+    });
+    setFields(fields);
+    setIsModalOpen(true);
+  }
 
   return (
     <div className={styles.tableContainer}>
@@ -33,8 +48,16 @@ function Table<T extends object>(props: Table<T>) {
           rows={rows}
           prepareRow={prepareRow}
           goTo={goTo}
-          handleHover={handleHover} />
+          action={action}
+          handleRowClick={handleRowClick} />
       </table>
+      {
+        isModalOpen && action &&
+        < ModalUpdateRow
+          title='Edit'
+          action={setIsModalOpen}
+          fields={fields} />
+      }
     </div>
   );
 }

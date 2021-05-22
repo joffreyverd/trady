@@ -32,10 +32,16 @@ function Modal(props): ReactElement<Props> {
                     <select
                       id={field.id}
                       name={field.id}
-                      className={styles.input}>
+                      className={styles.input}
+                      defaultValue={field.value}
+                      onChange={() => { console.log('change') }}>
                       {
                         field.options.map((option, j) => (
-                          <option value={option} key={j}>{option}</option>
+                          <option
+                            value={option}
+                            key={j}>
+                            {option}
+                          </option>
                         ))
                       }
                     </select>
@@ -44,7 +50,9 @@ function Modal(props): ReactElement<Props> {
                       type={field.type}
                       id={field.id}
                       name={field.id}
-                      className={styles.input} />
+                      defaultValue={field.value}
+                      className={styles.input}
+                      onChange={() => { console.log('change') }} />
                 }
               </div>
             ))
