@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import styles from './head.module.scss';
 
-function Body(props): ReactElement {
+function Head(props): ReactElement {
   const { headerGroups, filter, sort } = props;
 
   return (
@@ -28,4 +28,4 @@ function Body(props): ReactElement {
   )
 }
 
-export default Body;
+export default Head;

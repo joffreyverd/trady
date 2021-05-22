@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import Cell from 'component/table/cell';
 import styles from './body.module.scss';

@@ -25,8 +25,8 @@ function Table<T extends object>(props: Table<T>) {
       useSortBy,
     );
 
-  function handleRowClick(data) {
-    const row = data.values;
+  function handleRowClick(rowData) {
+    const row = rowData.values;
     fields.map((field) => {
       if (field.id in row) {
         field.value = row[field.id];
