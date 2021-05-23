@@ -1,5 +1,6 @@
 import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
 import FilterListIcon from '@material-ui/icons/FilterList';
+import FilterButton from 'component/button/filter';
 import styles from './filtersPopHover.module.scss';
 import Filters from 'component/filters';
 
@@ -26,8 +27,7 @@ function FiltersPopHover({ options, isActive }): ReactElement<Props> {
       <button
         type='button'
         className={`${styles.button} ${isActiveFilter}`}
-        onClick={() => setIsModalOpen(!isModalOpen)}
-      >
+        onClick={() => setIsModalOpen(!isModalOpen)}>
         <FilterListIcon className={styles.filterIcon} />
       </button>
       {

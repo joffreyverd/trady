@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import Button from 'component/button';
+import CreateButton from 'component/button/create';
 import Title from 'component/title/page';
 import OperationsTable from 'component/table/operations';
 import { operations } from 'utils/columnsDefinitions';
@@ -14,7 +14,7 @@ function Operations(): ReactElement {
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your operations' />
-        <Button title={title} action={setIsModalOpen} />
+        <CreateButton title={title} action={setIsModalOpen} />
       </div>
       <OperationsTable columns={operations} />
       {

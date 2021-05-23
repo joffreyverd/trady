@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import Title from 'component/title/page';
-import Button from 'component/button';
+import CreateButton from 'component/button/create';
 import BreadCrumb from 'component/breadcrumb';
 import CategoryTitle from 'component/title/category';
 import PositionResume from 'component/table/positionResume';
@@ -26,7 +26,7 @@ function Position(): ReactElement {
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your position' />
-        <Button title={title} action={setIsModalOpen} />
+        <CreateButton title={title} action={setIsModalOpen} />
       </div>
       <BreadCrumb
         path='/operations'

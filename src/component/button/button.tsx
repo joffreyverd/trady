@@ -1,18 +1,22 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
-import AddIcon from '@material-ui/icons/Add';
 import styles from './button.module.scss';
 
 interface Props {
   title: string,
-  action: Dispatch<SetStateAction<boolean>>
+  action: Dispatch<SetStateAction<boolean>>,
+  icon: ReactElement | null,
 }
 
 function Button(props: Props): ReactElement {
-  const { title, action } = props;
+  const { title, action, icon } = props;
+
   return (
-    <button type='button' className={styles.button} onClick={() => action(true)}>
-      <AddIcon className={styles.addIcon} />
-      <p>{title}</p>
+    <button
+      type='button'
+      className={styles.button}
+      onClick={() => action(true)}>
+      { icon && icon}
+      { title && <p>{title}</p>}
     </button>
   );
 }

@@ -40,7 +40,7 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
         })
       }
       <div className={styles.clearAllContainer}>
-        <button type='button' className={styles.clearAll} onClick={() => reset()} >
+        <button type='button' className={styles.clearAll} onClick={() => reset()}>
           <ClearAllIcon className={styles.clearAllIcon} />
           <p>Clear all</p>
         </button>

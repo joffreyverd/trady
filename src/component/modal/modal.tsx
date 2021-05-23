@@ -1,6 +1,6 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import CloseIcon from '@material-ui/icons/Close';
-import Add from 'component/button';
+import CreateButton from 'component/button/create';
 import styles from './modal.module.scss';
 
 interface Props {
@@ -60,7 +60,7 @@ function Modal(props): ReactElement<Props> {
         </div>
 
         <div className={styles.addButtonContainer}>
-          <Add title='Add' action={action} />
+          <CreateButton title='Add' action={action} />
         </div>
       </div>
     </div>
