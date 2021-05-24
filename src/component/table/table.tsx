@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Head from 'component/table/head';
 import Body from 'component/table/body';

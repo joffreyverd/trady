@@ -15,8 +15,8 @@ function Button(props: Props): ReactElement {
       type='button'
       className={styles.button}
       onClick={() => action(true)}>
-      { icon && icon}
-      { title && <p>{title}</p>}
+      {icon}
+      {title && <p>{title}</p>}
     </button>
   );
 }

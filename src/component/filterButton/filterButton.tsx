@@ -3,7 +3,7 @@ import filter from 'helper/filter';
 import { OperationsContext } from 'context/operationsContext';
 import FiltersPopHover from 'component/filtersPophover';
 
-function FiltersButton(): ReactElement {
+function FilterButton(): ReactElement {
   const { data, setFilteredOperations } = useContext(OperationsContext);
   const [onlyShowOpen, toggleOnlyShowOpen] = useState(false);
   const [year, setYear] = useState('');
@@ -27,4 +27,4 @@ function FiltersButton(): ReactElement {
       options={options} />
   );
 }
-export default FiltersButton;
+export default FilterButton;
