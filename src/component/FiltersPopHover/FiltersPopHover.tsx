@@ -1,7 +1,6 @@
 import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import FilterButton from 'component/button/filter';
-import styles from './filtersPopHover.module.scss';
+import styles from './filtersPophover.module.scss';
 import Filters from 'component/filters';
 
 interface Option {
@@ -18,7 +17,7 @@ interface Props {
   isActive: boolean,
 }
 
-function FiltersPopHover({ options, isActive }): ReactElement<Props> {
+function FiltersPophover({ options, isActive }): ReactElement<Props> {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
@@ -39,4 +38,4 @@ function FiltersPopHover({ options, isActive }): ReactElement<Props> {
     </>
   );
 }
-export default FiltersPopHover;
+export default FiltersPophover;

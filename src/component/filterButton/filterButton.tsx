@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, ReactElement } from 'react';
 import filter from 'helper/filter';
 import { OperationsContext } from 'context/operationsContext';
-import FiltersPopHover from 'component/filtersPopHover';
+import FiltersPopHover from 'component/filtersPophover';
 
-function OverlayButton(): ReactElement {
+function FiltersButton(): ReactElement {
   const { data, setFilteredOperations } = useContext(OperationsContext);
   const [onlyShowOpen, toggleOnlyShowOpen] = useState(false);
   const [year, setYear] = useState('');
@@ -27,4 +27,4 @@ function OverlayButton(): ReactElement {
       options={options} />
   );
 }
-export default OverlayButton;
+export default FiltersButton;

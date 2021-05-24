@@ -2,13 +2,15 @@ import Table from 'component/table';
 import position from 'assets/resumePosition.json';
 
 function PositionResume(props: Columns) {
+  const { columns } = props;
   return (
     <Table
-      columns={props.columns}
+      columns={columns}
       data={position}
       filter={false}
       goTo=''
-      action={false} />
+      action={false}
+      handleRowClick={null} />
   );
 }
 

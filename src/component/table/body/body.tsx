@@ -25,7 +25,7 @@ function Body(props): ReactElement {
             <tr {...row.getRowProps()}
               className={rowStyle}
               key={i}
-              onClick={() => handleRowClick(row)}>
+              onClick={() => handleRowClick ? handleRowClick(row) : ''}>
               {
                 row.cells.map((cell, k) => (
                   <Cell object={cell} key={k} />

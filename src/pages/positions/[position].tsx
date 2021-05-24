@@ -9,24 +9,22 @@ import PositionResume from 'component/table/positionResume';
 import PositionHistory from 'component/table/positionHistory';
 import Targets from 'component/table/targets';
 import AddAction from 'component/modal';
-import { actionFields } from 'utils/fieldsDefinitions';
+import { createPosition } from 'utils/fieldsDefinitions';
 import { resume, history, targets } from 'utils/columnsDefinitions';
 
 function Position(): ReactElement {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const title = 'Add action';
   const router = useRouter();
   const { position } = router.query;
   const TvChart = dynamic(() =>
-    import('../../component/chart/tradingView'),
-    { ssr: false }
+    import('component/chart/tradingView'), { ssr: false }
   );
 
   return (
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your position' />
-        <CreateButton title={title} action={setIsModalOpen} />
+        <CreateButton title='Add action' action={setIsModalOpen} />
       </div>
       <BreadCrumb
         path='/operations'
@@ -46,12 +44,13 @@ function Position(): ReactElement {
       <div className='TVContainer'>
         <TvChart symbol='BTCUSDT' />
       </div>
+
       {
         isModalOpen &&
         <AddAction
-          title={title}
+          title='Add action'
           action={setIsModalOpen}
-          fields={actionFields} />
+          fields={createPosition} />
       }
     </div>
   );

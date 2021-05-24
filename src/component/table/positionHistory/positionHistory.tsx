@@ -1,14 +1,38 @@
+import React, { useState } from 'react';
 import Table from 'component/table';
+import AddAction from 'component/modal';
+import { editPosition } from 'utils/fieldsDefinitions';
 import position from 'assets/position.json';
+import { chargeFieldsWithValues } from 'utils/tableFunctions';
 
 function PositionHistory(props: Columns) {
+  const { columns } = props;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [fields, setFields] = useState(editPosition);
+
+  function handleRowClick(rowData) {
+    setFields(chargeFieldsWithValues(fields, rowData.values));
+    setIsModalOpen(true);
+  }
+
   return (
-    <Table
-      columns={props.columns}
-      data={position}
-      filter={true}
-      goTo=''
-      action={true} />
+    <>
+      <Table
+        columns={columns}
+        data={position}
+        filter={true}
+        goTo=''
+        action={true}
+        handleRowClick={handleRowClick} />
+
+      {
+        isModalOpen &&
+        <AddAction
+          title='Edit'
+          action={setIsModalOpen}
+          fields={fields} />
+      }
+    </>
   );
 }
 

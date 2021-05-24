@@ -54,6 +54,7 @@ type Table<T> = {
     filter: boolean,
     goTo: string,
     action: boolean,
+    handleRowClick: Function | null,
 }
 
 type Columns = {
