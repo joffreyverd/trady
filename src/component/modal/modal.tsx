@@ -1,5 +1,4 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
-import CloseIcon from '@material-ui/icons/Close';
 import CreateButton from 'component/button/create';
 import styles from './modal.module.scss';
 
@@ -14,9 +13,6 @@ function Modal(props): ReactElement<Props> {
 
   return (
     <div className={styles.modalContainer} onClick={() => action(false)} >
-      <CloseIcon
-        onClick={() => () => action(true)}
-        className={styles.closeIcon} />
       <div
         className={styles.modalContent}
         onClick={(event) => event.stopPropagation()}
