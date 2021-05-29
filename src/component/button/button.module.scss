@@ -11,11 +11,10 @@
     font-size: 1em;
     font-weight: bold;
     color: $font-primary-color;
-    margin: auto 0px;
     transition: $default-transition;
 }
 
-.button > p {
+.button > * {
     margin: auto 0px auto 5px;
 }
 
@@ -25,4 +24,12 @@
 
 .editButton {
     background-color: $warning-theme;
+}
+
+.clearAllButton {
+    margin: auto;
+    height: 30px;
+    width: 100px;
+    background-color: $danger-theme;
+    font-size: $little-font-size;
 }

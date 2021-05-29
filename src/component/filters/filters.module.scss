@@ -41,20 +41,3 @@
     right: 1rem;
     cursor: pointer;
 }
-
-.clearAll {
-    display: flex;
-    margin: auto;
-    height: 30px;
-    width: 100px;
-    border-radius: $default-border-radius;
-    background-color: $danger-theme;
-    border: none;
-    color: $font-primary-color;
-    font-size: $little-font-size;
-    cursor: pointer;
-}
-
-.clearAllIcon, .clearAll > p {
-    margin: auto;
-}

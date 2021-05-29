@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import Button from 'component/button';
-import EditIcon from '@material-ui/icons/Edit';
+import ClearAllIcon from '@material-ui/icons/ClearAll';
 
-function Update(props): ReactElement {
+function Clear(props): ReactElement {
   const { title, action } = props;
 
   return (
@@ -10,10 +10,9 @@ function Update(props): ReactElement {
       title={title}
       action={action}
       icon={
-        <EditIcon />
+        <ClearAllIcon />
       } />
   );
 }
 
-export default Update;
-
+export default Clear;

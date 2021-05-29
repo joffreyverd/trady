@@ -11,11 +11,12 @@ function Button(props: Props): ReactElement {
   const { title, action, icon } = props;
   const add = title === 'Add' ? styles.addButton : '';
   const edit = title === 'Edit' ? styles.editButton : '';
+  const clearAll = title === 'Clear all' ? styles.clearAllButton : '';
 
   return (
     <button
       type='button'
-      className={`${styles.button} ${add} ${edit}`}
+      className={`${styles.button} ${add} ${edit} ${clearAll}`}
       onClick={() => action(true)}>
       {icon}
       {title && <p>{title}</p>}
