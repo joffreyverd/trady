@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import Title from 'component/title/page';
+import Bars from 'component/chart/bars';
 
 function Reports(): ReactElement {
   return (
     <div className='pageContainer'>
       <div className='flexContainer titleAndAction'>
         <Title title='Your reports' />
-        <></>
       </div>
-      <p>This feature is ongoing 🤯</p>
+      <Bars />
     </div>
   );
 }
