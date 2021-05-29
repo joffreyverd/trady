@@ -28,6 +28,9 @@ function getStyle(column: string, value: string) {
   if (column === 'action') {
     return value === 'Buy' ? styles.positive : styles.negative;
   }
+  if (column === 'month') {
+    return styles.month;
+  }
   return '';
 }
 

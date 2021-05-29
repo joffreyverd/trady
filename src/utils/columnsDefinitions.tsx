@@ -41,4 +41,14 @@ const targets = [
     { Header: 'Return %', accessor: 'returnP' },
 ]
 
-export { operations, resume, history, targets }
+const monthlyHistory = [
+    { Header: 'Month', accessor: 'month' },
+    { Header: 'Return $', accessor: 'returnD' },
+    { Header: 'Return %', accessor: 'returnP' },
+    { Header: 'Profit Factor', accessor: 'profitFactor' },
+    { Header: 'Trades', accessor: 'trades' },
+    { Header: 'Win %', accessor: 'win' },
+    { Header: 'Fees', accessor: 'fees' },
+]
+
+export { operations, resume, history, targets, monthlyHistory }

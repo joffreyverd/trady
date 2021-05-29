@@ -1,0 +1,110 @@
+[
+    {
+        "month": "January",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "February",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "March",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "April",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "May",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "June",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "July",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "August",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "September",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "October",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "November",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    },
+    {
+        "month": "December",
+        "returnD": 0,
+        "returnP": 0,
+        "profitFactor": 0,
+        "trades": 0,
+        "win": 0,
+        "fees": 0
+    }
+]

@@ -4,7 +4,7 @@ import position from 'assets/resumePosition.json';
 function PositionResume(props: Columns) {
   const { columns } = props;
   return (
-    <Table
+    <Table<ResumePosition>
       columns={columns}
       data={position}
       filter={false}

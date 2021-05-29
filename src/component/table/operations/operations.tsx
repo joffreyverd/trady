@@ -6,12 +6,13 @@ function Operations(props: Columns) {
   const { filteredOperations } = useContext(OperationsContext);
 
   return (
-    <Table
+    <Table<Operation>
       columns={props.columns}
       data={filteredOperations}
       filter={true}
       goTo='./positions/'
-      action={true} />
+      action={true}
+      handleRowClick={null} />
   );
 }
 

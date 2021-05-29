@@ -40,7 +40,17 @@ type Targets = {
     price: number,
     value: number,
     returnD: number,
-    returnP: number
+    returnP: number,
+}
+
+type MonthlyResume = {
+    month: string,
+    returnD: number,
+    returnP: number,
+    profitFactor: number,
+    trades: number,
+    win: number,
+    fees: number,
 }
 
 type TableHeader = {

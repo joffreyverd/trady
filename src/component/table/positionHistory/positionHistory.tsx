@@ -17,7 +17,7 @@ function PositionHistory(props: Columns) {
 
   return (
     <>
-      <Table
+      <Table<Position>
         columns={columns}
         data={position}
         filter={true}
