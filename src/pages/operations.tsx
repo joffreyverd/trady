@@ -21,6 +21,7 @@ function Operations(): ReactElement {
         isModalOpen &&
         <AddOperation
           title={title}
+          buttonType='Add'
           action={setIsModalOpen}
           fields={operationFields} />
       }

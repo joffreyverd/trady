@@ -28,7 +28,8 @@ function PositionHistory(props: Columns) {
       {
         isModalOpen &&
         <AddAction
-          title='Edit'
+          title='Edit action'
+          buttonType='Edit'
           action={setIsModalOpen}
           fields={fields} />
       }

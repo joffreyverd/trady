@@ -27,7 +27,8 @@ function Targets(props: Columns) {
       {
         isModalOpen &&
         <AddAction
-          title='Edit'
+          title='Edit target'
+          buttonType='Edit'
           action={setIsModalOpen}
           fields={fields} />
       }

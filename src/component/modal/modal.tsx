@@ -1,15 +1,17 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import CreateButton from 'component/button/create';
+import UpdateButton from 'component/button/update';
 import styles from './modal.module.scss';
 
 interface Props {
   title: string,
+  buttonType: string,
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
 }
 
 function Modal(props): ReactElement<Props> {
-  const { title, action, fields } = props;
+  const { title, buttonType, action, fields } = props;
 
   return (
     <div className={styles.modalContainer} onClick={() => action(false)} >
@@ -56,7 +58,14 @@ function Modal(props): ReactElement<Props> {
         </div>
 
         <div className={styles.addButtonContainer}>
-          <CreateButton title='Add' action={action} />
+          {
+            buttonType === 'Add' &&
+            <CreateButton title={buttonType} action={action} />
+          }
+          {
+            buttonType === 'Edit' &&
+            <UpdateButton title={buttonType} action={action} />
+          }
         </div>
       </div>
     </div>

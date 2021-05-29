@@ -9,11 +9,13 @@ interface Props {
 
 function Button(props: Props): ReactElement {
   const { title, action, icon } = props;
+  const add = title === 'Add' ? styles.addButton : '';
+  const edit = title === 'Edit' ? styles.editButton : '';
 
   return (
     <button
       type='button'
-      className={styles.button}
+      className={`${styles.button} ${add} ${edit}`}
       onClick={() => action(true)}>
       {icon}
       {title && <p>{title}</p>}

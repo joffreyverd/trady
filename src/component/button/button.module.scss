@@ -15,11 +15,14 @@
     transition: $default-transition;
 }
 
-.button:hover {
-    background-color: $valid-theme;
-    transition: $default-transition;
-}
-
 .button > p {
     margin: auto 0px auto 5px;
+}
+
+.addButton {
+    background-color: $valid-theme;
+}
+
+.editButton {
+    background-color: $warning-theme;
 }

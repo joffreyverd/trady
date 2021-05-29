@@ -49,6 +49,7 @@ function Position(): ReactElement {
         isModalOpen &&
         <AddAction
           title='Add action'
+          buttonType='Add'
           action={setIsModalOpen}
           fields={createPosition} />
       }
