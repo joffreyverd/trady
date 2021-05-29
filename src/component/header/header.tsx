@@ -3,18 +3,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './header.module.scss';
 
-interface Menu {
+type Menu = {
   title: string,
   action: string
 }
 
-interface Props {
+type Props = {
   logoPath: string,
   sections: Menu[],
 }
 
 function Header(props: Props): ReactElement {
   const { sections, logoPath } = props;
+
   return (
     <div className={styles.header}>
       {

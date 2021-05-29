@@ -1,7 +1,7 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import styles from './button.module.scss';
 
-interface Props {
+type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
   icon: ReactElement | null,

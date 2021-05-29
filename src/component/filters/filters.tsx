@@ -5,7 +5,7 @@ import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearButton from 'component/button/clear';
 
-interface Props {
+type Props = {
   options: FiltersOptions[],
   setIsModalOpen: Dispatch<SetStateAction<boolean>>,
 }

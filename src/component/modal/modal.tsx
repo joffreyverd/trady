@@ -3,14 +3,14 @@ import CreateButton from 'component/button/create';
 import UpdateButton from 'component/button/update';
 import styles from './modal.module.scss';
 
-interface Props {
+type Props = {
   title: string,
   buttonType: string,
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
 }
 
-function Modal(props): ReactElement<Props> {
+function Modal(props: Props): ReactElement {
   const { title, buttonType, action, fields } = props;
 
   return (

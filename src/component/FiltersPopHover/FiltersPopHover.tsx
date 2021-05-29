@@ -3,7 +3,7 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import styles from './filtersPophover.module.scss';
 import Filters from 'component/filters';
 
-interface Option {
+type Option = {
   id: number,
   label: string,
   type: string,
@@ -12,7 +12,7 @@ interface Option {
   setState: Dispatch<SetStateAction<any>>,
 }
 
-interface Props {
+type Props = {
   options: Option[],
   isActive: boolean,
 }

@@ -3,6 +3,7 @@ import position from 'assets/resumePosition.json';
 
 function PositionResume(props: Columns) {
   const { columns } = props;
+
   return (
     <Table<ResumePosition>
       columns={columns}

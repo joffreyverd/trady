@@ -1,8 +1,13 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import Button from 'component/button';
 import EditIcon from '@material-ui/icons/Edit';
 
-function Update(props): ReactElement {
+type Props = {
+  title: string,
+  action: Dispatch<SetStateAction<boolean>>,
+}
+
+function Update(props: Props): ReactElement {
   const { title, action } = props;
 
   return (

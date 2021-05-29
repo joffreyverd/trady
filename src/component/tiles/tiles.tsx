@@ -2,20 +2,20 @@ import React, { ReactElement } from 'react';
 import CategoryTitle from 'component/title/category';
 import styles from './tiles.module.scss';
 
-interface Tile {
+type Tile = {
   id: number,
   title: string,
   value: number,
 }
 
-interface Analytic {
+type Analytic = {
   id: number,
   title: string,
   value: Tile[],
   symbol: string,
 }
 
-interface Props {
+type Props = {
   data: Analytic[],
 }
 
@@ -25,6 +25,7 @@ function greenOrRed(value: number, css) {
 
 function Tiles(props: Props): ReactElement {
   const { data } = props;
+
   return (
     <div>
       {

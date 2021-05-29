@@ -1,17 +1,18 @@
 import React, { ReactElement } from 'react';
 import styles from './resume.module.scss';
 
-interface Balance {
+type Balance = {
   title: string,
   value: string
 }
 
-interface Props {
+type Props = {
   sections: Balance[],
 }
 
 function Resume(props: Props): ReactElement {
   const { sections } = props;
+
   return (
     <div className={styles.resumeContainer}>
       {

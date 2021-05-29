@@ -3,6 +3,7 @@ import months from 'assets/months.json';
 
 function MonthlyResume(props: Columns) {
     const { columns } = props;
+
     return (
         <Table<MonthlyResume>
             columns={columns}

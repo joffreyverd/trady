@@ -1,8 +1,13 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import Button from 'component/button';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
 
-function Clear(props): ReactElement {
+type Props = {
+  title: string,
+  action: Dispatch<SetStateAction<boolean>>,
+}
+
+function Clear(props: Props): ReactElement {
   const { title, action } = props;
 
   return (

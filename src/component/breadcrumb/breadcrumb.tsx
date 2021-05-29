@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import styles from './breadcrumb.module.scss';
 
-interface Props {
+type Props = {
   path: string,
   name: string,
   current: string
@@ -10,6 +10,7 @@ interface Props {
 
 function BreadCrumb(props: Props): ReactElement {
   const { path, name, current } = props;
+
   return (
     <div className={styles.breadcrumbContainer}>
       <Link href='/'>Home </Link>

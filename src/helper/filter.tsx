@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-interface Filters {
+type Filters = {
   onlyShowOpen: boolean,
   year: string
 }
@@ -33,12 +33,12 @@ function getYears(operations: Operation[]): string[] {
   return years;
 }
 
-interface OpenFilter {
+type OpenFilter = {
   onlyShowOpen: boolean,
   toggleOnlyShowOpen: Dispatch<SetStateAction<boolean>>,
 }
 
-interface YearFilter {
+type YearFilter = {
   year: string,
   setYear: Dispatch<SetStateAction<string>>,
 }
