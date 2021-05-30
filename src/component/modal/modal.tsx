@@ -14,12 +14,7 @@ function Modal(props: Props): ReactElement {
   const { title, buttonType, action, fields } = props;
 
   const keydownHandler = ({ key }) => {
-    switch (key) {
-      case 'Escape':
-        action(false);
-        break;
-      default:
-    }
+    key === 'Escape' && action(false);
   };
 
   useEffect(() => {
