@@ -2,46 +2,59 @@ import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import Tooltip from 'component/tooltip';
 import styles from './header.module.scss';
 
-type Menu = {
-  title: string,
-  action: string
-}
+const sections = [
+  { title: 'Portfolio', action: '/portfolio' },
+  { title: 'Operations', action: '/operations' },
+  { title: 'Analytics', action: '/analytics' },
+  { title: 'Reports', action: '/reports' },
+  { title: 'Calendar', action: '/calendar' },
+];
 
-type Props = {
-  logoPath: string,
-  sections: Menu[],
-}
-
-function Header(props: Props): ReactElement {
-  const { sections, logoPath } = props;
+function Header(): ReactElement {
 
   return (
     <div className={styles.header}>
+
+      <div className={styles.item}>
+        <div className={styles.logoItem}>
+          <Image src='/logo.png' alt='logo' width={30} height={30} />
+          <Link href='/'>
+            <a className={styles.name}>Trady</a>
+          </Link>
+        </div>
+      </div>
+
       {
         sections.map((section) => (
           <div className={styles.item} key={section.title}>
             {
-              logoPath && logoPath !== '' && section.title === 'Trady' ?
-                <div className={styles.logoItem}>
-                  <Image src={logoPath} alt='logo' width={30} height={30} />
-                  <Link href={section.action}>
-                    <a className={styles.name}>{section.title}</a>
-                  </Link>
-                </div>
-                : section.title === 'User' ?
-                  <Link href={section.action}>
-                    <AccountCircleIcon className={`${styles.name}`} />
-                  </Link>
-                  :
-                  <Link href={section.action}>
-                    <a className={styles.name}>{section.title}</a>
-                  </Link>
+              <Link href={section.action}>
+                <a className={styles.name}>{section.title}</a>
+              </Link>
             }
           </div>
         ))
       }
+
+      <div className={styles.itemGroup}>
+        <Tooltip text='Hide amouts'>
+          <VisibilityIcon className={styles.icon} />
+        </Tooltip>
+        <Tooltip text='Change theme'>
+          <Brightness4Icon className={styles.icon} />
+        </Tooltip>
+        <div className={`${styles.item} ${styles.icon}`}>
+          <Link href='/user'>
+            <AccountCircleIcon className={`${styles.name}`} />
+          </Link>
+        </div>
+      </div>
+
     </div >
   );
 }

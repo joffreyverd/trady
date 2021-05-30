@@ -1,0 +1,22 @@
+@import 'styles/variables';
+
+.tooltipContainer {
+  position: relative;
+}
+  
+.tooltipBox {
+  position: absolute;
+  width: 120px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: $default-border-radius;
+  top: calc(80% + 5px);
+  right: -40px;
+  display: none;
+}
+  
+.tooltipBox.visible {
+  display: block;
+}

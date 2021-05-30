@@ -3,7 +3,6 @@ import 'styles/global.scss';
 import Header from 'component/header';
 import Footer from 'component/footer';
 import FiltersButton from 'component/filterButton';
-import sections from 'utils/sections';
 import { OperationsProvider } from 'context/operationsContext';
 import type { AppProps } from 'next/app';
 
@@ -17,7 +16,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <div className='global'>
-        <Header logoPath='/logo.png' sections={sections} />
+        <Header />
         <OperationsProvider>
           <Component {...pageProps} />
           <FiltersButton />
