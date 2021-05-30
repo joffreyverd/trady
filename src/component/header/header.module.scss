@@ -26,5 +26,7 @@
 }
 
 .name:hover {
+    cursor: pointer;
+    transition: $default-transition;
     color: $primary-blue;
 }

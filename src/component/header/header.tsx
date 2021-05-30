@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import styles from './header.module.scss';
 
 type Menu = {
@@ -29,15 +30,19 @@ function Header(props: Props): ReactElement {
                     <a className={styles.name}>{section.title}</a>
                   </Link>
                 </div>
-                :
-                <Link href={section.action}>
-                  <a className={styles.name}>{section.title}</a>
-                </Link>
+                : section.title === 'User' ?
+                  <Link href={section.action}>
+                    <AccountCircleIcon className={`${styles.name}`} />
+                  </Link>
+                  :
+                  <Link href={section.action}>
+                    <a className={styles.name}>{section.title}</a>
+                  </Link>
             }
           </div>
         ))
       }
-    </div>
+    </div >
   );
 }
 

@@ -5,6 +5,7 @@ const sections = [
   { title: 'Analytics', action: '/analytics' },
   { title: 'Reports', action: '/reports' },
   { title: 'Calendar', action: '/calendar' },
+  { title: 'User', action: '/user' },
 ];
 
 export default sections;

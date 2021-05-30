@@ -57,7 +57,7 @@ function Modal(props: Props): ReactElement {
           }
         </div>
 
-        <div className={styles.addButtonContainer}>
+        <div className={styles.buttonContainer}>
           {
             buttonType === 'Add' &&
             <CreateButton title={buttonType} action={action} />
