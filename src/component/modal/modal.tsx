@@ -1,4 +1,4 @@
-import React, { ReactElement, Dispatch, SetStateAction } from 'react';
+import React, { ReactElement, Dispatch, SetStateAction, useEffect } from 'react';
 import CreateButton from 'component/button/create';
 import UpdateButton from 'component/button/update';
 import styles from './modal.module.scss';
@@ -12,6 +12,20 @@ type Props = {
 
 function Modal(props: Props): ReactElement {
   const { title, buttonType, action, fields } = props;
+
+  const keydownHandler = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        action(false);
+        break;
+      default:
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', keydownHandler);
+    return () => document.removeEventListener('keydown', keydownHandler);
+  });
 
   return (
     <div className={styles.modalContainer} onClick={() => action(false)} >
