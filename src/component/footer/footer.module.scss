@@ -3,15 +3,29 @@
 .footer {
     display: flex;
     bottom: 0;
-    background-color: $secondary-dark;
     margin-top: $main-margin;
     padding: 30px 0px;
 }
 
+.light {
+    background-color: $secondary-light;
+}
+
+.dark {
+    background-color: $secondary-dark;
+}
+
 .footer > a {
-    color: $font-secondary-color-light;
     margin: auto 0px auto $main-margin;
     transition: $quick-transition;
+}
+
+.footer.dark > a {
+    color: $font-secondary-color-light;
+}
+
+.footer.light > a {
+    color: $font-secondary-color-dark;
 }
 
 .footer > a:hover {

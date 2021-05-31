@@ -2,7 +2,15 @@
 
 .head {
     height: 40px;
+    font-weight: bold;
+}
+
+.light {
+    background-color: $ternary-light;
+    color: $font-primary-color-dark;
+}
+
+.dark {
     background-color: $ternary-dark;
     color: $font-primary-color-light;
-    font-weight: bold;
 }

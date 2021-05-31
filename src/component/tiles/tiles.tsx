@@ -1,5 +1,6 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import CategoryTitle from 'component/title/category/category';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './tiles.module.scss';
 
 type Tile = {
@@ -25,6 +26,8 @@ function greenOrRed(value: number, css) {
 
 function Tiles(props: Props): ReactElement {
   const { data } = props;
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
 
   return (
     <div>
@@ -35,7 +38,7 @@ function Tiles(props: Props): ReactElement {
             <div className={styles.tilesContainer}>
               {
                 subData.value.map((tile) => (
-                  <div className={styles.tile} key={tile.id}>
+                  <div className={`${styles.tile} ${theme}`} key={tile.id}>
                     <h3>{tile.title}</h3>
                     <p className={greenOrRed(tile.value, styles)}>
                       {

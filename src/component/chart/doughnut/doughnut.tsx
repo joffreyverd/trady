@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, ReactElement } from 'react';
+import React, { useEffect, useRef, ReactElement, useContext } from 'react';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import { Chart, DoughnutController, ArcElement, Legend, Title, Tooltip } from 'chart.js';
 import styles from './doughnut.module.scss';
 
@@ -6,6 +7,8 @@ Chart.register(DoughnutController, ArcElement, Legend, Title, Tooltip);
 
 function Doughnut(): ReactElement {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
 
   useEffect(() => {
     if (!canvasRef.current) {
@@ -63,7 +66,7 @@ function Doughnut(): ReactElement {
   }, [canvasRef]);
 
   return (
-    <div className={styles.chartContainer}>
+    <div className={`${styles.chartContainer} ${theme}`}>
       <canvas id='doughnut' ref={canvasRef} />
     </div>
   );

@@ -10,10 +10,12 @@
 }
 
 .light {
+    color: $font-primary-color-dark;
     background-color: $secondary-light;
 }
 
 .dark {
+    color: $font-primary-color-light;
     background-color: $secondary-dark;
 }
 

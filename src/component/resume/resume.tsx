@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './resume.module.scss';
 
 type Balance = {
@@ -12,9 +13,11 @@ type Props = {
 
 function Resume(props: Props): ReactElement {
   const { sections } = props;
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
 
   return (
-    <div className={styles.resumeContainer}>
+    <div className={`${styles.resumeContainer} ${theme}`}>
       {
         sections.map((section) => (
           <div className={styles.item} key={section.title}>

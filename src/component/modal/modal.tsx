@@ -1,4 +1,5 @@
-import React, { ReactElement, Dispatch, SetStateAction, useEffect } from 'react';
+import React, { ReactElement, Dispatch, SetStateAction, useEffect, useContext } from 'react';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import Dropdown from 'component/form/dropdown/dropdown';
 import Input from 'component/form/input/input';
 import CreateButton from 'component/button/create/create';
@@ -14,6 +15,8 @@ type Props = {
 
 function Modal(props: Props): ReactElement {
   const { title, buttonType, action, fields } = props;
+  const { themeState } = useContext(ThemeContext);
+  const modalTheme = themeState ? styles.modalThemeDark : styles.modalThemeLight;
 
   const keydownHandler = ({ key }) => {
     key === 'Escape' && action(false);
@@ -27,7 +30,7 @@ function Modal(props: Props): ReactElement {
   return (
     <div className={styles.modalContainer} onClick={() => action(false)} >
       <div
-        className={styles.modalContent}
+        className={`${styles.modalContent} ${modalTheme}`}
         onClick={(event) => event.stopPropagation()}>
         <h3>{title}</h3>
         <div>

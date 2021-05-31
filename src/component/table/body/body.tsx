@@ -1,11 +1,14 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import Link from 'next/link';
 import Cell from 'component/table/cell/cell';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './body.module.scss';
 
 function Body(props): ReactElement {
   const { getTableBodyProps, rows, prepareRow, goTo, action, handleRowClick } = props;
+  const { themeState } = useContext(ThemeContext);
   const rowStyle = action ? styles.actionRow : styles.row;
+  const theme = themeState ? styles.dark : styles.light;
 
   return (
     <tbody {...getTableBodyProps()}>
@@ -14,7 +17,7 @@ function Body(props): ReactElement {
         if (goTo) {
           return (
             <Link href={`${goTo}${row.id}`} key={i}>
-              <tr {...row.getRowProps()} className={rowStyle}>
+              <tr {...row.getRowProps()} className={`${rowStyle} ${theme}`}>
                 {row.cells.map((cell, j) => (
                   <Cell object={cell} key={j} />
                 ))}</tr>
@@ -23,7 +26,7 @@ function Body(props): ReactElement {
         } else {
           return (
             <tr {...row.getRowProps()}
-              className={rowStyle}
+              className={`${rowStyle} ${theme}`}
               key={i}
               onClick={() => handleRowClick ? handleRowClick(row) : ''}>
               {

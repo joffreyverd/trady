@@ -1,7 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useContext } from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Head from 'component/table/head/head';
 import Body from 'component/table/body/body';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './table.module.scss';
 
 function sort(isSorted: boolean, isSortedDesc: boolean): string {
@@ -14,6 +15,8 @@ function sort(isSorted: boolean, isSortedDesc: boolean): string {
 function Table<T extends object>(props: Table<T>) {
   const { data, goTo, filter, action, handleRowClick } = props;
   const columns = useMemo(() => props.columns, []);
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
 
   const { getTableProps, getTableBodyProps,
     headerGroups, rows, prepareRow } = useTable(
@@ -23,7 +26,7 @@ function Table<T extends object>(props: Table<T>) {
 
   return (
     <div className={styles.tableContainer}>
-      <table {...getTableProps()} className={styles.tableBody}>
+      <table {...getTableProps()} className={`${styles.table} ${theme}`}>
         <Head
           headerGroups={headerGroups}
           filter={filter}

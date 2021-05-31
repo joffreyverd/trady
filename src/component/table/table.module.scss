@@ -4,10 +4,17 @@
     margin: auto $main-margin $main-margin $main-margin;
 }
 
-.tableBody {
+.table {
     border-radius: $default-border-radius;
-    background-color: $ternary-dark;
     width: 100%;
+}
+
+.light {
+    background-color: $ternary-light;
+}
+
+.dark {
+    background-color: $ternary-dark;
 }
 
 .button {

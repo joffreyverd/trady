@@ -5,5 +5,14 @@
     margin: $main-margin $main-margin $main-margin 25px;
     padding: 80px;
     border-radius: $default-border-radius;
+}
+
+.light {
+    color: $font-primary-color-dark;
+    background-color: $ternary-light;
+}
+
+.dark {
+    color: $font-primary-color-light;
     background-color: $ternary-dark;
 }

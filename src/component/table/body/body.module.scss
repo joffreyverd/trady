@@ -3,11 +3,25 @@
 .row, .actionRow {
     height: 50px;
     transition: $quick-transition;
-    color: $font-secondary-color-light;
 }
 
 .actionRow:hover {
     cursor: pointer;
-    background-color: $primary-dark;
     transition: $quick-transition;
+}
+
+.light {
+    color: $font-secondary-color-dark;
+}
+
+.dark {
+    color: $font-secondary-color-light;
+}
+
+.light:hover {
+    background-color: $primary-light;
+}
+
+.dark:hover {
+    background-color: $primary-dark;
 }
