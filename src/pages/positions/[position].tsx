@@ -17,7 +17,7 @@ function Position(): ReactElement {
   const router = useRouter();
   const { position } = router.query;
   const TvChart = dynamic(() =>
-    import('component/chart/tradingView/tradingView'), { ssr: false }
+    import('component/chart/tradingView/Widget'), { ssr: false }
   );
 
   return (
