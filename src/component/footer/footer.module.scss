@@ -3,13 +3,13 @@
 .footer {
     display: flex;
     bottom: 0;
-    background-color: $secondary-black;
+    background-color: $secondary-dark;
     margin-top: $main-margin;
     padding: 30px 0px;
 }
 
 .footer > a {
-    color: $font-secondary-color;
+    color: $font-secondary-color-light;
     margin: auto 0px auto $main-margin;
     transition: $quick-transition;
 }

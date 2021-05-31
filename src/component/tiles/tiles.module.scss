@@ -9,17 +9,17 @@
 
 .tile {
     flex: 1 0 21%; // 4 tiles per row and the last one take the available space
-    background-color: $ternary-black;
+    background-color: $ternary-dark;
     height: 200px;
     margin: 20px;
     border-radius: $light-border-radius;
     transition: $quick-transition;
     cursor: pointer;
-    color: $font-secondary-color;
+    color: $font-secondary-color-light;
 }
 
 .tile:hover {
-    background-color: $secondary-black;
+    background-color: $secondary-dark;
     transition: $default-transition;
 }
 

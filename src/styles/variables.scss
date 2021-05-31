@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto&display=swap');
 
-$font-primary-color: #fff;
-$font-secondary-color: #a1a7bb;
+$font-primary-color-light: #fff;
+$font-secondary-color-light: #a1a7bb;
+$primary-dark: #222531;
+$secondary-dark: #171924;
+$ternary-dark: #292d3f;
+
+$font-primary-color-dark: #333;
+$font-secondary-color-dark: black;
+$primary-light: #f1f1f1;
+$secondary-light: white;
+$ternary-light: white;
+
 $font-family-roboto: 'Roboto';
 
 $primary-blue: #6188ff;
-
-$primary-black: #222531;
-$secondary-black: #171924;
-$ternary-black: #292d3f;
 
 $default-border-radius: 7px;
 $light-border-radius: 3px;

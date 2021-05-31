@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
+import ThemeMode from 'helper/themeMode';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Tooltip from 'component/tooltip';
 import styles from './header.module.scss';
@@ -46,7 +46,7 @@ function Header(): ReactElement {
           <VisibilityIcon className={styles.icon} />
         </Tooltip>
         <Tooltip text='Change theme'>
-          <Brightness4Icon className={styles.icon} />
+          <ThemeMode className={styles.icon} />
         </Tooltip>
         <div className={`${styles.item} ${styles.icon}`}>
           <Link href='/user'>

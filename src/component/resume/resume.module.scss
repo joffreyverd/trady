@@ -4,14 +4,14 @@
     display: flex;
     margin: auto $main-margin;
     border-radius: $default-border-radius;
-    background-color: $ternary-black;
+    background-color: $ternary-dark;
 }
 
 .item {
     text-align: center;
     font-size: $little-font-size;
     width: 33.33%;
-    color: $font-secondary-color;
+    color: $font-secondary-color-light;
 }
 
 .amout {
