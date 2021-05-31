@@ -1,10 +1,11 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ThemeMode from 'helper/themeMode';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Tooltip from 'component/tooltip';
+import { ThemeContext } from 'context/themeContext';
 import styles from './header.module.scss';
 
 const sections = [
@@ -16,9 +17,11 @@ const sections = [
 ];
 
 function Header(): ReactElement {
+  const { themeState, setThemeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
 
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} ${theme}`}>
 
       <div className={styles.item}>
         <div className={styles.logoItem}>
@@ -46,7 +49,10 @@ function Header(): ReactElement {
           <VisibilityIcon className={styles.icon} />
         </Tooltip>
         <Tooltip text='Change theme'>
-          <ThemeMode className={styles.icon} />
+          <Brightness4Icon
+            value={themeState}
+            className={styles.icon}
+            onClick={() => setThemeState(!themeState)} />
         </Tooltip>
         <div className={`${styles.item} ${styles.icon}`}>
           <Link href='/user'>

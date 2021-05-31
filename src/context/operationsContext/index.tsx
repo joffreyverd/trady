@@ -9,6 +9,7 @@ type Props = {
 
 function OperationsProvider({ children }: Props): ReactElement {
   const [filteredOperations, setFilteredOperations] = useState(data);
+
   return (
     <OperationsContext.Provider
       value={{

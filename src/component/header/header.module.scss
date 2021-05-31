@@ -5,9 +5,16 @@
     width: 100%;
     top: 0;
     display: flex;
-    background-color: $secondary-dark;
     height: 50px;
     z-index: 1;
+}
+
+.light {
+    background-color: $secondary-light;
+}
+
+.dark {
+    background-color: $secondary-dark;
 }
 
 .item {
@@ -23,6 +30,10 @@
     margin: 10px;
 }
 
+.icon:hover {
+    cursor: pointer;
+}
+
 .logoItem {
     display: flex;
     justify-content: space-between;
@@ -36,7 +47,6 @@
 }
 
 .name:hover {
-    cursor: pointer;
     transition: $default-transition;
     color: $primary-blue;
 }
