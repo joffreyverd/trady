@@ -1,8 +1,8 @@
 import React, { ReactElement, Dispatch, SetStateAction, useEffect } from 'react';
-import Dropdown from 'component/form/dropdown';
-import Input from 'component/form/input';
-import CreateButton from 'component/button/create';
-import UpdateButton from 'component/button/update';
+import Dropdown from 'component/form/dropdown/dropdown';
+import Input from 'component/form/input/input';
+import CreateButton from 'component/button/create/create';
+import UpdateButton from 'component/button/update/update';
 import styles from './modal.module.scss';
 
 type Props = {

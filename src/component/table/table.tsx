@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTable, useSortBy } from 'react-table';
-import Head from 'component/table/head';
-import Body from 'component/table/body';
+import Head from 'component/table/head/head';
+import Body from 'component/table/body/body';
 import styles from './table.module.scss';
 
 function sort(isSorted: boolean, isSortedDesc: boolean): string {

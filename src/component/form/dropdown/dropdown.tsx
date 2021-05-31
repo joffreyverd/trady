@@ -4,7 +4,7 @@ import styles from './../form.module.scss';
 type Props = {
   id: string,
   value: string,
-  options: [string],
+  options: string[],
 }
 
 function Dropdown(props: Props): ReactElement {

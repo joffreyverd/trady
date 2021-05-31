@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import Title from 'component/title/page';
-import AccountBalance from 'component/resume';
-import Doughnut from 'component/chart/doughnut';
-import AssetsList from 'component/list';
+import Title from 'component/title/page/page';
+import AccountBalance from 'component/resume/resume';
+import Doughnut from 'component/chart/doughnut/doughnut';
+import AssetsList from 'component/list/list';
 
 const sections = [
   { title: 'Current Balance', value: '5000' },

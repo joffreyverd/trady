@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import CategoryTitle from 'component/title/category';
+import CategoryTitle from 'component/title/category/category';
 import styles from './tiles.module.scss';
 
 type Tile = {

@@ -1,10 +1,10 @@
 import React, { ReactElement, useState } from 'react';
-import CreateButton from 'component/button/create';
-import Title from 'component/title/page';
-import OperationsTable from 'component/table/operations';
+import CreateButton from 'component/button/create/create';
+import Title from 'component/title/page/page';
+import OperationsTable from 'component/table/operations/operations';
 import { operations } from 'utils/columnsDefinitions';
 import { operationFields } from 'utils/fieldsDefinitions';
-import AddOperation from 'component/modal';
+import AddOperation from 'component/modal/modal';
 
 function Operations(): ReactElement {
   const [isModalOpen, setIsModalOpen] = useState(false);

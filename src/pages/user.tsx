@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import Title from 'component/title/page';
+import Title from 'component/title/page/page';
 
 function User(): ReactElement {
   return (

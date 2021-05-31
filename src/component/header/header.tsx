@@ -4,8 +4,8 @@ import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import Tooltip from 'component/tooltip';
-import { ThemeContext } from 'context/themeContext';
+import Tooltip from 'component/tooltip/tooltip';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './header.module.scss';
 
 const sections = [
@@ -49,10 +49,12 @@ function Header(): ReactElement {
           <VisibilityIcon className={styles.icon} />
         </Tooltip>
         <Tooltip text='Change theme'>
-          <Brightness4Icon
-            value={themeState}
+          <div
+            defaultValue={themeState}
             className={styles.icon}
-            onClick={() => setThemeState(!themeState)} />
+            onClick={() => setThemeState(!themeState)}>
+            <Brightness4Icon />
+          </div>
         </Tooltip>
         <div className={`${styles.item} ${styles.icon}`}>
           <Link href='/user'>

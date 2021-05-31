@@ -1,13 +1,13 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
-import Button from 'component/button';
-import AddIcon from '@material-ui/icons/Add';
+import Button from 'component/button/button';
+import EditIcon from '@material-ui/icons/Edit';
 
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
 }
 
-function Create(props: Props): ReactElement {
+function Update(props: Props): ReactElement {
   const { title, action } = props;
 
   return (
@@ -15,9 +15,10 @@ function Create(props: Props): ReactElement {
       title={title}
       action={action}
       icon={
-        <AddIcon />
+        <EditIcon />
       } />
   );
 }
 
-export default Create;
+export default Update;
+

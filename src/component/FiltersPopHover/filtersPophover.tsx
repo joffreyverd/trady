@@ -1,7 +1,7 @@
 import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import styles from './filtersPophover.module.scss';
-import Filters from 'component/filters';
+import Filters from 'component/filters/filters';
 
 type Option = {
   id: number,

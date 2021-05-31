@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
-import Title from 'component/title/page';
-import Bars from 'component/chart/bars';
-import CategoryTitle from 'component/title/category';
-import MonthlyResume from 'component/table/monthlyResume';
+import Title from 'component/title/page/page';
+import Bars from 'component/chart/bars/bars';
+import CategoryTitle from 'component/title/category/category';
+import MonthlyResume from 'component/table/monthlyResume/monthlyResume';
 import { monthlyHistory } from 'utils/columnsDefinitions';
 
 function Reports(): ReactElement {

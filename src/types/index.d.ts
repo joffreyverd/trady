@@ -85,5 +85,5 @@ type Fields = {
     type: string,
     id: string,
     value: string,
-    options: [string],
+    options: string[],
 }

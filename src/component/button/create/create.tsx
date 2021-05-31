@@ -1,13 +1,13 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
-import Button from 'component/button';
-import ClearAllIcon from '@material-ui/icons/ClearAll';
+import Button from 'component/button/button';
+import AddIcon from '@material-ui/icons/Add';
 
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
 }
 
-function Clear(props: Props): ReactElement {
+function Create(props: Props): ReactElement {
   const { title, action } = props;
 
   return (
@@ -15,9 +15,9 @@ function Clear(props: Props): ReactElement {
       title={title}
       action={action}
       icon={
-        <ClearAllIcon />
+        <AddIcon />
       } />
   );
 }
 
-export default Clear;
+export default Create;

@@ -1,4 +1,4 @@
-import Table from 'component/table';
+import Table from 'component/table/table';
 import position from 'assets/resumePosition.json';
 
 function PositionResume(props: Columns) {

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Table from 'component/table';
-import AddAction from 'component/modal';
-import { editPosition } from 'utils/fieldsDefinitions';
-import position from 'assets/position.json';
+import Table from 'component/table/table';
+import AddAction from 'component/modal/modal';
+import { editTarget } from 'utils/fieldsDefinitions';
+import targets from 'assets/targets.json';
 import { chargeFieldsWithValues } from 'utils/tableFunctions';
 
-function PositionHistory(props: Columns) {
+function Targets(props: Columns) {
   const { columns } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [fields, setFields] = useState(editPosition);
+  const [fields, setFields] = useState(editTarget);
 
   function handleRowClick(rowData) {
     setFields(chargeFieldsWithValues(fields, rowData.values));
@@ -17,18 +17,17 @@ function PositionHistory(props: Columns) {
 
   return (
     <>
-      <Table<Position>
+      <Table<Targets>
         columns={columns}
-        data={position}
-        filter={true}
+        data={targets}
+        filter={false}
         goTo=''
         action={true}
         handleRowClick={handleRowClick} />
-
       {
         isModalOpen &&
         <AddAction
-          title='Edit action'
+          title='Edit target'
           buttonType='Edit'
           action={setIsModalOpen}
           fields={fields} />
@@ -37,4 +36,4 @@ function PositionHistory(props: Columns) {
   );
 }
 
-export default PositionHistory;
+export default Targets;

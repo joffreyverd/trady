@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
-import Cell from 'component/table/cell';
+import Cell from 'component/table/cell/cell';
 import styles from './body.module.scss';
 
 function Body(props): ReactElement {

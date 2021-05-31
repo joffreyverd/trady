@@ -3,7 +3,7 @@ import styles from './filters.module.scss';
 import Checkbox from 'component/filters/type/checkbox';
 import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
-import ClearButton from 'component/button/clear';
+import ClearButton from 'component/button/clear/clear';
 
 type Props = {
   options: FiltersOptions[],

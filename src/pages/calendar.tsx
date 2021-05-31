@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
-import Title from 'component/title/page';
-import MontlyCalendar from 'component/monthlyCalendar';
+import Title from 'component/title/page/page';
+import MontlyCalendar from 'component/monthlyCalendar/monthlyCalendar';
 
 function Calendar(): ReactElement {
   return (
