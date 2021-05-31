@@ -1,6 +1,7 @@
 @import 'styles/variables';
 
 .modalContainer {
+  z-index: 1;
   position: fixed;
   padding-top: 100px;
   left: 0rem;
