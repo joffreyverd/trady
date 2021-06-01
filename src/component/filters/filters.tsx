@@ -1,9 +1,10 @@
-import React, { Dispatch, SetStateAction, ReactElement } from 'react';
+import React, { Dispatch, SetStateAction, ReactElement, useContext } from 'react';
 import styles from './filters.module.scss';
 import Checkbox from 'component/filters/type/checkbox';
 import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearButton from 'component/button/clear/clear';
+import { ThemeContext } from 'context/themeContext/themeContext';
 
 type Props = {
   options: FiltersOptions[],
@@ -11,6 +12,8 @@ type Props = {
 }
 
 function Filters({ options, setIsModalOpen }): ReactElement<Props> {
+  const { themeState } = useContext(ThemeContext);
+  const modalTheme = themeState ? styles.modalDark : styles.modalLight;
 
   function reset() {
     options.map((option) => {
@@ -24,7 +27,7 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
   }
 
   return (
-    <div className={styles.modal}>
+    <div className={`${styles.modal} ${modalTheme}`}>
       <h3>Filters</h3>
       <CloseIcon
         onClick={() => setIsModalOpen(false)}

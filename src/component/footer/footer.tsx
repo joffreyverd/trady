@@ -11,8 +11,7 @@ function Footer(): ReactElement {
       <a
         href='https://github.com/joffreyverd/trady'
         target='_blank'
-        rel='noreferrer'
-      >
+        rel='noreferrer'>
         Trady is an open-source project
     </a>
     </div>

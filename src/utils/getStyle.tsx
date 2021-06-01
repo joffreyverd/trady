@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from './getStyle.module.scss';
 
 function getStatusStyle(value: string) {
@@ -13,14 +15,18 @@ function getStatusStyle(value: string) {
 }
 
 function getStyle(column: string, value: string) {
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? styles.dark : styles.light;
+
   if (column === 'pair') {
     return styles.pairFont;
   }
   if (column === 'status') {
-    return getStatusStyle(value);
+    return `${getStatusStyle(value)} ${theme}`;
   }
   if (column === 'side') {
-    return value === 'Long' ? styles.upLabel : styles.downLabel;
+    const label = value === 'Long' ? styles.upLabel : styles.downLabel;
+    return `${label} ${theme}`;
   }
   if (column === 'returnD' || column === 'returnP' || column === 'pnl') {
     return parseInt(value, 10) >= 0 ? styles.positive : styles.negative;

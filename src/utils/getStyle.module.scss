@@ -9,6 +9,13 @@
     padding: 4px;
     border-radius: $light-border-radius;
     font-weight: bold;
+}
+
+.light {
+    color: $font-primary-color-dark;
+}
+
+.dark {
     color: $font-primary-color-light;
 }
 
@@ -27,7 +34,6 @@
 .upLabel, .downLabel {
     border: 1px solid;
     border-radius: $light-border-radius;
-    color: $font-primary-color-light;
     padding: 3px;
 }
 

@@ -1,9 +1,16 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import styles from '../filters.module.scss';
 
 function Dropdown({ option }): ReactElement<FiltersOptions> {
+  const { themeState } = useContext(ThemeContext);
+  const filterContainerTheme =
+    themeState ? styles.filterContainerDark : styles.filterContainerLight;
+
   return (
-    <div key={option.id} className={styles.filterContainer}>
+    <div
+      key={option.id}
+      className={`${styles.filterContainer} ${filterContainerTheme}`}>
       <label htmlFor='options'>
         <p>{option.label}</p>
         <select

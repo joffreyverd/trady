@@ -17,6 +17,7 @@ function Modal(props: Props): ReactElement {
   const { title, buttonType, action, fields } = props;
   const { themeState } = useContext(ThemeContext);
   const modalTheme = themeState ? styles.modalThemeDark : styles.modalThemeLight;
+  const inputTheme = themeState ? styles.inputThemeDark : styles.inputThemeLight;
 
   const keydownHandler = ({ key }) => {
     key === 'Escape' && action(false);
@@ -36,7 +37,7 @@ function Modal(props: Props): ReactElement {
         <div>
           {
             fields.map((f, i) => (
-              <div className={styles.inputContainer} key={i}>
+              <div className={`${styles.inputContainer} ${inputTheme}`} key={i}>
                 <label>{f.label}</label>
                 {
                   f.type === 'dropdown' ?

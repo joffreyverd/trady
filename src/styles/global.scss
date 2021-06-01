@@ -4,8 +4,6 @@ html, body {
     font-family: $font-family-roboto, 'Arial';
     padding: 0;
     margin: 0;
-    background-color: $primary-dark;
-    color: $font-primary-color-light;
 }
 
 html, body, #__next, .global {
@@ -36,6 +34,16 @@ a {
 .pageContainer {
     margin: 100px $main-margin 0px $main-margin;
     flex-grow: 1;
+}
+
+.light {
+    background-color: $primary-light;
+    color: $font-primary-color-dark;
+}
+
+.dark {
+    background-color: $primary-dark;
+    color: $font-primary-color-light;
 }
 
 .flexContainer {

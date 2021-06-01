@@ -4,13 +4,20 @@
     position: fixed;
     bottom: 5rem;
     right: 2rem;
-    background-color: $secondary-dark;
     border-radius: $default-border-radius;
     border: none;
     width: 400px;
     height: auto;
     padding: 20px;
     z-index: 0;
+}
+
+.modalLight {
+    background-color: $secondary-light;
+}
+
+.modalDark {
+    background-color: $secondary-dark;
 }
 
 .modal > h3 {
@@ -21,9 +28,16 @@
 
 .filterContainer {
     margin: 20px 0px;
-    background-color: $primary-dark;
     border-radius: $default-border-radius;
     padding: 10px 20px;
+}
+
+.filterContainerLight {
+    background-color: $primary-light;
+}
+
+.filterContainerDark {
+    background-color: $primary-dark;
 }
 
 .modal > div > label {

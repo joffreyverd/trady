@@ -40,6 +40,13 @@
   height: 50px;
   margin: 20px 20px;
   border-radius: $default-border-radius;
+}
+
+.inputThemeLight  {
+  background-color: $primary-light;
+}
+
+.inputThemeDark {
   background-color: $primary-dark;
 }
 
