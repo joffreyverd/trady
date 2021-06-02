@@ -1,5 +1,6 @@
 import React, { ReactElement, useContext } from 'react';
 import { ThemeContext } from 'context/themeContext/themeContext';
+import { PrivacyContext } from 'context/privacyContext/privacyContext';
 import styles from './resume.module.scss';
 
 type Balance = {
@@ -14,6 +15,7 @@ type Props = {
 function Resume(props: Props): ReactElement {
   const { sections } = props;
   const { themeState } = useContext(ThemeContext);
+  const { privacyState } = useContext(PrivacyContext);
   const theme = themeState ? styles.dark : styles.light;
 
   return (
@@ -22,7 +24,12 @@ function Resume(props: Props): ReactElement {
         sections.map((section) => (
           <div className={styles.item} key={section.title}>
             <h2>{section.title}</h2>
-            <p className={styles.amout}>$ {section.value}</p>
+            <p className={styles.amout}>
+              {
+                privacyState ? '$ *****' : `$ ${section.value}`
+              }
+
+            </p>
           </div>
         ))
       }

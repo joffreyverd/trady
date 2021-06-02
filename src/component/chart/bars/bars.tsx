@@ -24,14 +24,9 @@ function Bars(): ReactElement {
 
     /* eslint-disable no-new */
     new Chart(canvasRef.current, {
-      type: 'bar',
-      data: {
+      type: 'bar', data: {
         labels: labels,
-        datasets: [{
-          label: '',
-          data,
-          backgroundColor,
-        }],
+        datasets: [{ label: '', data, backgroundColor }],
       },
       options: {
         scales: {
@@ -40,14 +35,8 @@ function Bars(): ReactElement {
         },
         plugins: {
           title: {
-            display: true,
-            text: 'Monthly revenus ($)',
-            color: '#fff',
-            font: {
-              family: 'Roboto',
-              weight: 'bold',
-              size: 20,
-            },
+            display: true, text: 'Monthly revenus ($)', color: '#fff',
+            font: { family: 'Roboto', weight: 'bold', size: 20 },
           },
         },
       },

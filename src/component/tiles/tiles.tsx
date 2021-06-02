@@ -1,6 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import CategoryTitle from 'component/title/category/category';
 import { ThemeContext } from 'context/themeContext/themeContext';
+import { PrivacyContext } from 'context/privacyContext/privacyContext';
 import styles from './tiles.module.scss';
 
 type Tile = {
@@ -27,7 +28,15 @@ function greenOrRed(value: number, css) {
 function Tiles(props: Props): ReactElement {
   const { data } = props;
   const { themeState } = useContext(ThemeContext);
+  const { privacyState } = useContext(PrivacyContext);
   const theme = themeState ? styles.dark : styles.light;
+
+  function setValue(symbol, value): string {
+    if (symbol === '$') {
+      return privacyState ? '$ *****' : `$ ${value}`;
+    }
+    return `${value} ${symbol}`;
+  }
 
   return (
     <div>
@@ -41,11 +50,7 @@ function Tiles(props: Props): ReactElement {
                   <div className={`${styles.tile} ${theme}`} key={tile.id}>
                     <h3>{tile.title}</h3>
                     <p className={greenOrRed(tile.value, styles)}>
-                      {
-                        subData.symbol === '$' ?
-                          `${subData.symbol} ${tile.value}` :
-                          `${tile.value}${subData.symbol}`
-                      }
+                      {setValue(subData.symbol, tile.value)}
                     </p>
                   </div>
                 ))

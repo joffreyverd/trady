@@ -6,6 +6,7 @@ import Brightness4Icon from '@material-ui/icons/Brightness4';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Tooltip from 'component/tooltip/tooltip';
 import { ThemeContext } from 'context/themeContext/themeContext';
+import { PrivacyContext } from 'context/privacyContext/privacyContext';
 import styles from './header.module.scss';
 
 const sections = [
@@ -18,6 +19,7 @@ const sections = [
 
 function Header(): ReactElement {
   const { themeState, setThemeState } = useContext(ThemeContext);
+  const { privacyState, setPrivacyState } = useContext(PrivacyContext);
   const theme = themeState ? styles.dark : styles.light;
 
   return (
@@ -46,7 +48,12 @@ function Header(): ReactElement {
 
       <div className={styles.itemGroup}>
         <Tooltip text='Hide amouts'>
-          <VisibilityIcon className={styles.icon} />
+          <div
+            defaultValue={privacyState}
+            className={styles.icon}
+            onClick={() => setPrivacyState(!privacyState)}>
+            <VisibilityIcon />
+          </div>
         </Tooltip>
         <Tooltip text='Change theme'>
           <div

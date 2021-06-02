@@ -1,6 +1,5 @@
 import React, { createContext, useState, ReactNode, ReactElement } from 'react';
 import data from 'assets/operations.json';
-
 const OperationsContext = createContext(null);
 
 type Props = {
