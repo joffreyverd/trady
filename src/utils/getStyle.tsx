@@ -22,7 +22,7 @@ function getStyle(column: string, value: string) {
     return styles.pairFont;
   }
   if (column === 'status') {
-    return `${getStatusStyle(value)} ${theme}`;
+    return getStatusStyle(value);
   }
   if (column === 'side') {
     const label = value === 'Long' ? styles.upLabel : styles.downLabel;

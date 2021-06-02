@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement, useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
@@ -21,9 +21,23 @@ function Header(): ReactElement {
   const { themeState, setThemeState } = useContext(ThemeContext);
   const { privacyState, setPrivacyState } = useContext(PrivacyContext);
   const theme = themeState ? styles.dark : styles.light;
+  const [shadowBorder, setShadowBorder] = useState(false);
+  let shadowBorderTheme = ''
+  if (shadowBorder) {
+    shadowBorderTheme = themeState ?
+      styles.shadowBorderDark : styles.shadowBorderLight;
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () =>
+        setShadowBorder(window.pageYOffset > 50)
+      );
+    }
+  }, []);
 
   return (
-    <div className={`${styles.header} ${theme}`}>
+    <div className={`${styles.header} ${shadowBorderTheme} ${theme}`}>
 
       <div className={styles.item}>
         <div className={styles.logoItem}>
