@@ -1,5 +1,5 @@
 import React, { ReactElement, useContext } from 'react';
-import CustomChart from 'component/chart/chart';
+import CustomChart from 'component/chart/customChart';
 import { ThemeContext } from 'context/themeContext';
 import { Chart, BarController, LinearScale, CategoryScale, BarElement, Title, Tooltip } from 'chart.js';
 

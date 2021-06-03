@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
-import styles from './chart.module.scss';
+import styles from './customChart.module.scss';
 
 function CustomChart(props): ReactElement {
   const { id, Chart, config, updateTheme, optionalClass } = props;
