@@ -2,7 +2,15 @@ import React, { useState, useEffect, useRef, ReactElement, useContext } from 're
 import { ThemeContext } from 'context/themeContext';
 import styles from './customChart.module.scss';
 
-function CustomChart(props): ReactElement {
+type Props = {
+  id: string,
+  Chart: any,
+  config: Object,
+  updateTheme: Function,
+  optionalClass: string
+}
+
+function CustomChart(props: Props): ReactElement {
   const { id, Chart, config, updateTheme, optionalClass } = props;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [chartInstance, setChartInstance] = useState(null);
