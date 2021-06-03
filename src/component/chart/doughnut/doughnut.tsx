@@ -1,15 +1,12 @@
-import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
+import React, { ReactElement, useContext } from 'react';
+import CustomChart from 'component/chart/chart';
 import { ThemeContext } from 'context/themeContext';
 import { Chart, DoughnutController, ArcElement, Legend, Title, Tooltip } from 'chart.js';
-import styles from './doughnut.module.scss';
 
 Chart.register(DoughnutController, ArcElement, Legend, Title, Tooltip);
 
 function Doughnut(): ReactElement {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [chartInstance, setChartInstance] = useState(null);
   const { themeState } = useContext(ThemeContext);
-  const theme = themeState ? styles.dark : styles.light;
   const fontColor = themeState ? '#fff' : '#26272d';
   const borderColor = themeState ? '#222531' : '#fff';
 
@@ -51,32 +48,19 @@ function Doughnut(): ReactElement {
     },
   };
 
-  useEffect(() => {
-    if (chartInstance) {
-      config.data.datasets[0].borderColor = borderColor;
-      config.options.plugins.title.color = fontColor;
-      config.options.plugins.legend.labels.color = fontColor;
-      chartInstance.destroy();
-      buildChart();
-    }
-  }, [themeState])
-
-  useEffect(() => {
-    if (!canvasRef.current) {
-      return;
-    }
-    buildChart();
-  }, [canvasRef]);
-
-  function buildChart() {
-    const newChartInstance = new Chart(canvasRef.current, config);
-    setChartInstance(newChartInstance);
+  function updateTheme() {
+    config.data.datasets[0].borderColor = borderColor;
+    config.options.plugins.title.color = fontColor;
+    config.options.plugins.legend.labels.color = fontColor;
   }
 
   return (
-    <div className={`${styles.chartContainer} ${theme}`}>
-      <canvas id='doughnut' ref={canvasRef} />
-    </div>
+    <CustomChart
+      id='doughnut'
+      Chart={Chart}
+      config={config}
+      updateTheme={updateTheme}
+      optionalClass='doughnutContainer' />
   );
 }
 

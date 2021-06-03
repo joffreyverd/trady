@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, ReactNode, ReactElement, useCallback } from 'react';
+import React, { createContext, useState, useEffect, ReactNode, ReactElement } from 'react';
 const ToastContext = createContext(null);
 
 type Props = {

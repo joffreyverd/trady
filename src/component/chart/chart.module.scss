@@ -1,7 +1,14 @@
 @import 'styles/variables';
 
-.chartContainer {
+.barsContainer {
     margin: 0px 25px $main-margin $main-margin;
+    padding: 50px;
+    border-radius: $default-border-radius;
+}
+
+.doughnutContainer {
+    width: 50%;
+    margin: $main-margin 25px $main-margin $main-margin;
     padding: 50px;
     border-radius: $default-border-radius;
 }
