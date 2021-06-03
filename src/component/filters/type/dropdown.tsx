@@ -1,11 +1,13 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
+import { ToastContext } from 'context/toastContext';
 import styles from '../filters.module.scss';
 
 function Dropdown({ option }): ReactElement<FiltersOptions> {
   const { themeState } = useContext(ThemeContext);
   const filterContainerTheme =
     themeState ? styles.filterContainerDark : styles.filterContainerLight;
+  const { setToastState } = useContext(ToastContext);
 
   return (
     <div
@@ -17,8 +19,10 @@ function Dropdown({ option }): ReactElement<FiltersOptions> {
           name='options'
           id='options'
           value={option.state}
-          onChange={(e) => { option.setState(e.target.value); }}
-        >
+          onChange={(e) => {
+            option.setState(e.target.value);
+            setToastState('Filters has been changed');
+          }}>
           <option value=''>Select</option>
           {
             option.values.map((value) => (

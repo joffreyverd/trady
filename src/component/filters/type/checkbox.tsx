@@ -1,11 +1,13 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
+import { ToastContext } from 'context/toastContext';
 import styles from '../filters.module.scss';
 
 function Checkbox({ option }): ReactElement<FiltersOptions> {
   const { themeState } = useContext(ThemeContext);
   const filterContainerTheme =
     themeState ? styles.filterContainerDark : styles.filterContainerLight;
+  const { setToastState } = useContext(ToastContext);
 
   return (
     <div
@@ -19,7 +21,10 @@ function Checkbox({ option }): ReactElement<FiltersOptions> {
           name={option.id}
           value={option.state}
           checked={option.state}
-          onChange={() => option.setState(!option.state)} />
+          onChange={() => {
+            option.setState(!option.state);
+            setToastState('Filters has been changed');
+          }} />
       </label>
     </div>
   );

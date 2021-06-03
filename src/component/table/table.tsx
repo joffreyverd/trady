@@ -2,7 +2,7 @@ import React, { useMemo, useContext } from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Head from 'component/table/head/head';
 import Body from 'component/table/body/body';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import styles from './table.module.scss';
 
 function sort(isSorted: boolean, isSortedDesc: boolean): string {

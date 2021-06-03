@@ -4,7 +4,7 @@ import Checkbox from 'component/filters/type/checkbox';
 import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearButton from 'component/button/clear/clear';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 
 type Props = {
   options: FiltersOptions[],

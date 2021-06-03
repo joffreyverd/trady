@@ -10,7 +10,7 @@
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   animation-name: appear;
-  animation-duration: 300ms;
+  animation-duration: $animation-default-duration;
 }
 
 .modalContent {

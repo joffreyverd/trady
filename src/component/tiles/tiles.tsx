@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import CategoryTitle from 'component/title/category/category';
-import { ThemeContext } from 'context/themeContext/themeContext';
-import { PrivacyContext } from 'context/privacyContext/privacyContext';
+import { ThemeContext } from 'context/themeContext';
+import { PrivacyContext } from 'context/privacyContext';
 import styles from './tiles.module.scss';
 
 type Tile = {

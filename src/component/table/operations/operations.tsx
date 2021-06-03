@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { OperationsContext } from 'context/operationsContext/operationsContext';
+import { OperationsContext } from 'context/operationsContext';
 import Table from 'component/table/table';
 
 function Operations(props: Columns) {

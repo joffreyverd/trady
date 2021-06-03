@@ -1,6 +1,6 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
-import { PrivacyContext } from 'context/privacyContext/privacyContext';
+import { ThemeContext } from 'context/themeContext';
+import { PrivacyContext } from 'context/privacyContext';
 import styles from './resume.module.scss';
 
 type Balance = {

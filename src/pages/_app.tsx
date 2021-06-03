@@ -3,9 +3,10 @@ import 'styles/global.scss';
 import Header from 'component/header/header';
 import Footer from 'component/footer/footer';
 import FiltersButton from 'component/filterButton/filterButton';
-import { OperationsProvider } from 'context/operationsContext/operationsContext';
-import { ThemeProvider } from 'context/themeContext/themeContext';
-import { PrivacyProvider } from 'context/privacyContext/privacyContext';
+import { OperationsProvider } from 'context/operationsContext';
+import { ThemeProvider } from 'context/themeContext';
+import { PrivacyProvider } from 'context/privacyContext';
+import { ToastProvider } from 'context/toastContext';
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
@@ -21,12 +22,14 @@ function App({ Component, pageProps }: AppProps) {
           </Head>
 
           <div className='global'>
-            <Header />
-            <OperationsProvider>
-              <Component {...pageProps} />
-              <FiltersButton />
-            </OperationsProvider>
-            <Footer />
+            <ToastProvider>
+              <Header />
+              <OperationsProvider>
+                <Component {...pageProps} />
+                <FiltersButton />
+              </OperationsProvider>
+              <Footer />
+            </ToastProvider>
           </div>
         </PrivacyProvider>
       </ThemeProvider>

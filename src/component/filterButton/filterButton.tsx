@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, ReactElement } from 'react';
 import filter from 'helper/filter';
-import { OperationsContext } from 'context/operationsContext/operationsContext';
+import { OperationsContext } from 'context/operationsContext';
 import FiltersPopHover from 'component/filtersPophover/filtersPophover';
 
 function FilterButton(): ReactElement {

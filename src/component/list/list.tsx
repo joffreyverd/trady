@@ -1,5 +1,5 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import styles from './list.module.scss';
 
 function List(): ReactElement {

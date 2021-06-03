@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import { Chart, BarController, LinearScale, CategoryScale, BarElement, Title, Tooltip } from 'chart.js';
 import styles from './bars.module.scss';
 

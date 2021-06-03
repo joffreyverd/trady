@@ -5,8 +5,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import Tooltip from 'component/tooltip/tooltip';
-import { ThemeContext } from 'context/themeContext/themeContext';
-import { PrivacyContext } from 'context/privacyContext/privacyContext';
+import { ThemeContext } from 'context/themeContext';
+import { PrivacyContext } from 'context/privacyContext';
+import { ToastContext } from 'context/toastContext';
 import styles from './header.module.scss';
 
 const sections = [
@@ -20,6 +21,7 @@ const sections = [
 function Header(): ReactElement {
   const { themeState, setThemeState } = useContext(ThemeContext);
   const { privacyState, setPrivacyState } = useContext(PrivacyContext);
+  const { setToastState } = useContext(ToastContext);
   const theme = themeState ? styles.dark : styles.light;
   const [shadowBorder, setShadowBorder] = useState(false);
   let shadowBorderTheme = ''
@@ -65,7 +67,10 @@ function Header(): ReactElement {
           <div
             defaultValue={privacyState}
             className={styles.icon}
-            onClick={() => setPrivacyState(!privacyState)}>
+            onClick={() => {
+              setPrivacyState(!privacyState);
+              setToastState('Privacy settings has been changed');
+            }}>
             <VisibilityIcon />
           </div>
         </Tooltip>
@@ -73,7 +78,10 @@ function Header(): ReactElement {
           <div
             defaultValue={themeState}
             className={styles.icon}
-            onClick={() => setThemeState(!themeState)}>
+            onClick={() => {
+              setThemeState(!themeState);
+              setToastState('Application theme has been changed');
+            }}>
             <Brightness4Icon />
           </div>
         </Tooltip>

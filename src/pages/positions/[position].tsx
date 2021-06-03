@@ -9,7 +9,7 @@ import PositionResume from 'component/table/positionResume/positionResume';
 import PositionHistory from 'component/table/positionHistory/positionHistory';
 import Targets from 'component/table/targets/targets';
 import AddAction from 'component/modal/modal';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import { createPosition } from 'utils/fieldsDefinitions';
 import { resume, history, targets } from 'utils/columnsDefinitions';
 

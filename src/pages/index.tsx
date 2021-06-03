@@ -1,5 +1,5 @@
 import React, { ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import Title from 'component/title/page/page';
 
 function Main(): ReactElement {

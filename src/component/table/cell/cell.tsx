@@ -1,5 +1,5 @@
 import React, { ReactElement, useContext } from 'react';
-import { PrivacyContext } from 'context/privacyContext/privacyContext';
+import { PrivacyContext } from 'context/privacyContext';
 import getStyle from 'utils/getStyle';
 import styles from './cell.module.scss';
 

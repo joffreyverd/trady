@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import { Chart, DoughnutController, ArcElement, Legend, Title, Tooltip } from 'chart.js';
 import styles from './doughnut.module.scss';
 

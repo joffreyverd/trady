@@ -1,5 +1,5 @@
 import React, { ReactElement, Dispatch, SetStateAction, useEffect, useContext } from 'react';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import Dropdown from 'component/form/dropdown/dropdown';
 import Input from 'component/form/input/input';
 import CreateButton from 'component/button/create/create';

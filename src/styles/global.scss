@@ -54,3 +54,30 @@ a {
     z-index: -1;
     margin: 0px $main-margin 0px $main-margin;
 }
+
+.toast {
+    background-color: $valid-theme;
+    color: $font-primary-color-light;
+    border-radius: $light-border-radius;
+    font-weight: bold;
+    width: 200px;
+    max-width: 200px;
+    padding: 10px;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 3;
+    animation-name: appear;
+    animation-duration: $animation-default-duration;
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+      left: 0rem;
+    }
+    to {
+      opacity: 1;
+      left: 1rem;
+    }
+}

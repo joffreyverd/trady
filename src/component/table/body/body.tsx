@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import Link from 'next/link';
 import Cell from 'component/table/cell/cell';
-import { ThemeContext } from 'context/themeContext/themeContext';
+import { ThemeContext } from 'context/themeContext';
 import styles from './body.module.scss';
 
 function Body(props): ReactElement {
