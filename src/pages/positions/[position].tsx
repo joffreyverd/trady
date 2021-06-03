@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import Title from 'component/title/page/page';
@@ -9,6 +9,7 @@ import PositionResume from 'component/table/positionResume/positionResume';
 import PositionHistory from 'component/table/positionHistory/positionHistory';
 import Targets from 'component/table/targets/targets';
 import AddAction from 'component/modal/modal';
+import { ThemeContext } from 'context/themeContext/themeContext';
 import { createPosition } from 'utils/fieldsDefinitions';
 import { resume, history, targets } from 'utils/columnsDefinitions';
 
@@ -19,6 +20,8 @@ function Position(): ReactElement {
   const TvChart = dynamic(() =>
     import('component/chart/tradingView/Widget'), { ssr: false }
   );
+  const { themeState } = useContext(ThemeContext);
+  const theme = themeState ? 'dark' : 'light';
 
   return (
     <div className='pageContainer'>
@@ -42,7 +45,7 @@ function Position(): ReactElement {
 
       <CategoryTitle title='Chart' />
       <div className='TVContainer'>
-        <TvChart symbol='BTCUSDT' />
+        <TvChart symbol='BTCUSDT' theme={theme} />
       </div>
 
       {

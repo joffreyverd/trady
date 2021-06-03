@@ -15,7 +15,7 @@ export default class Widget extends PureComponent {
         save_image: false,
         show_popup_button: false,
         style: '1',
-        theme: 'Dark',
+        theme: 'dark',
         timezone: 'Etc/UTC',
         toolbar_bg: '#F1F3F6',
         widgetType: 'widget',

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ReactElement, useContext } from 'react';
+import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
 import { ThemeContext } from 'context/themeContext/themeContext';
 import { Chart, BarController, LinearScale, CategoryScale, BarElement, Title, Tooltip } from 'chart.js';
 import styles from './bars.module.scss';
@@ -7,6 +7,7 @@ Chart.register(BarController, LinearScale, CategoryScale, BarElement, Title, Too
 
 function Bars(): ReactElement {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [chartInstance, setChartInstance] = useState(null);
   const { themeState } = useContext(ThemeContext);
   const theme = themeState ? styles.dark : styles.light;
   const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -16,32 +17,48 @@ function Bars(): ReactElement {
     let color = result >= 0 ? '#00b399' : '#f96e8f';
     backgroundColor.push(color);
   })
+  const fontColor = themeState ? '#fff' : '#26272d';
+
+  let config = {
+    type: 'bar', data: {
+      labels: labels,
+      datasets: [{ label: '', data, backgroundColor }],
+    },
+    options: {
+      scales: {
+        y: { ticks: { color: fontColor }, beginAtZero: true },
+        x: { ticks: { color: fontColor } }
+      },
+      plugins: {
+        title: {
+          display: true, text: 'Monthly revenus ($)', color: fontColor,
+          font: { family: 'Roboto', weight: 'bold', size: 20 },
+        },
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (chartInstance) {
+      config.options.plugins.title.color = fontColor;
+      config.options.scales.x.ticks.color = fontColor;
+      config.options.scales.y.ticks.color = fontColor;
+      chartInstance.destroy();
+      buildChart();
+    }
+  }, [themeState])
 
   useEffect(() => {
     if (!canvasRef.current) {
       return;
     }
-
-    /* eslint-disable no-new */
-    new Chart(canvasRef.current, {
-      type: 'bar', data: {
-        labels: labels,
-        datasets: [{ label: '', data, backgroundColor }],
-      },
-      options: {
-        scales: {
-          y: { ticks: { color: '#fff' }, beginAtZero: true },
-          x: { ticks: { color: '#fff' } }
-        },
-        plugins: {
-          title: {
-            display: true, text: 'Monthly revenus ($)', color: '#fff',
-            font: { family: 'Roboto', weight: 'bold', size: 20 },
-          },
-        },
-      },
-    });
+    buildChart();
   }, [canvasRef]);
+
+  function buildChart() {
+    const newChartInstance = new Chart(canvasRef.current, config);
+    setChartInstance(newChartInstance);
+  }
 
   return (
     <div className={`${styles.chartContainer} ${theme}`}>
