@@ -8,7 +8,7 @@ import CategoryTitle from 'component/title/category/category';
 import PositionResume from 'component/table/positionResume/positionResume';
 import PositionHistory from 'component/table/positionHistory/positionHistory';
 import Targets from 'component/table/targets/targets';
-import AddAction from 'component/modal/modal';
+import CreateModal from 'component/modal/create/create';
 import { ThemeContext } from 'context/themeContext';
 import { createPosition } from 'utils/fieldsDefinitions';
 import { resume, history, targets } from 'utils/columnsDefinitions';
@@ -50,9 +50,8 @@ function Position(): ReactElement {
 
       {
         isModalOpen &&
-        <AddAction
+        <CreateModal
           title='Add action'
-          buttonType='Add'
           action={setIsModalOpen}
           fields={createPosition} />
       }

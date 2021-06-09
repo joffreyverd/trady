@@ -4,7 +4,7 @@ import Title from 'component/title/page/page';
 import OperationsTable from 'component/table/operations/operations';
 import { operations } from 'utils/columnsDefinitions';
 import { operationFields } from 'utils/fieldsDefinitions';
-import AddOperation from 'component/modal/modal';
+import CreateModal from 'component/modal/create/create';
 
 function Operations(): ReactElement {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,9 +19,8 @@ function Operations(): ReactElement {
       <OperationsTable columns={operations} />
       {
         isModalOpen &&
-        <AddOperation
+        <CreateModal
           title={title}
-          buttonType='Add'
           action={setIsModalOpen}
           fields={operationFields} />
       }

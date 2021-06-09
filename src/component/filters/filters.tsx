@@ -4,6 +4,7 @@ import Checkbox from 'component/filters/type/checkbox';
 import Dropdown from 'component/filters/type/dropdown';
 import CloseIcon from '@material-ui/icons/Close';
 import ClearButton from 'component/button/clear/clear';
+import { ToastContext } from 'context/toastContext';
 import { ThemeContext } from 'context/themeContext';
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
 
 function Filters({ options, setIsModalOpen }): ReactElement<Props> {
   const { themeState } = useContext(ThemeContext);
+  const { setToastState } = useContext(ToastContext);
   const modalTheme = themeState ? styles.modalDark : styles.modalLight;
 
   function reset() {
@@ -23,7 +25,8 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
       if (option.type === 'dropdown') {
         return option.setState('');
       }
-    })
+    });
+    setToastState('Filters has been reset');
   }
 
   return (

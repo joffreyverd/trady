@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Table from 'component/table/table';
-import AddAction from 'component/modal/modal';
+import EditModal from 'component/modal/edit/edit';
 import { editTarget } from 'utils/fieldsDefinitions';
 import targets from 'assets/targets.json';
 import { chargeFieldsWithValues } from 'utils/tableFunctions';
@@ -26,9 +26,8 @@ function Targets(props: Columns) {
         handleRowClick={handleRowClick} />
       {
         isModalOpen &&
-        <AddAction
+        <EditModal
           title='Edit target'
-          buttonType='Edit'
           action={setIsModalOpen}
           fields={fields} />
       }

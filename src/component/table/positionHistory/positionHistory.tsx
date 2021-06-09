@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Table from 'component/table/table';
-import AddAction from 'component/modal/modal';
+import EditModal from 'component/modal/edit/edit';
 import { editPosition } from 'utils/fieldsDefinitions';
 import position from 'assets/position.json';
 import { chargeFieldsWithValues } from 'utils/tableFunctions';
@@ -27,9 +27,8 @@ function PositionHistory(props: Columns) {
 
       {
         isModalOpen &&
-        <AddAction
+        <EditModal
           title='Edit action'
-          buttonType='Edit'
           action={setIsModalOpen}
           fields={fields} />
       }

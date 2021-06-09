@@ -1,110 +1,110 @@
 [
     {
         "month": "January",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": 222,
+        "returnP": 222,
+        "profitFactor": 222,
+        "trades": 222,
+        "win": 222,
+        "fees": 222
     },
     {
         "month": "February",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "March",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "April",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "May",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "June",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "July",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "August",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "September",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "October",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "November",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     },
     {
         "month": "December",
-        "returnD": 0,
-        "returnP": 0,
-        "profitFactor": 0,
-        "trades": 0,
-        "win": 0,
-        "fees": 0
+        "returnD": "",
+        "returnP": "",
+        "profitFactor": "",
+        "trades": "",
+        "win": "",
+        "fees": ""
     }
 ]

@@ -1,5 +1,4 @@
-import React, { ReactElement, Dispatch, SetStateAction, useContext } from 'react';
-import { ToastContext } from 'context/toastContext';
+import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import styles from './button.module.scss';
 
 type Props = {
@@ -13,16 +12,12 @@ function Button(props: Props): ReactElement {
   const add = title === 'Add' ? styles.addButton : '';
   const edit = title === 'Edit' ? styles.editButton : '';
   const clearAll = title === 'Clear all' ? styles.clearAllButton : '';
-  const { setToastState } = useContext(ToastContext);
 
   return (
     <button
       type='button'
       className={`${styles.button} ${add} ${edit} ${clearAll}`}
-      onClick={() => {
-        action(true);
-        setToastState('Filters has been reset')
-      }}>
+      onClick={() => action(true)}>
       {icon}
       {title && <p>{title}</p>}
     </button>

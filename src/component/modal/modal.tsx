@@ -2,19 +2,17 @@ import React, { ReactElement, Dispatch, SetStateAction, useEffect, useContext } 
 import { ThemeContext } from 'context/themeContext';
 import Dropdown from 'component/form/dropdown/dropdown';
 import Input from 'component/form/input/input';
-import CreateButton from 'component/button/create/create';
-import UpdateButton from 'component/button/update/update';
 import styles from './modal.module.scss';
 
 type Props = {
   title: string,
-  buttonType: string,
+  modalAction: any;
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
 }
 
 function Modal(props: Props): ReactElement {
-  const { title, buttonType, action, fields } = props;
+  const { title, modalAction, action, fields } = props;
   const { themeState } = useContext(ThemeContext);
   const modalTheme = themeState ? styles.modalThemeDark : styles.modalThemeLight;
   const inputTheme = themeState ? styles.inputThemeDark : styles.inputThemeLight;
@@ -51,14 +49,7 @@ function Modal(props: Props): ReactElement {
         </div>
 
         <div className={styles.buttonContainer}>
-          {
-            buttonType === 'Add' &&
-            <CreateButton title={buttonType} action={action} />
-          }
-          {
-            buttonType === 'Edit' &&
-            <UpdateButton title={buttonType} action={action} />
-          }
+          {modalAction}
         </div>
       </div>
     </div>

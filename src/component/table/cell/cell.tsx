@@ -10,7 +10,7 @@ function Cell(props): ReactElement {
   const { object } = props;
   const { privacyState } = useContext(PrivacyContext);
 
-  function setValue(value): string {
+  function displayValue(value): string {
     if (dollarColumns.includes(object.column.id)) {
       return privacyState ? '*****' : value;
     }
@@ -21,7 +21,7 @@ function Cell(props): ReactElement {
     <td {...object.getCellProps()} className={styles.cell}>
       <div className={getStyle(object.column.id, object.value)}>
         {object.value && dollarColumns.includes(object.column.id) && '$ '}
-        {setValue(object.render('Cell'))}
+        {displayValue(object.render('Cell'))}
         {object.value && percentColumns.includes(object.column.id) && ' %'}
       </div>
     </td>
