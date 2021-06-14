@@ -1,0 +1,28 @@
+@import 'styles/variables';
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    margin: auto $main-margin $main-margin $main-margin;
+    border-radius: $default-border-radius;
+    font-size: $medium-font-size;
+}
+
+.message {
+    display: flex;
+}
+
+.message > * {
+    margin: auto 10px;
+}
+
+.light {
+    background-color: $ternary-light;
+    color: $font-secondary-color-light;
+}
+
+.dark {
+    background-color: $ternary-dark;
+    color: $font-secondary-color-dark;
+}
