@@ -7,7 +7,7 @@ type Props = {
   action: Dispatch<SetStateAction<boolean>>,
 }
 
-function Edit(props: Props): ReactElement {
+function Remove(props: Props): ReactElement {
   const { title, action } = props;
 
   return (
@@ -18,5 +18,5 @@ function Edit(props: Props): ReactElement {
   );
 }
 
-export default Edit;
+export default Remove;
 
