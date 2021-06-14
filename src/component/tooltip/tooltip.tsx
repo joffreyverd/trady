@@ -3,15 +3,15 @@ import styles from './tooltip.module.scss';
 
 const Tooltip = ({ children, text, ...rest }) => {
   const [show, setShow] = useState(false);
-  const isTooltipVisible = show ?
+  const tooltipClass = show ?
     `${styles.tooltipBox} ${styles.visible}` : `${styles.tooltipBox}`;
 
   return (
     <div className={styles.tooltipContainer}>
-      <div className={isTooltipVisible}>{text}</div>
+      <div className={tooltipClass}>{text}</div>
       <div
-        onMouseEnter={() => setShow(!show)}
-        onMouseLeave={() => setShow(!show)}
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
         {...rest}
       >
         {children}

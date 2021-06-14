@@ -2,9 +2,11 @@
 
 .button {
     display: flex;
+    justify-content: center;
     margin: auto 0px;
     cursor: pointer;
     height: 40px;
+    width: 170px;
     background-color: $primary-blue;
     border: none;
     border-radius: $default-border-radius;
@@ -19,12 +21,20 @@
     margin: auto 0px;
 }
 
+.addButton, .editButton, .removeButton {
+    width: 120px;
+}
+
 .addButton {
     background-color: $valid-theme;
 }
 
 .editButton {
     background-color: $warning-theme;
+}
+
+.removeButton {
+    background-color: $danger-theme;
 }
 
 .clearAllButton {

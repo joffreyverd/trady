@@ -6,7 +6,7 @@ import styles from './modal.module.scss';
 
 type Props = {
   title: string,
-  modalAction: any;
+  modalAction: ReactElement | HTMLElement;
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
 }
@@ -48,9 +48,7 @@ function Modal(props: Props): ReactElement {
           }
         </div>
 
-        <div className={styles.buttonContainer}>
-          {modalAction}
-        </div>
+        {modalAction}
       </div>
     </div>
   );

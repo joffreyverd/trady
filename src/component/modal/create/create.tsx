@@ -1,6 +1,7 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import CreateButton from 'component/button/create/create';
 import Modal from 'component/modal/modal';
+import styles from './create.module.scss';
 
 type Props = {
   title: string,
@@ -11,10 +12,18 @@ type Props = {
 function Create(props: Props): ReactElement {
   const { title, action, fields } = props;
 
+  function getActions() {
+    return (
+      <div className={styles.actionsContainer}>
+        <CreateButton title='Add' action={action} />
+      </div>
+    )
+  }
+
   return (
     <Modal
       title={title}
-      modalAction={<CreateButton title='Add' action={action} />}
+      modalAction={getActions()}
       action={action}
       fields={fields} />
   );

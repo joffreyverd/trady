@@ -1,6 +1,6 @@
 import React, { ReactElement, Dispatch, SetStateAction } from 'react';
 import Button from 'component/button/button';
-import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 type Props = {
   title: string,
@@ -14,7 +14,7 @@ function Edit(props: Props): ReactElement {
     <Button
       title={title}
       action={action}
-      icon={<EditIcon />} />
+      icon={<DeleteIcon />} />
   );
 }
 

@@ -3,7 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import Tooltip from 'component/tooltip/tooltip';
 import { ThemeContext } from 'context/themeContext';
 import { PrivacyContext } from 'context/privacyContext';
@@ -38,6 +40,16 @@ function Header(): ReactElement {
     }
   }, []);
 
+  function handlePrivacyClick() {
+    setPrivacyState(!privacyState);
+    setToastState('Privacy settings has been changed');
+  }
+
+  function handleThemeClick() {
+    setThemeState(!themeState);
+    setToastState('Application theme has been changed');
+  }
+
   return (
     <div className={`${styles.header} ${shadowBorderTheme} ${theme}`}>
 
@@ -63,26 +75,26 @@ function Header(): ReactElement {
       }
 
       <div className={styles.itemGroup}>
-        <Tooltip text='Hide amouts'>
+        <Tooltip text='Change privacy'>
           <div
             defaultValue={privacyState}
             className={styles.icon}
-            onClick={() => {
-              setPrivacyState(!privacyState);
-              setToastState('Privacy settings has been changed');
-            }}>
-            <VisibilityIcon />
+            onClick={() => handlePrivacyClick()}>
+            {
+              privacyState ?
+                <VisibilityIcon /> : <VisibilityOffIcon />
+            }
           </div>
         </Tooltip>
         <Tooltip text='Change theme'>
           <div
             defaultValue={themeState}
             className={styles.icon}
-            onClick={() => {
-              setThemeState(!themeState);
-              setToastState('Application theme has been changed');
-            }}>
-            <Brightness4Icon />
+            onClick={() => handleThemeClick()}>
+            {
+              themeState ?
+                <Brightness7Icon /> : <Brightness4Icon />
+            }
           </div>
         </Tooltip>
         <div className={`${styles.item} ${styles.icon}`}>
