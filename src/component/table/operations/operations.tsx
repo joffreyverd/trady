@@ -9,10 +9,11 @@ function Operations(props: Columns) {
     <Table<Operation>
       columns={props.columns}
       data={filteredOperations}
-      filter={true}
+      filter
       goTo='./positions/'
-      action={true}
-      handleRowClick={null} />
+      action
+      handleRowClick={null}
+    />
   );
 }
 

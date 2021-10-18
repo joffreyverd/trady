@@ -12,7 +12,8 @@ function Dropdown({ option }): ReactElement<FiltersOptions> {
   return (
     <div
       key={option.id}
-      className={`${styles.filterContainer} ${filterContainerTheme}`}>
+      className={`${styles.filterContainer} ${filterContainerTheme}`}
+    >
       <label htmlFor='options'>
         <p>{option.label}</p>
         <select
@@ -22,7 +23,8 @@ function Dropdown({ option }): ReactElement<FiltersOptions> {
           onChange={(e) => {
             option.setState(e.target.value);
             setToastState('Filters has been changed');
-          }}>
+          }}
+        >
           <option value=''>Select</option>
           {
             option.values.map((value) => (

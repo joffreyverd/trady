@@ -10,7 +10,6 @@ import { ToastProvider } from 'context/toastContext';
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
-
   return (
     <>
       <ThemeProvider>

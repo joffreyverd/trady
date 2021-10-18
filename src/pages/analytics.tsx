@@ -16,4 +16,3 @@ function Analytics(): ReactElement {
 }
 
 export default Analytics;
-

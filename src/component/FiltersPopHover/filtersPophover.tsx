@@ -1,7 +1,7 @@
 import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
 import FilterListIcon from '@material-ui/icons/FilterList';
-import styles from './filtersPophover.module.scss';
 import Filters from 'component/filters/filters';
+import styles from './filtersPophover.module.scss';
 
 type Option = {
   id: number,
@@ -10,12 +10,12 @@ type Option = {
   values: [],
   state: boolean | string,
   setState: Dispatch<SetStateAction<any>>,
-}
+};
 
 type Props = {
   options: Option[],
   isActive: boolean,
-}
+};
 
 function FiltersPophover({ options, isActive }): ReactElement<Props> {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,14 +26,16 @@ function FiltersPophover({ options, isActive }): ReactElement<Props> {
       <button
         type='button'
         className={`${styles.button} ${isActiveFilter}`}
-        onClick={() => setIsModalOpen(!isModalOpen)}>
+        onClick={() => setIsModalOpen(!isModalOpen)}
+      >
         <FilterListIcon className={styles.filterIcon} />
       </button>
       {
         isModalOpen ?
           <Filters
             options={options}
-            setIsModalOpen={setIsModalOpen} /> : ''
+            setIsModalOpen={setIsModalOpen}
+          /> : ''
       }
     </>
   );

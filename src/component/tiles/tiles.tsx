@@ -8,18 +8,18 @@ type Tile = {
   id: number,
   title: string,
   value: number,
-}
+};
 
 type Analytic = {
   id: number,
   title: string,
   value: Tile[],
   symbol: string,
-}
+};
 
 type Props = {
   data: Analytic[],
-}
+};
 
 function greenOrRed(value: number, css) {
   return value > 0 ? css.greenFont : css.redFont;

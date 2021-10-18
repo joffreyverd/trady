@@ -5,7 +5,7 @@ import EditIcon from '@material-ui/icons/Edit';
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
-}
+};
 
 function Edit(props: Props): ReactElement {
   const { title, action } = props;
@@ -14,9 +14,9 @@ function Edit(props: Props): ReactElement {
     <Button
       title={title}
       action={action}
-      icon={<EditIcon />} />
+      icon={<EditIcon />}
+    />
   );
 }
 
 export default Edit;
-

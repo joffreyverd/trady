@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import styles from './../form.module.scss';
+import styles from '../form.module.scss';
 
 type Props = {
   id: string,
   value: string,
   options: string[],
-}
+};
 
 function Dropdown(props: Props): ReactElement {
   const { id, value, options } = props;
@@ -16,12 +16,14 @@ function Dropdown(props: Props): ReactElement {
       name={id}
       className={styles.input}
       defaultValue={value}
-      onChange={() => { console.log('change') }}>
+      onChange={() => { console.log('change'); }}
+    >
       {
         options.map((option, j) => (
           <option
             value={option}
-            key={j}>
+            key={j}
+          >
             {option}
           </option>
         ))

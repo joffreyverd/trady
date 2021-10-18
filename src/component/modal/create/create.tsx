@@ -7,7 +7,7 @@ type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
-}
+};
 
 function Create(props: Props): ReactElement {
   const { title, action, fields } = props;
@@ -17,7 +17,7 @@ function Create(props: Props): ReactElement {
       <div className={styles.actionsContainer}>
         <CreateButton title='Add' action={action} />
       </div>
-    )
+    );
   }
 
   return (
@@ -25,7 +25,8 @@ function Create(props: Props): ReactElement {
       title={title}
       modalAction={getActions()}
       action={action}
-      fields={fields} />
+      fields={fields}
+    />
   );
 }
 

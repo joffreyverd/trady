@@ -8,7 +8,7 @@ type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
-}
+};
 
 function Edit(props: Props): ReactElement {
   const { title, action, fields } = props;
@@ -27,7 +27,8 @@ function Edit(props: Props): ReactElement {
       title={title}
       modalAction={getActions()}
       action={action}
-      fields={fields} />
+      fields={fields}
+    />
   );
 }
 

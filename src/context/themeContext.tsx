@@ -1,9 +1,10 @@
 import React, { createContext, useState, useEffect, ReactNode, ReactElement } from 'react';
+
 const ThemeContext = createContext(null);
 
 type Props = {
   children: ReactNode
-}
+};
 
 function ThemeProvider({ children }: Props): ReactElement {
   const [themeState, setThemeState] = useState(false);
@@ -49,7 +50,8 @@ function ThemeProvider({ children }: Props): ReactElement {
       value={{
         themeState: themeState,
         setThemeState: setThemeState,
-      }}>
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

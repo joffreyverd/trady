@@ -10,7 +10,7 @@ function Doughnut(): ReactElement {
   const fontColor = themeState ? '#fff' : '#26272d';
   const borderColor = themeState ? '#222531' : '#fff';
 
-  let config = {
+  const config = {
     type: 'doughnut',
     data: {
       datasets: [{
@@ -60,7 +60,8 @@ function Doughnut(): ReactElement {
       Chart={Chart}
       config={config}
       updateTheme={updateTheme}
-      optionalClass='doughnutContainer' />
+      optionalClass='doughnutContainer'
+    />
   );
 }
 

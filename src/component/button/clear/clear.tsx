@@ -5,7 +5,7 @@ import ClearAllIcon from '@material-ui/icons/ClearAll';
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
-}
+};
 
 function Clear(props: Props): ReactElement {
   const { title, action } = props;
@@ -16,7 +16,8 @@ function Clear(props: Props): ReactElement {
       action={action}
       icon={
         <ClearAllIcon />
-      } />
+      }
+    />
   );
 }
 

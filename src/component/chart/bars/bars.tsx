@@ -12,16 +12,17 @@ function Bars(): ReactElement {
   const fontColor = themeState ? '#fff' : '#26272d';
 
   function getBackgroundcolor(): string[] {
-    let backgroundColor = [];
+    const backgroundColor = [];
     data.forEach((result) => {
-      let color = result >= 0 ? '#00b399' : '#f96e8f';
+      const color = result >= 0 ? '#00b399' : '#f96e8f';
       backgroundColor.push(color);
-    })
+    });
     return backgroundColor;
   }
 
-  let config = {
-    type: 'bar', data: {
+  const config = {
+    type: 'bar',
+    data: {
       labels: labels,
       datasets: [{ label: '', data, backgroundColor: getBackgroundcolor }],
     },
@@ -32,7 +33,9 @@ function Bars(): ReactElement {
       },
       plugins: {
         title: {
-          display: true, text: 'Monthly revenus ($)', color: fontColor,
+          display: true,
+          text: 'Monthly revenus ($)',
+          color: fontColor,
           font: { family: 'Roboto', weight: 'bold', size: 20 },
         },
       },
@@ -51,7 +54,8 @@ function Bars(): ReactElement {
       Chart={Chart}
       config={config}
       updateTheme={updateTheme}
-      optionalClass='barsContainer' />
+      optionalClass='barsContainer'
+    />
   );
 }
 

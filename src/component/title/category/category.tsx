@@ -3,7 +3,7 @@ import styles from './category.module.scss';
 
 type Props = {
   title: string,
-}
+};
 
 function Category(props: Props): ReactElement {
   const { title } = props;

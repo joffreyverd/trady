@@ -20,17 +20,19 @@ function PositionHistory(props: Columns) {
       <Table<Position>
         columns={columns}
         data={position}
-        filter={true}
+        filter
         goTo=''
-        action={true}
-        handleRowClick={handleRowClick} />
+        action
+        handleRowClick={handleRowClick}
+      />
 
       {
         isModalOpen &&
         <EditModal
           title='Edit action'
           action={setIsModalOpen}
-          fields={fields} />
+          fields={fields}
+        />
       }
     </>
   );

@@ -22,9 +22,8 @@ function Portfolio(): ReactElement {
         <Doughnut />
         <AssetsList />
       </div>
-    </div >
+    </div>
   );
 }
 
 export default Portfolio;
-

@@ -22,14 +22,16 @@ function Targets(props: Columns) {
         data={targets}
         filter={false}
         goTo=''
-        action={true}
-        handleRowClick={handleRowClick} />
+        action
+        handleRowClick={handleRowClick}
+      />
       {
         isModalOpen &&
         <EditModal
           title='Edit target'
           action={setIsModalOpen}
-          fields={fields} />
+          fields={fields}
+        />
       }
     </>
   );

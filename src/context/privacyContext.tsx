@@ -1,9 +1,10 @@
 import React, { createContext, useState, useEffect, ReactNode, ReactElement } from 'react';
+
 const PrivacyContext = createContext(null);
 
 type Props = {
   children: ReactNode
-}
+};
 
 function PrivacyProvider({ children }: Props): ReactElement {
   const [privacyState, setPrivacyState] = useState(false);
@@ -34,7 +35,8 @@ function PrivacyProvider({ children }: Props): ReactElement {
       value={{
         privacyState: privacyState,
         setPrivacyState: setPrivacyState,
-      }}>
+      }}
+    >
       {children}
     </PrivacyContext.Provider>
   );

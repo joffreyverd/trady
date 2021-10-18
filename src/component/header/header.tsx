@@ -26,7 +26,7 @@ function Header(): ReactElement {
   const { setToastState } = useContext(ToastContext);
   const theme = themeState ? styles.dark : styles.light;
   const [shadowBorder, setShadowBorder] = useState(false);
-  let shadowBorderTheme = ''
+  let shadowBorderTheme = '';
   if (shadowBorder) {
     shadowBorderTheme = themeState ?
       styles.shadowBorderDark : styles.shadowBorderLight;
@@ -34,9 +34,7 @@ function Header(): ReactElement {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () =>
-        setShadowBorder(window.pageYOffset > 50)
-      );
+      window.addEventListener('scroll', () => setShadowBorder(window.pageYOffset > 50));
     }
   }, []);
 
@@ -65,11 +63,9 @@ function Header(): ReactElement {
       {
         sections.map((section) => (
           <div className={styles.item} key={section.title}>
-            {
-              <Link href={section.action}>
+            <Link href={section.action}>
                 <a className={styles.name}>{section.title}</a>
-              </Link>
-            }
+            </Link>
           </div>
         ))
       }
@@ -79,7 +75,8 @@ function Header(): ReactElement {
           <div
             defaultValue={privacyState}
             className={styles.icon}
-            onClick={() => handlePrivacyClick()}>
+            onClick={() => handlePrivacyClick()}
+          >
             {
               privacyState ?
                 <VisibilityIcon /> : <VisibilityOffIcon />
@@ -90,7 +87,8 @@ function Header(): ReactElement {
           <div
             defaultValue={themeState}
             className={styles.icon}
-            onClick={() => handleThemeClick()}>
+            onClick={() => handleThemeClick()}
+          >
             {
               themeState ?
                 <Brightness7Icon /> : <Brightness4Icon />
@@ -104,7 +102,7 @@ function Header(): ReactElement {
         </div>
       </div>
 
-    </div >
+    </div>
   );
 }
 

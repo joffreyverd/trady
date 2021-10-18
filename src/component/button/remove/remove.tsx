@@ -5,7 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
-}
+};
 
 function Remove(props: Props): ReactElement {
   const { title, action } = props;
@@ -14,9 +14,9 @@ function Remove(props: Props): ReactElement {
     <Button
       title={title}
       action={action}
-      icon={<DeleteIcon />} />
+      icon={<DeleteIcon />}
+    />
   );
 }
 
 export default Remove;
-

@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 type Filters = {
   onlyShowOpen: boolean,
   year: string
-}
+};
 
 function updateFilters(
   filters: Filters, operations: Operation[], setOperations: Dispatch<SetStateAction<Operation[]>>,
@@ -36,12 +36,12 @@ function getYears(operations: Operation[]): string[] {
 type OpenFilter = {
   onlyShowOpen: boolean,
   toggleOnlyShowOpen: Dispatch<SetStateAction<boolean>>,
-}
+};
 
 type YearFilter = {
   year: string,
   setYear: Dispatch<SetStateAction<string>>,
-}
+};
 
 function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: string[]) {
   const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;

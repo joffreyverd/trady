@@ -6,11 +6,11 @@ import styles from './resume.module.scss';
 type Balance = {
   title: string,
   value: string
-}
+};
 
 type Props = {
   sections: Balance[],
-}
+};
 
 function Resume(props: Props): ReactElement {
   const { sections } = props;

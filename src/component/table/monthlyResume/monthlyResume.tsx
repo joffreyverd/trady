@@ -11,7 +11,8 @@ function MonthlyResume(props: Columns) {
       filter={false}
       goTo=''
       action={false}
-      handleRowClick={null} />
+      handleRowClick={null}
+    />
   );
 }
 

@@ -6,7 +6,7 @@ type Props = {
   path: string,
   name: string,
   current: string
-}
+};
 
 function BreadCrumb(props: Props): ReactElement {
   const { path, name, current } = props;

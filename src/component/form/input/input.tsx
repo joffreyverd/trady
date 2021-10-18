@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import styles from './../form.module.scss';
+import styles from '../form.module.scss';
 
 type Props = {
   id: string
   type: string,
   value: string,
-}
+};
 
 function Input(props: Props): ReactElement {
   const { id, type, value } = props;
@@ -17,7 +17,8 @@ function Input(props: Props): ReactElement {
       name={id}
       defaultValue={value}
       className={styles.input}
-      onChange={() => { console.log('change') }} />
+      onChange={() => { console.log('change'); }}
+    />
   );
 }
 

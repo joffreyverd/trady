@@ -28,7 +28,7 @@ function Head(props): ReactElement {
         </tr>
       ))}
     </thead>
-  )
+  );
 }
 
 export default Head;

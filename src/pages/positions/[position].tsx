@@ -17,9 +17,7 @@ function Position(): ReactElement {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
   const { position } = router.query;
-  const TvChart = dynamic(() =>
-    import('component/chart/tradingView/Widget'), { ssr: false }
-  );
+  const TvChart = dynamic(() => import('component/chart/tradingView/Widget'), { ssr: false });
   const { themeState } = useContext(ThemeContext);
   const theme = themeState ? 'dark' : 'light';
 
@@ -32,7 +30,8 @@ function Position(): ReactElement {
       <BreadCrumb
         path='/operations'
         name='operations'
-        current={`position ${position}`} />
+        current={`position ${position}`}
+      />
 
       <CategoryTitle title='Resume' />
       <PositionResume columns={resume} />
@@ -53,7 +52,8 @@ function Position(): ReactElement {
         <CreateModal
           title='Add action'
           action={setIsModalOpen}
-          fields={createPosition} />
+          fields={createPosition}
+        />
       }
     </div>
   );

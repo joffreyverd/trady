@@ -20,8 +20,7 @@ function Reports(): ReactElement {
       { !privacyState ?
         <Bars />
         :
-        <Card />
-      }
+        <Card />}
 
       <CategoryTitle title='Detail' />
       <MonthlyResume columns={monthlyHistory} />

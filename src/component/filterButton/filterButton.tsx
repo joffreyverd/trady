@@ -24,7 +24,8 @@ function FilterButton(): ReactElement {
   return (
     <FiltersPopHover
       isActive={isActiveFilter}
-      options={options} />
+      options={options}
+    />
   );
 }
 export default FilterButton;

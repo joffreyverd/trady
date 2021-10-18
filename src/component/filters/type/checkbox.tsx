@@ -12,7 +12,8 @@ function Checkbox({ option }): ReactElement<FiltersOptions> {
   return (
     <div
       key={option.id}
-      className={`${styles.filterContainer} ${filterContainerTheme}`}>
+      className={`${styles.filterContainer} ${filterContainerTheme}`}
+    >
       <label htmlFor={option.id}>
         <p>{option.label}</p>
         <input
@@ -24,7 +25,8 @@ function Checkbox({ option }): ReactElement<FiltersOptions> {
           onChange={() => {
             option.setState(!option.state);
             setToastState('Filters has been changed');
-          }} />
+          }}
+        />
       </label>
     </div>
   );

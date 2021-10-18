@@ -25,7 +25,7 @@ function Cell(props): ReactElement {
         {object.value && percentColumns.includes(object.column.id) && ' %'}
       </div>
     </td>
-  )
+  );
 }
 
 export default Cell;

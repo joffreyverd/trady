@@ -8,7 +8,7 @@ type Props = {
   config: Object,
   updateTheme: Function,
   optionalClass: string
-}
+};
 
 function CustomChart(props: Props): ReactElement {
   const { id, Chart, config, updateTheme, optionalClass } = props;
@@ -25,7 +25,7 @@ function CustomChart(props: Props): ReactElement {
       chartInstance.destroy();
       buildChart();
     }
-  }, [themeState])
+  }, [themeState]);
 
   useEffect(() => {
     if (!canvasRef.current) {
@@ -42,7 +42,7 @@ function CustomChart(props: Props): ReactElement {
   return (
     <div className={`${className} ${theme}`}>
       <canvas id={id} ref={canvasRef} />
-    </div >
+    </div>
   );
 }
 

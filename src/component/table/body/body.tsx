@@ -20,26 +20,28 @@ function Body(props): ReactElement {
               <tr {...row.getRowProps()} className={`${rowStyle} ${theme}`}>
                 {row.cells.map((cell, j) => (
                   <Cell object={cell} key={j} />
-                ))}</tr>
+                ))}
+              </tr>
             </Link>
-          )
-        } else {
-          return (
-            <tr {...row.getRowProps()}
+          );
+        }
+        return (
+            <tr
+              {...row.getRowProps()}
               className={`${rowStyle} ${theme}`}
               key={i}
-              onClick={() => handleRowClick ? handleRowClick(row) : ''}>
+              onClick={() => (handleRowClick ? handleRowClick(row) : '')}
+            >
               {
                 row.cells.map((cell, k) => (
                   <Cell object={cell} key={k} />
                 ))
               }
             </tr>
-          )
-        }
+        );
       })}
     </tbody>
-  )
+  );
 }
 
 export default Body;

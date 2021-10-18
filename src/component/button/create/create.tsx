@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
-}
+};
 
 function Create(props: Props): ReactElement {
   const { title, action } = props;
@@ -16,7 +16,8 @@ function Create(props: Props): ReactElement {
       action={action}
       icon={
         <AddIcon />
-      } />
+      }
+    />
   );
 }
 

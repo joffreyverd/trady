@@ -22,7 +22,8 @@ function Operations(): ReactElement {
         <CreateModal
           title={title}
           action={setIsModalOpen}
-          fields={operationFields} />
+          fields={operationFields}
+        />
       }
     </div>
   );

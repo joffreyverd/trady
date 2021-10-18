@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 
 type Props = {
   title: string,
-}
+};
 
 function Page(props: Props): ReactElement {
   const { title } = props;

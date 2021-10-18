@@ -5,7 +5,7 @@ type Props = {
   title: string,
   action: Dispatch<SetStateAction<boolean>>,
   icon: ReactElement | null,
-}
+};
 
 function Button(props: Props): ReactElement {
   const { title, action, icon } = props;
@@ -18,7 +18,8 @@ function Button(props: Props): ReactElement {
     <button
       type='button'
       className={`${styles.button} ${add} ${edit} ${remove} ${clearAll}`}
-      onClick={() => action(true)}>
+      onClick={() => action(true)}
+    >
       {icon}
       {title && <p>{title}</p>}
     </button>

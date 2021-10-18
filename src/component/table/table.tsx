@@ -20,9 +20,9 @@ function Table<T extends object>(props: Table<T>) {
 
   const { getTableProps, getTableBodyProps,
     headerGroups, rows, prepareRow } = useTable(
-      { columns, data },
-      useSortBy,
-    );
+    { columns, data },
+    useSortBy,
+  );
 
   return (
     <div className={styles.tableContainer}>
@@ -30,14 +30,16 @@ function Table<T extends object>(props: Table<T>) {
         <Head
           headerGroups={headerGroups}
           filter={filter}
-          sort={sort} />
+          sort={sort}
+        />
         <Body
           getTableBodyProps={getTableBodyProps}
           rows={rows}
           prepareRow={prepareRow}
           goTo={goTo}
           action={action}
-          handleRowClick={handleRowClick} />
+          handleRowClick={handleRowClick}
+        />
       </table>
     </div>
   );

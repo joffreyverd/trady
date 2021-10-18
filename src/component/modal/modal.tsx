@@ -9,7 +9,7 @@ type Props = {
   modalAction: ReactElement | HTMLElement;
   action: Dispatch<SetStateAction<boolean>>,
   fields: Fields[],
-}
+};
 
 function Modal(props: Props): ReactElement {
   const { title, modalAction, action, fields } = props;
@@ -27,10 +27,11 @@ function Modal(props: Props): ReactElement {
   });
 
   return (
-    <div className={styles.modalContainer} onClick={() => action(false)} >
+    <div className={styles.modalContainer} onClick={() => action(false)}>
       <div
         className={`${styles.modalContent} ${modalTheme}`}
-        onClick={(event) => event.stopPropagation()}>
+        onClick={(event) => event.stopPropagation()}
+      >
         <h3>{title}</h3>
         <div>
           {
