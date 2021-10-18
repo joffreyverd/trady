@@ -7,4 +7,4 @@ function chargeFieldsWithValues(fields, row) {
   return fields;
 }
 
-export { chargeFieldsWithValues };
+export default chargeFieldsWithValues;

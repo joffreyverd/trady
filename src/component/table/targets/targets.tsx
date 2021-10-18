@@ -3,7 +3,7 @@ import Table from 'component/table/table';
 import EditModal from 'component/modal/edit/edit';
 import { editTarget } from 'utils/fieldsDefinitions';
 import targets from 'assets/targets.json';
-import { chargeFieldsWithValues } from 'utils/tableFunctions';
+import chargeFieldsWithValues from 'utils/tableFunctions';
 
 function Targets(props: Columns) {
   const { columns } = props;

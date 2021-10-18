@@ -3,7 +3,7 @@ import Table from 'component/table/table';
 import EditModal from 'component/modal/edit/edit';
 import { editPosition } from 'utils/fieldsDefinitions';
 import position from 'assets/position.json';
-import { chargeFieldsWithValues } from 'utils/tableFunctions';
+import chargeFieldsWithValues from 'utils/tableFunctions';
 
 function PositionHistory(props: Columns) {
   const { columns } = props;
