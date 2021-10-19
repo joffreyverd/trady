@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef, ReactElement, useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
+import { ChartType } from 'chart.js';
 import styles from './customChart.module.scss';
 
 type Props = {
   id: string,
-  Chart: any,
-  config: Object,
-  updateTheme: Function,
+  Chart: ChartType,
+  config: {},
+  updateTheme: () => void,
   optionalClass: string
 };
 
@@ -18,6 +19,11 @@ function CustomChart(props: Props): ReactElement {
   const theme = themeState ? styles.dark : styles.light;
   const className = optionalClass === 'barsContainer' ?
     styles.barsContainer : styles.doughnutContainer;
+
+  function buildChart() {
+    const newChartInstance = new Chart(canvasRef.current, config);
+    setChartInstance(newChartInstance);
+  }
 
   useEffect(() => {
     if (chartInstance) {
@@ -33,11 +39,6 @@ function CustomChart(props: Props): ReactElement {
     }
     buildChart();
   }, [canvasRef]);
-
-  function buildChart() {
-    const newChartInstance = new Chart(canvasRef.current, config);
-    setChartInstance(newChartInstance);
-  }
 
   return (
     <div className={`${className} ${theme}`}>

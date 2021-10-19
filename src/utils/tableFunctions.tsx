@@ -1,5 +1,5 @@
-function chargeFieldsWithValues(fields, row) {
-  fields.map((field) => {
+function chargeFieldsWithValues(fields: any, row: any): any {
+  fields.forEach((field) => {
     if (field.id in row) {
       field.value = row[field.id];
     }

@@ -7,9 +7,10 @@ import { OperationsProvider } from 'context/operationsContext';
 import { ThemeProvider } from 'context/themeContext';
 import { PrivacyProvider } from 'context/privacyContext';
 import { ToastProvider } from 'context/toastContext';
+import { ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps): ReactElement {
   return (
     <>
       <ThemeProvider>

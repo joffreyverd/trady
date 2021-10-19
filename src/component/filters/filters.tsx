@@ -18,12 +18,12 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
   const modalTheme = themeState ? styles.modalDark : styles.modalLight;
 
   function reset() {
-    options.map((option) => {
+    options.forEach((option) => {
       if (option.type === 'checkbox') {
-        return option.setState(false);
+        option.setState(false);
       }
       if (option.type === 'dropdown') {
-        return option.setState('');
+        option.setState('');
       }
     });
     setToastState('Filters has been reset');

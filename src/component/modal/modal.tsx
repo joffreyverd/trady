@@ -17,9 +17,7 @@ function Modal(props: Props): ReactElement {
   const modalTheme = themeState ? styles.modalThemeDark : styles.modalThemeLight;
   const inputTheme = themeState ? styles.inputThemeDark : styles.inputThemeLight;
 
-  const keydownHandler = ({ key }) => {
-    key === 'Escape' && action(false);
-  };
+  const keydownHandler = ({ key }) => key === 'Escape' && action(false);
 
   useEffect(() => {
     document.addEventListener('keydown', keydownHandler);

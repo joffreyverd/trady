@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useMemo, useContext, ReactElement } from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Head from 'component/table/head/head';
 import Body from 'component/table/body/body';
@@ -12,7 +12,7 @@ function sort(isSorted: boolean, isSortedDesc: boolean): string {
   return isSortedDesc ? ' 👇🏼' : ' 👆🏼';
 }
 
-function Table<T extends object>(props: Table<T>) {
+function Table<T extends object>(props: Table<T>): ReactElement {
   const { data, goTo, filter, action, handleRowClick } = props;
   const columns = useMemo(() => props.columns, []);
   const { themeState } = useContext(ThemeContext);

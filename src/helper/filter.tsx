@@ -43,7 +43,26 @@ type YearFilter = {
   setYear: Dispatch<SetStateAction<string>>,
 };
 
-function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: string[]) {
+type Options = [
+  {
+    id: number,
+    label: string,
+    type: string,
+    values: boolean[],
+    state: boolean,
+    setState: Function
+  },
+  {
+    id: number,
+    label: string,
+    type: string,
+    values: string[],
+    state: string,
+    setState: Function
+  }
+];
+
+function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: string[]): Options {
   const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;
   const { year, setYear } = yearFilter;
   return [

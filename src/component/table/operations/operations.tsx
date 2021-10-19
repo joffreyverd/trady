@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, ReactElement } from 'react';
 import { OperationsContext } from 'context/operationsContext';
 import Table from 'component/table/table';
 
-function Operations(props: Columns) {
+function Operations(props: Columns): ReactElement {
   const { columns } = props;
   const { filteredOperations } = useContext(OperationsContext);
 

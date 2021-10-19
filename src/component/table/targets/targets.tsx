@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import Table from 'component/table/table';
 import EditModal from 'component/modal/edit/edit';
 import { editTarget } from 'utils/fieldsDefinitions';
 import targets from 'assets/targets.json';
 import chargeFieldsWithValues from 'utils/tableFunctions';
 
-function Targets(props: Columns) {
+function Targets(props: Columns): ReactElement {
   const { columns } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fields, setFields] = useState(editTarget);

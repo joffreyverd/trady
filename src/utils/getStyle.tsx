@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import styles from './getStyle.module.scss';
 
-function getStatusStyle(value: string) {
+function getStatusStyle(value: string): string {
   if (value === 'Win') {
     return styles.validLabel;
   }
@@ -12,9 +12,10 @@ function getStatusStyle(value: string) {
   if (value === 'Open') {
     return styles.warningLabel;
   }
+  return '';
 }
 
-function getStyle(column: string, value: string) {
+function getStyle(column: string, value: string): string {
   const { themeState } = useContext(ThemeContext);
   const theme = themeState ? styles.dark : styles.light;
 
