@@ -1,4 +1,4 @@
-@import 'styles/variables';
+@import "styles/variables";
 
 .modalContainer {
   z-index: 1;
@@ -8,7 +8,7 @@
   top: 0rem;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   animation-name: appear;
   animation-duration: $animation-default-duration;
 }
@@ -42,16 +42,16 @@
   border-radius: $default-border-radius;
 }
 
-.inputThemeLight  {
+.labelName {
+  margin: auto 20px;
+}
+
+.inputThemeLight {
   background-color: $primary-light;
 }
 
 .inputThemeDark {
   background-color: $primary-dark;
-}
-
-.inputContainer > label {
-  margin: auto 20px;
 }
 
 @keyframes appear {

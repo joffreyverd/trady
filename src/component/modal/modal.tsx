@@ -35,7 +35,7 @@ function Modal(props: Props): ReactElement {
           {
             fields.map((f, i) => (
               <div className={`${styles.inputContainer} ${inputTheme}`} key={i}>
-                <label>{f.label}</label>
+                <p className={styles.labelName}>{f.label}</p>
                 {
                   f.type === 'dropdown' ?
                     <Dropdown id={f.id} value={f.value} options={f.options} />

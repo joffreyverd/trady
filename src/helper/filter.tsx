@@ -50,7 +50,7 @@ type Options = [
     type: string,
     values: boolean[],
     state: boolean,
-    setState: Function
+    setState: Dispatch<SetStateAction<boolean>>
   },
   {
     id: number,
@@ -58,7 +58,7 @@ type Options = [
     type: string,
     values: string[],
     state: string,
-    setState: Function
+    setState: Dispatch<SetStateAction<string>>
   }
 ];
 

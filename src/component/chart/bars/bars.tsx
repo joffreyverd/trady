@@ -20,7 +20,7 @@ function Bars(): ReactElement {
     return backgroundColor;
   }
 
-  const config = {
+  const config: BarsConfig = {
     type: 'bar',
     data: {
       labels: labels,
@@ -53,7 +53,7 @@ function Bars(): ReactElement {
       id='bars'
       Chart={Chart}
       config={config}
-      updateTheme={updateTheme}
+      updateTheme={() => updateTheme}
       optionalClass='barsContainer'
     />
   );

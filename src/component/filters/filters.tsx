@@ -37,13 +37,14 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
         className={styles.closeIcon}
       />
       {
-        options.map((option, i) => {
+        options.map((option, i): ReactElement => {
           if (option.type === 'checkbox') {
             return <Checkbox option={option} key={i} />;
           }
           if (option.type === 'dropdown') {
             return <Dropdown option={option} key={i} />;
           }
+          return <></>;
         })
       }
       <div className={styles.clearAllContainer}>

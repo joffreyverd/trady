@@ -16,6 +16,7 @@ function Dropdown(props: Props): ReactElement {
       name={id}
       className={styles.input}
       defaultValue={value}
+      /* eslint-disable no-console */
       onChange={() => { console.log('change'); }}
     >
       {

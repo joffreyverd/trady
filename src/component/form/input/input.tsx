@@ -17,6 +17,7 @@ function Input(props: Props): ReactElement {
       name={id}
       defaultValue={value}
       className={styles.input}
+      /* eslint-disable no-console */
       onChange={() => { console.log('change'); }}
     />
   );

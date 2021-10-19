@@ -6,7 +6,7 @@ import styles from './customChart.module.scss';
 type Props = {
   id: string,
   Chart: ChartType,
-  config: {},
+  config: DoughnutConfig | BarsConfig,
   updateTheme: () => void,
   optionalClass: string
 };

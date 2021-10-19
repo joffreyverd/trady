@@ -64,7 +64,7 @@ type Table<T> = {
   filter: boolean,
   goTo: string,
   action: boolean,
-  handleRowClick: Function | null,
+  handleRowClick: () => | null,
 };
 
 type Columns = {
@@ -86,4 +86,83 @@ type Fields = {
   id: string,
   value: string,
   options: string[],
+};
+
+type DoughnutConfig = {
+  type: string,
+  data: {
+    datasets: [{
+      label: string,
+      data: number[],
+      backgroundColor: string[],
+      hoverOffset: number,
+      borderColor: string,
+    }],
+    labels: string[]
+  },
+  options: {
+    responsive: boolean,
+    plugins: {
+      title: {
+        display: boolean,
+        text: string,
+        color: string,
+        font: {
+          family: string,
+          weight: string,
+          size: number
+        }
+      },
+      legend: {
+        position: string,
+        labels: {
+          color: string,
+          padding: number,
+          usePointStyle: boolean,
+          font: {
+            family: string
+          }
+        }
+      }
+    }
+  }
+};
+
+type BarsConfig = {
+  type: string,
+  data: {
+    labels: string[],
+    datasets: [{
+      label: string,
+      data: number[],
+      backgroundColor: () => string[],
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        ticks: {
+          color: string
+        },
+        beginAtZero: boolean
+      },
+      x: {
+        ticks: {
+          color: string
+        }
+      }
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: string,
+        color: string,
+        font: {
+          family: string,
+          weight: string,
+          size: number
+        }
+      }
+    }
+  }
 };
