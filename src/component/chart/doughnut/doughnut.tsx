@@ -1,16 +1,16 @@
 import React, { ReactElement, useContext } from 'react';
 import CustomChart from 'component/chart/customChart';
 import { ThemeContext } from 'context/themeContext';
-import { Chart, DoughnutController, ArcElement, Legend, Title, Tooltip } from 'chart.js';
+import { Chart, ChartConfiguration, DoughnutController, ArcElement, Legend, Title, Tooltip } from 'chart.js';
 
 Chart.register(DoughnutController, ArcElement, Legend, Title, Tooltip);
 
-function Doughnut(): ReactElement {
+const Doughnut = (): ReactElement => {
   const { themeState } = useContext(ThemeContext);
   const fontColor = themeState ? '#fff' : '#26272d';
   const borderColor = themeState ? '#222531' : '#fff';
 
-  const config: DoughnutConfig = {
+  const config: ChartConfiguration = {
     type: 'doughnut',
     data: {
       datasets: [{
@@ -48,11 +48,11 @@ function Doughnut(): ReactElement {
     },
   };
 
-  function updateTheme() {
+  const updateTheme = () => {
     config.data.datasets[0].borderColor = borderColor;
     config.options.plugins.title.color = fontColor;
     config.options.plugins.legend.labels.color = fontColor;
-  }
+  };
 
   return (
     <CustomChart
@@ -63,6 +63,6 @@ function Doughnut(): ReactElement {
       optionalClass='doughnutContainer'
     />
   );
-}
+};
 
 export default Doughnut;

@@ -7,7 +7,7 @@ type Props = {
   action: Dispatch<SetStateAction<boolean>>,
 };
 
-function Create(props: Props): ReactElement {
+const Create = (props: Props): ReactElement => {
   const { title, action } = props;
 
   return (
@@ -19,6 +19,6 @@ function Create(props: Props): ReactElement {
       }
     />
   );
-}
+};
 
 export default Create;

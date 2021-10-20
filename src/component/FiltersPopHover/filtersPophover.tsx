@@ -4,11 +4,11 @@ import Filters from 'component/filters/filters';
 import styles from './filtersPophover.module.scss';
 
 type Props = {
-  options: [],
+  options: FiltersOptions[],
   isActive: boolean,
 };
 
-function FiltersPophover({ options, isActive }: Props): ReactElement<Props> {
+const FiltersPophover = ({ options, isActive }: Props): ReactElement<Props> => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 
@@ -30,5 +30,6 @@ function FiltersPophover({ options, isActive }: Props): ReactElement<Props> {
       }
     </>
   );
-}
+};
+
 export default FiltersPophover;

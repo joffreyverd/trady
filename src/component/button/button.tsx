@@ -7,7 +7,7 @@ type Props = {
   icon: ReactElement | null,
 };
 
-function Button(props: Props): ReactElement {
+const Button = (props: Props): ReactElement => {
   const { title, action, icon } = props;
   const add = title === 'Add' ? styles.addButton : '';
   const edit = title === 'Edit' ? styles.editButton : '';
@@ -24,6 +24,6 @@ function Button(props: Props): ReactElement {
       {title && <p>{title}</p>}
     </button>
   );
-}
+};
 
 export default Button;

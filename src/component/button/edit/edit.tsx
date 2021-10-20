@@ -7,7 +7,7 @@ type Props = {
   action: Dispatch<SetStateAction<boolean>>,
 };
 
-function Edit(props: Props): ReactElement {
+const Edit = (props: Props): ReactElement => {
   const { title, action } = props;
 
   return (
@@ -17,6 +17,6 @@ function Edit(props: Props): ReactElement {
       icon={<EditIcon />}
     />
   );
-}
+};
 
 export default Edit;

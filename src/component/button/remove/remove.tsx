@@ -7,7 +7,7 @@ type Props = {
   action: Dispatch<SetStateAction<boolean>>,
 };
 
-function Remove(props: Props): ReactElement {
+const Remove = (props: Props): ReactElement => {
   const { title, action } = props;
 
   return (
@@ -17,6 +17,6 @@ function Remove(props: Props): ReactElement {
       icon={<DeleteIcon />}
     />
   );
-}
+};
 
 export default Remove;

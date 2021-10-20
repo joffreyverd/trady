@@ -12,7 +12,7 @@ type Props = {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>,
 };
 
-function Filters({ options, setIsModalOpen }: Props): ReactElement<Props> {
+const Filters = ({ options, setIsModalOpen }: Props): ReactElement<Props> => {
   const { themeState } = useContext(ThemeContext);
   const { setToastState } = useContext(ToastContext);
   const modalTheme = themeState ? styles.modalDark : styles.modalLight;
@@ -52,5 +52,6 @@ function Filters({ options, setIsModalOpen }: Props): ReactElement<Props> {
       </div>
     </div>
   );
-}
+};
+
 export default Filters;
