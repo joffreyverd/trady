@@ -9,6 +9,7 @@ type Props = {
 function ToastProvider({ children }: Props): ReactElement {
   const [toastState, setToastState] = useState('');
 
+  /* eslint-disable consistent-return */
   useEffect(() => {
     if (toastState) {
       const timer = setTimeout(() => setToastState(''), 3000);

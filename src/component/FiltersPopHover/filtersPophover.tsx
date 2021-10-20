@@ -1,23 +1,14 @@
-import React, { useState, Dispatch, SetStateAction, ReactElement } from 'react';
+import React, { useState, ReactElement } from 'react';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Filters from 'component/filters/filters';
 import styles from './filtersPophover.module.scss';
 
-type Option = {
-  id: number,
-  label: string,
-  type: string,
-  values: [],
-  state: boolean | string,
-  setState: Dispatch<SetStateAction<any>>,
-};
-
 type Props = {
-  options: Option[],
+  options: [],
   isActive: boolean,
 };
 
-function FiltersPophover({ options, isActive }): ReactElement<Props> {
+function FiltersPophover({ options, isActive }: Props): ReactElement<Props> {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isActiveFilter = isActive ? styles.highlight : '';
 

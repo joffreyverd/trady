@@ -4,7 +4,16 @@ import Cell from 'component/table/cell/cell';
 import { ThemeContext } from 'context/themeContext';
 import styles from './body.module.scss';
 
-function Body(props): ReactElement {
+type Props = {
+  getTableBodyProps: () => void,
+  rows: ReactTableRow[],
+  prepareRow: (row: ReactTableRow) => void,
+  goTo: string,
+  action: () => void,
+  handleRowClick: (row: ReactTableRow) => void
+};
+
+function Body(props: Props): ReactElement {
   const { getTableBodyProps, rows, prepareRow, goTo, action, handleRowClick } = props;
   const { themeState } = useContext(ThemeContext);
   const rowStyle = action ? styles.actionRow : styles.row;

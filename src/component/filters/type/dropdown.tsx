@@ -1,9 +1,19 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement, useContext, Dispatch, SetStateAction } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import { ToastContext } from 'context/toastContext';
 import styles from '../filters.module.scss';
 
-function Dropdown({ option }): ReactElement<FiltersOptions> {
+type Options = {
+  option: {
+    id: string,
+    label: string,
+    state: string,
+    values: [value: string, key: number],
+    setState: Dispatch<SetStateAction<string>>
+  }
+};
+
+function Dropdown({ option }: Options): ReactElement<FiltersOptions> {
   const { themeState } = useContext(ThemeContext);
   const filterContainerTheme =
     themeState ? styles.filterContainerDark : styles.filterContainerLight;

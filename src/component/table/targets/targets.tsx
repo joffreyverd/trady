@@ -5,15 +5,15 @@ import { editTarget } from 'utils/fieldsDefinitions';
 import targets from 'assets/targets.json';
 import chargeFieldsWithValues from 'utils/tableFunctions';
 
-function Targets(props: Columns): ReactElement {
+const Targets = (props: Columns): ReactElement => {
   const { columns } = props;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fields, setFields] = useState(editTarget);
 
-  function handleRowClick(rowData) {
+  const handleRowClick = (rowData) => {
     setFields(chargeFieldsWithValues(fields, rowData.values));
     setIsModalOpen(true);
-  }
+  };
 
   return (
     <>
@@ -35,6 +35,6 @@ function Targets(props: Columns): ReactElement {
       }
     </>
   );
-}
+};
 
 export default Targets;

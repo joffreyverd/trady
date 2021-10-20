@@ -12,12 +12,12 @@ type Props = {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>,
 };
 
-function Filters({ options, setIsModalOpen }): ReactElement<Props> {
+function Filters({ options, setIsModalOpen }: Props): ReactElement<Props> {
   const { themeState } = useContext(ThemeContext);
   const { setToastState } = useContext(ToastContext);
   const modalTheme = themeState ? styles.modalDark : styles.modalLight;
 
-  function reset() {
+  const reset = () => {
     options.forEach((option) => {
       if (option.type === 'checkbox') {
         option.setState(false);
@@ -27,7 +27,7 @@ function Filters({ options, setIsModalOpen }): ReactElement<Props> {
       }
     });
     setToastState('Filters has been reset');
-  }
+  };
 
   return (
     <div className={`${styles.modal} ${modalTheme}`}>

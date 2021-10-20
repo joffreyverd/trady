@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styles from './tooltip.module.scss';
 
-const Tooltip = ({ children, text, ...rest }) => {
+type Props = {
+  text: string,
+  children: JSX.Element
+};
+
+const Tooltip = ({ children, text, ...rest }: Props): ReactElement => {
   const [show, setShow] = useState(false);
   const tooltipClass = show ?
     `${styles.tooltipBox} ${styles.visible}` : `${styles.tooltipBox}`;

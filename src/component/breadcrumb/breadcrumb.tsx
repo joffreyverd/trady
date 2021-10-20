@@ -8,7 +8,7 @@ type Props = {
   current: string
 };
 
-function BreadCrumb(props: Props): ReactElement {
+const BreadCrumb = (props: Props): ReactElement => {
   const { path, name, current } = props;
 
   return (
@@ -19,6 +19,6 @@ function BreadCrumb(props: Props): ReactElement {
       <p>/ {current}</p>
     </div>
   );
-}
+};
 
 export default BreadCrumb;

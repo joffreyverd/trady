@@ -10,10 +10,10 @@ function PositionHistory(props: Columns): ReactElement {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [fields, setFields] = useState(editPosition);
 
-  function handleRowClick(rowData) {
+  const handleRowClick = (rowData) => {
     setFields(chargeFieldsWithValues(fields, rowData.values));
     setIsModalOpen(true);
-  }
+  };
 
   return (
     <>

@@ -166,3 +166,9 @@ type BarsConfig = {
     }
   }
 };
+
+type ReactTableRow = {
+  id: number,
+  cells: [],
+  getRowProps: () => []
+};

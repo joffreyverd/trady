@@ -1,9 +1,19 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement, useContext, Dispatch, SetStateAction } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import { ToastContext } from 'context/toastContext';
 import styles from '../filters.module.scss';
 
-function Checkbox({ option }): ReactElement<FiltersOptions> {
+type Option = {
+  option: {
+    id: string,
+    label: string,
+    name: string,
+    state: string,
+    setState: Dispatch<SetStateAction<boolean>>
+  }
+};
+
+function Checkbox({ option }: Option): ReactElement<FiltersOptions> {
   const { themeState } = useContext(ThemeContext);
   const filterContainerTheme =
     themeState ? styles.filterContainerDark : styles.filterContainerLight;

@@ -6,7 +6,20 @@ import styles from './cell.module.scss';
 const dollarColumns = ['returnD', 'value', 'fees', 'price', 'cost', 'pnl'];
 const percentColumns = ['returnP'];
 
-function Cell(props): ReactElement {
+type ReactTableCellObject = {
+  value: string,
+  column: {
+    id: string
+  }
+  render: (value: string) => void,
+  getCellProps: () => void
+};
+
+type Props = {
+  object: ReactTableCellObject
+};
+
+function Cell(props: Props): ReactElement {
   const { object } = props;
   const { privacyState } = useContext(PrivacyContext);
 
