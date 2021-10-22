@@ -33,56 +33,40 @@ function getYears(operations: Operation[]): string[] {
   return years;
 }
 
-type OpenFilter = {
-  onlyShowOpen: boolean,
-  toggleOnlyShowOpen: Dispatch<SetStateAction<boolean>>,
-};
-
-type YearFilter = {
+type Year = {
   year: string,
   setYear: Dispatch<SetStateAction<string>>,
 };
 
-type Options = [
-  {
-    id: number,
-    label: string,
-    type: string,
-    values: boolean[],
-    state: boolean,
-    setState: Dispatch<SetStateAction<boolean>>
-  },
-  {
-    id: number,
-    label: string,
-    type: string,
-    values: string[],
-    state: string,
-    setState: Dispatch<SetStateAction<string>>
-  }
-];
-
-function getOptions(openFilter: OpenFilter, yearFilter: YearFilter, years: string[]): Options {
-  const { onlyShowOpen, toggleOnlyShowOpen } = openFilter;
+function getYearFilter(yearFilter: Year, operations: Operation[]): DropdownProps {
   const { year, setYear } = yearFilter;
-  return [
-    {
-      id: 0,
-      label: 'Only show open positions',
-      type: 'checkbox',
-      values: [true, false],
-      state: onlyShowOpen,
-      setState: toggleOnlyShowOpen,
-    },
-    {
-      id: 1,
-      label: 'Year',
-      type: 'dropdown',
-      values: years,
-      state: year,
-      setState: setYear,
-    },
-  ];
+  const years = getYears(operations);
+  const filter = {
+    id: 1,
+    label: 'Year',
+    type: 'dropdown',
+    values: years,
+    state: year,
+    setState: setYear,
+  };
+  return filter;
 }
 
-export default { getYears, getOptions, updateFilters };
+type IsOpenPosition = {
+  onlyShowOpen: boolean,
+  toggleOnlyShowOpen: Dispatch<SetStateAction<boolean>>,
+};
+
+function getIsOpenPositionFilter(isOpenPosition: IsOpenPosition): CheckboxProps {
+  const { onlyShowOpen, toggleOnlyShowOpen } = isOpenPosition;
+  return {
+    id: 0,
+    label: 'Only show open positions',
+    type: 'checkbox',
+    values: [true, false],
+    state: onlyShowOpen,
+    setState: toggleOnlyShowOpen,
+  };
+}
+
+export default { getYears, getYearFilter, getIsOpenPositionFilter, updateFilters };

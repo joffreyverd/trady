@@ -11,7 +11,7 @@ type Props = {
   optionalClass: string
 };
 
-const CustomChart = (props: Props): ReactElement => {
+function CustomChart(props: Props): ReactElement {
   const { id, Chart, config, updateTheme, optionalClass } = props;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [chartInstance, setChartInstance] = useState(null);
@@ -45,6 +45,6 @@ const CustomChart = (props: Props): ReactElement => {
       <canvas id={id} ref={canvasRef} />
     </div>
   );
-};
+}
 
 export default CustomChart;

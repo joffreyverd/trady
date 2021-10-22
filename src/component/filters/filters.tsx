@@ -8,24 +8,19 @@ import { ThemeContext } from 'context/themeContext';
 import styles from './filters.module.scss';
 
 type Props = {
-  options: FiltersOptions[],
+  year: DropdownProps,
+  isOpenPosition: CheckboxProps,
   setIsModalOpen: Dispatch<SetStateAction<boolean>>,
 };
 
-const Filters = ({ options, setIsModalOpen }: Props): ReactElement<Props> => {
+function Filters({ year, isOpenPosition, setIsModalOpen }: Props): ReactElement {
   const { themeState } = useContext(ThemeContext);
   const { setToastState } = useContext(ToastContext);
   const modalTheme = themeState ? styles.modalDark : styles.modalLight;
 
   const reset = () => {
-    options.forEach((option) => {
-      if (option.type === 'checkbox') {
-        option.setState(false);
-      }
-      if (option.type === 'dropdown') {
-        option.setState('');
-      }
-    });
+    isOpenPosition.setState(false);
+    year.setState(false);
     setToastState('Filters has been reset');
   };
 
@@ -36,22 +31,13 @@ const Filters = ({ options, setIsModalOpen }: Props): ReactElement<Props> => {
         onClick={() => setIsModalOpen(false)}
         className={styles.closeIcon}
       />
-      {
-        options.map((option, i): ReactElement => {
-          if (option.type === 'checkbox') {
-            return <Checkbox option={option} key={i} />;
-          }
-          if (option.type === 'dropdown') {
-            return <Dropdown option={option} key={i} />;
-          }
-          return <></>;
-        })
-      }
+        <Checkbox option={isOpenPosition} />
+        <Dropdown option={year} />
       <div className={styles.clearAllContainer}>
         <ClearButton title='Clear all' action={reset} />
       </div>
     </div>
   );
-};
+}
 
 export default Filters;

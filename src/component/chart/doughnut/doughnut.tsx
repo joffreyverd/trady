@@ -5,7 +5,7 @@ import { Chart, ChartConfiguration, DoughnutController, ArcElement, Legend, Titl
 
 Chart.register(DoughnutController, ArcElement, Legend, Title, Tooltip);
 
-const Doughnut = (): ReactElement => {
+function Doughnut(): ReactElement {
   const { themeState } = useContext(ThemeContext);
   const fontColor = themeState ? '#fff' : '#26272d';
   const borderColor = themeState ? '#222531' : '#fff';
@@ -63,6 +63,6 @@ const Doughnut = (): ReactElement => {
       optionalClass='doughnutContainer'
     />
   );
-};
+}
 
 export default Doughnut;

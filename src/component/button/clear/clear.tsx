@@ -7,7 +7,7 @@ type Props = {
   action: Dispatch<SetStateAction<boolean>>,
 };
 
-const Clear = (props: Props): ReactElement => {
+function Clear(props: Props): ReactElement {
   const { title, action } = props;
 
   return (
@@ -19,6 +19,6 @@ const Clear = (props: Props): ReactElement => {
       }
     />
   );
-};
+}
 
 export default Clear;

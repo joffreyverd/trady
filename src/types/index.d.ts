@@ -64,26 +64,26 @@ type Table<T> = {
   filter: boolean,
   goTo: string,
   action: boolean,
-  handleRowClick: () => | null,
+  handleRowClick: any,
 };
 
 type Columns = {
   columns: TableHeader[],
 };
 
-type FiltersOptions = {
+type FiltersOptions<F> = {
   id: number,
   label: string,
   type: string,
-  values: [string],
-  state: boolean | string,
-  setState: Dispatch<SetStateAction<boolean | string>>,
+  values: F[],
+  state: F,
+  setState: Dispatch<SetStateAction<F>>,
 };
 
 type Fields = {
+  id: string,
   label: string,
   type: string,
-  id: string,
   value: string,
   options: string[],
 };
@@ -92,4 +92,22 @@ type ReactTableRow = {
   id: number,
   cells: [],
   getRowProps: () => []
+};
+
+type CheckboxProps = {
+  id: number,
+  label: string,
+  type: string,
+  values: boolean[],
+  state: boolean,
+  setState: Dispatch<SetStateAction<boolean>>
+};
+
+type DropdownProps = {
+  id: number,
+  label: string,
+  type: string,
+  values: string[],
+  state: string,
+  setState: Dispatch<SetStateAction<string>>
 };

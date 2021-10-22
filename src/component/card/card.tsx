@@ -3,7 +3,7 @@ import { ThemeContext } from 'context/themeContext';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import styles from './card.module.scss';
 
-const Card = (): ReactElement => {
+function Card(): ReactElement {
   const { themeState } = useContext(ThemeContext);
   const theme = themeState ? styles.dark : styles.light;
 
@@ -15,6 +15,6 @@ const Card = (): ReactElement => {
       </div>
     </div>
   );
-};
+}
 
 export default Card;

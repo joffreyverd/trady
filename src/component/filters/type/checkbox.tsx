@@ -1,39 +1,35 @@
-import React, { ReactElement, useContext, Dispatch, SetStateAction } from 'react';
+import React, { ReactElement, useContext } from 'react';
 import { ThemeContext } from 'context/themeContext';
 import { ToastContext } from 'context/toastContext';
 import styles from '../filters.module.scss';
 
-type Option = {
-  option: {
-    id: string,
-    label: string,
-    name: string,
-    state: string,
-    setState: Dispatch<SetStateAction<boolean>>
-  }
+type Props = {
+  option: CheckboxProps
 };
 
-function Checkbox({ option }: Option): ReactElement<FiltersOptions> {
+function Checkbox({ option }: Props): ReactElement {
+  const {id, label, state, setState} = option;
   const { themeState } = useContext(ThemeContext);
   const filterContainerTheme =
     themeState ? styles.filterContainerDark : styles.filterContainerLight;
   const { setToastState } = useContext(ToastContext);
+  const stringifiedId = option.id.toString();
 
   return (
     <div
-      key={option.id}
+      key={id}
       className={`${styles.filterContainer} ${filterContainerTheme}`}
     >
-      <label htmlFor={option.id}>
-        <p>{option.label}</p>
+      <label htmlFor={stringifiedId}>
+        <p>{label}</p>
         <input
           type='checkbox'
-          id={option.id}
-          name={option.id}
-          value={option.state}
-          checked={option.state}
+          id={stringifiedId}
+          name={stringifiedId}
+          value={state.toString()}
+          checked={state}
           onChange={() => {
-            option.setState(!option.state);
+            setState(!state);
             setToastState('Filters has been changed');
           }}
         />

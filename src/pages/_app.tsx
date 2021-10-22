@@ -2,7 +2,7 @@ import Head from 'next/head';
 import 'styles/global.scss';
 import Header from 'component/header/header';
 import Footer from 'component/footer/footer';
-import FiltersButton from 'component/filterButton/filterButton';
+import OverlayModal from 'component/overlayModal/overlayModal';
 import { OperationsProvider } from 'context/operationsContext';
 import { ThemeProvider } from 'context/themeContext';
 import { PrivacyProvider } from 'context/privacyContext';
@@ -26,7 +26,7 @@ function App({ Component, pageProps }: AppProps): ReactElement {
               <Header />
               <OperationsProvider>
                 <Component {...pageProps} />
-                <FiltersButton />
+                <OverlayModal />
               </OperationsProvider>
               <Footer />
             </ToastProvider>

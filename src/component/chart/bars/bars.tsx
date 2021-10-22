@@ -5,7 +5,7 @@ import { ThemeContext } from 'context/themeContext';
 
 Chart.register(BarController, LinearScale, CategoryScale, BarElement, Title, Tooltip);
 
-const Bars = (): ReactElement => {
+function Bars(): ReactElement {
   const { themeState } = useContext(ThemeContext);
   const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
   const data = [65, 59, -12, 81, 56, 55, 40, -21, 24, 43, 32, 116];
@@ -57,6 +57,6 @@ const Bars = (): ReactElement => {
       optionalClass='barsContainer'
     />
   );
-};
+}
 
 export default Bars;

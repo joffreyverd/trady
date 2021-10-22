@@ -12,7 +12,7 @@ function sort(isSorted: boolean, isSortedDesc: boolean): string {
   return isSortedDesc ? ' 👇🏼' : ' 👆🏼';
 }
 
-function Table<T extends Table<T>>(props: Table<T>): ReactElement {
+function Table<T extends Object>(props: Table<T>): ReactElement {
   const { data, goTo, filter, action, handleRowClick } = props;
   const columns = useMemo(() => props.columns, []);
   const { themeState } = useContext(ThemeContext);
